@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>הטיסה של חבר וחברה 💜 | בודפשט 2026</title>
+  <meta name="description" content="המדריך והלוח זמנים המלא לבודפשט 2026: טיסות Wizz Air, מלון Casati ובריכת Cortile המחוממת, מסעדות נבחרות, ברים, שופינג, שווקי כריסמס וטיפים">
+  <meta name="theme-color" content="#2e1065">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="בודפשט 2026">
+  
+  <!-- WhatsApp & Social Media Sharing (Open Graph) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="הטיסה של חבר וחברה 💜 | בודפשט 2026">
+  <meta property="og:description" content="המדריך והלו״ז המלא לבודפשט 24-28.11: טיסות Wizz Air, מלון Casati ובריכת Cortile המחוממת, מסעדות, שווקי כריסמס, שופינג ונקודות תצפית.">
+  <meta property="og:url" content="https://bencohen05.github.io/budapest-trip/">
+  <meta property="og:image" content="https://bencohen05.github.io/budapest-trip/images/og-banner.jpg?v=4">
+  <meta property="og:image:secure_url" content="https://bencohen05.github.io/budapest-trip/images/og-banner.jpg?v=4">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="טיול חבר וחברה - חוגגים 7 שנים בודפשט 24-28.11">
+  <link rel="image_src" href="https://bencohen05.github.io/budapest-trip/images/og-banner.jpg?v=4">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="הטיסה של חבר וחברה 💜 | בודפשט 2026">
+  <meta name="twitter:description" content="המדריך והלו״ז המלא לבודפשט 24-28.11">
+  <meta name="twitter:image" content="https://bencohen05.github.io/budapest-trip/images/og-banner.jpg?v=4">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sticky Mobile-First App Header (Single Slim Row) -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand-group">
+        <h1 class="brand-title">הטיסה של חבר וחברה 💜</h1>
+        <span class="brand-badge">24-28.11 • 7 שנים ❤️</span>
+      </div>
+
+      <div class="header-tools">
+        <button type="button" class="tool-btn-header" onclick="shareTripWhatsApp()" title="שיתוף בוואטסאפ" style="background: #22c55e; color: #fff; border-color: #16a34a;">
+          <span class="tool-icon">💬</span>
+          <span class="tool-text">שתף</span>
+        </button>
+        <button type="button" id="open-currency-modal-btn" class="tool-btn-header currency-btn" aria-label="פתח ממיר פורינט" title="ממיר פורינט">
+          <span class="tool-icon">💱</span>
+          <span class="tool-text">פורינט</span>
+        </button>
+        <button type="button" id="open-install-modal-btn" class="tool-btn-header install-btn" aria-label="התקנת אפליקציה למסך הבית" onclick="openInstallModal()" title="התקנת אפליקציה">
+          <span class="tool-icon">📲</span>
+          <span class="tool-text">התקנה</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mini-Site Navigation Tabs (Scrollable on Mobile, Sticky) -->
+  <nav class="category-nav-bar" id="category-nav">
+    <div class="nav-scroll-container">
+      <button class="nav-btn active" data-target="view-home">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">ראשי וטיסות</span>
+      </button>
+      <button class="nav-btn" data-target="view-itinerary">
+        <span class="nav-icon">📅</span>
+        <span class="nav-label">לו"ז יומי</span>
+      </button>
+      <button class="nav-btn" data-target="view-hotel">
+        <span class="nav-icon">🏨</span>
+        <span class="nav-label">מלון ובריכה</span>
+      </button>
+      <button class="nav-btn" data-target="view-food">
+        <span class="nav-icon">🍔</span>
+        <span class="nav-label">מסעדות ואוכל</span>
+      </button>
+      <button class="nav-btn" data-target="view-must-taste">
+        <span class="nav-icon"><span class="hu-flag-icon"></span></span>
+        <span class="nav-label">מאכלי חובה</span>
+      </button>
+      <button class="nav-btn" data-target="view-bars">
+        <span class="nav-icon">🍸</span>
+        <span class="nav-label">ברים ולילה</span>
+      </button>
+      <button class="nav-btn" data-target="view-shopping">
+        <span class="nav-icon">🛍️</span>
+        <span class="nav-label">שופינג וקניונים</span>
+      </button>
+      <button class="nav-btn" data-target="view-taxfree">
+        <span class="nav-icon">💶</span>
+        <span class="nav-label">החזר מס</span>
+      </button>
+      <button class="nav-btn" data-target="view-attractions">
+        <span class="nav-icon">🎄</span>
+        <span class="nav-label">אטרקציות ושווקים</span>
+      </button>
+      <button class="nav-btn" data-target="view-tips">
+        <span class="nav-icon">💡</span>
+        <span class="nav-label">טיפים ותחבורה</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Viewport for Mini-Sites -->
+  <main class="main-content">
+
+    <!-- ==================== MINI-SITE 1: HOME & FLIGHTS ==================== -->
+    <section id="view-home" class="minisite-view active" aria-label="מסך ראשי">
+
+      <!-- Hero: trip + countdown -->
+      <header class="hm-hero">
+        <img src="images/danube-cruise.jpg" alt="" class="hm-hero-img" loading="eager" decoding="async">
+        <div class="hm-hero-shade" aria-hidden="true"></div>
+        <div class="hm-hero-inner">
+          <span class="hm-hero-kicker">חופשת כריסמס בבודפשט ❤️</span>
+          <h2 class="hm-hero-title">בודפשט 2026</h2>
+          <p class="hm-hero-dates">24–28 בנובמבר · 5 ימים, 4 לילות</p>
+          <div class="hm-hero-chips">
+            <span class="hm-chip hm-chip-strong" id="countdown-chip">✈️ <span id="countdown-timer">24.11 ב-10:10</span></span>
+            <span class="hm-chip">❄️ <bdi dir="ltr">2°–8°C</bdi></span>
+            <button type="button" class="hm-chip hm-chip-btn" id="quick-currency-pill" aria-label="פתח ממיר פורינט">💱 <bdi dir="ltr">10,000 HUF ≈ 95 ₪</bdi></button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Days strip -->
+      <section class="hm-section" aria-labelledby="hm-days-title">
+        <div class="hm-section-head">
+          <h3 id="hm-days-title">הלו״ז</h3>
+          <button type="button" class="hm-link" onclick="selectDayAndGo(1)">לכל הלו״ז ‹</button>
+        </div>
+        <div class="hm-days" id="home-days-strip"><!-- app.js --></div>
+      </section>
+
+      <!-- Flights -->
+      <section class="hm-section" aria-labelledby="hm-flights-title">
+        <div class="hm-section-head">
+          <h3 id="hm-flights-title">טיסות Wizz Air</h3>
+        </div>
+        <div class="hm-card hm-flights">
+          <div class="hm-flight">
+            <div class="hm-flight-label"><b>הלוך</b><span>שלישי 24.11 · Wizz Air</span></div>
+            <div class="hm-flight-route">
+              <div class="hm-fp"><b>10:10</b><span>תל אביב</span></div>
+              <div class="hm-fline" aria-hidden="true"><span>3:35</span></div>
+              <div class="hm-fp"><b>12:45</b><span>בודפשט 2B</span></div>
+            </div>
+          </div>
+          <div class="hm-flight">
+            <div class="hm-flight-label"><b>חזור</b><span>שבת 28.11 · Wizz Air</span></div>
+            <div class="hm-flight-route">
+              <div class="hm-fp"><b>14:20</b><span>בודפשט 2B</span></div>
+              <div class="hm-fline" aria-hidden="true"><span>3:15</span></div>
+              <div class="hm-fp"><b>18:35</b><span>תל אביב</span></div>
+            </div>
+          </div>
+          <div class="hm-flight-facts">
+            <span>🧳 מזוודות: אחת <b>32 ק״ג</b> + אחת <b>26 ק״ג</b> · לכל אחד תיק קטן מתחת למושב <b><span class="ltr">⁦40×30×20⁩</span> ס״מ</b></span>
+            <span>🛫 יציאה מנתב״ג <b>טרמינל 1</b> · צ׳ק אין באפליקציה נפתח 24 שעות לפני</span>
+          </div>
+          <p class="hm-flight-note hm-warn">⚠️ התיק הקטן הוא <b>לא טרולי</b> – תרמיל או תיק צד שנכנס מתחת למושב. טרולי עם גלגלים (<span class="ltr">⁦55×40×23⁩</span>) לא נכלל ויחויב בשער.</p>
+        </div>
+      </section>
+
+      <!-- Hotel -->
+      <section class="hm-section" aria-labelledby="hm-hotel-title">
+        <h3 id="hm-hotel-title" class="sr-only">המלון</h3>
+        <button type="button" class="hm-card hm-hotel" onclick="switchMiniSite('view-hotel')">
+          <img src="images/casati-1.jpg" alt="" class="hm-hotel-img" loading="lazy" decoding="async">
+          <span class="hm-hotel-text">
+            <b>Hotel Casati Budapest</b>
+            <span>Paulay Ede u. 31 · רובע 6</span>
+            <span class="hm-hotel-perk">🏊 בריכה מחוממת ב-Cortile – חינם</span>
+          </span>
+          <span class="hm-arrow" aria-hidden="true">‹</span>
+        </button>
+      </section>
+
+      <!-- Categories -->
+      <section class="hm-section" aria-labelledby="hm-cats-title">
+        <h3 id="hm-cats-title" class="hm-section-title">מה בא לכם?</h3>
+        <div class="hm-cats">
+          <button type="button" class="hm-cat" onclick="switchMiniSite('view-food')"><span aria-hidden="true">🍔</span>מסעדות</button>
+          <button type="button" class="hm-cat" onclick="switchMiniSite('view-must-taste')"><span aria-hidden="true"><span class="hu-flag-badge"></span></span>מאכלי חובה</button>
+          <button type="button" class="hm-cat" onclick="switchMiniSite('view-attractions')"><span aria-hidden="true">🎄</span>אטרקציות</button>
+          <button type="button" class="hm-cat" onclick="switchMiniSite('view-bars')"><span aria-hidden="true">🍸</span>ברים</button>
+          <button type="button" class="hm-cat" onclick="switchMiniSite('view-shopping')"><span aria-hidden="true">🛍️</span>שופינג</button>
+          <button type="button" class="hm-cat" onclick="switchMiniSite('view-taxfree')"><span aria-hidden="true">💶</span>החזר מס</button>
+          <button type="button" class="hm-cat" onclick="switchMiniSite('view-hotel')"><span aria-hidden="true">🏨</span>מלון</button>
+          <button type="button" class="hm-cat" onclick="switchMiniSite('view-tips')"><span aria-hidden="true">💡</span>טיפים</button>
+        </div>
+      </section>
+    </section>
+
+
+    <!-- ==================== MINI-SITE 2: DAILY ITINERARY ==================== -->
+    <section id="view-itinerary" class="minisite-view" aria-label="לו״ז יומי">
+      <!-- Day Details Box -->
+      <div id="active-day-content">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+
+    <!-- ==================== MINI-SITE 3: HOTEL & CORTILE POOL ==================== -->
+    <section id="view-hotel" class="minisite-view">
+      <div class="subview-top-bar">
+        <button type="button" class="btn-view-back-home" onclick="switchMiniSite('view-home')">
+          <span class="back-arrow">➔</span>
+          <span>חזרה למסך הראשי</span>
+        </button>
+      </div>
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2><span>🏨</span> מדריך המלון והבריכה המחוממת</h2>
+          <p>Hotel Casati Budapest והטבת ה-VIP החינמית ב-Hotel Cortile Budapest</p>
+        </div>
+      </div>
+
+      <!-- Casati Hotel Main Card -->
+      <div class="section-card hotel-card-detailed">
+        <div class="hotel-gallery-grid">
+          <img src="images/casati-1.jpg" alt="Hotel Casati Interior" class="hotel-img" loading="lazy" decoding="async">
+          <img src="images/casati-2.jpg" alt="Hotel Casati Bedroom" class="hotel-img" loading="lazy" decoding="async">
+        </div>
+
+        <div class="hotel-info-body">
+          <div class="hotel-badge-row">
+            <span class="pill-badge gold">מלון בוטיק למבוגרים בלבד (14+)</span>
+            <span class="pill-badge cyan">רובע 6 המרכזי (ליד האופרה)</span>
+          </div>
+
+          <h3>Hotel Casati Budapest</h3>
+          <p class="hotel-address">📍 <bdi>Paulay Ede u. 31, 1061 Budapest</bdi></p>
+
+          <div class="hotel-vip-tags">
+            <span class="vip-tag">★ 9.4 ב-Google</span>
+            <span class="vip-tag">צ'ק אין 14:00 • צ'ק אאוט 11:00</span>
+            <span class="vip-tag">ארוחת בוקר בופה כלולה (07:30–10:30)</span>
+            <span class="vip-tag">סאונה וכושר 24/7</span>
+            <span class="vip-tag">TukTuk קוקטייל בר בלובי (18:00–01:00)</span>
+            <span class="vip-tag highlight">בריכת Cortile מחוממת – חינם 🏊</span>
+          </div>
+
+          <p class="hotel-description-text">
+            מלון בוטיק מעוצב ואינטימי הממוקם ברובע התרבות היוקרתי של פשט, צמוד לשדרת אנדראשי, בית האופרה ומרחק 5-7 דקות הליכה מכיכר Deák ומרחוב ואצי. חדרים שקטים, ארוחת בוקר מעולה, סאונה פנימית וחדר כושר חופשיים לאורחים.
+          </p>
+
+          <div class="hotel-action-buttons">
+            <a href="https://maps.google.com/?q=Casati+Budapest+Hotel" target="_blank" rel="noopener" class="btn-primary-action">
+              <span>📍</span> פתח ניווט ב-Google Maps
+            </a>
+            <a href="tel:+3613431198" class="btn-secondary-action">
+              <span>📞</span> חייג לקבלה (+36 1 343 1198)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cortile Heated Pool Step-by-Step VIP Guide -->
+      <div class="section-card cortile-pool-guide">
+        <div class="card-header highlight-cyan">
+          <div class="header-icon-title">
+            <span class="card-icon">🏊</span>
+            <div>
+              <h3>הטבת ה-VIP שלכם: בריכת Cortile המחוממת על הגג!</h3>
+              <p class="card-sub">חינם לחלוטין לאורחי Casati • מרחק 600 מטר (7 דקות הליכה)</p>
+            </div>
+          </div>
+          <span class="badge-free">חינם לאורחי Casati</span>
+        </div>
+
+        <img src="images/cortile-pool.jpg" alt="הבריכה המחוממת של מלון Cortile" class="hotel-img cortile-cover" loading="lazy" decoding="async">
+
+        <div class="pool-steps-list">
+          <div class="pool-step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <strong>איפה זה נמצא?</strong>
+              <p>מלון האחות Cortile שוכן ברחוב <strong>Dessewffy u. 14</strong>. מרחק של כ-600 מטר בלבד ממלון Casati (הליכה רגלית פשוטה ומהירה של 7-8 דקות).</p>
+            </div>
+          </div>
+
+          <div class="pool-step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <strong>מה יש בבריכה?</strong>
+              <p>בריכת אינפיניטי מקורה בזכוכית ומחוממת בקומה העליונה מול שמי בודפשט. טבילה חמימה ומרגיעה כשהאוויר בחוץ קריר, ולצידה בר קוקטיילים (SkyBar).</p>
+            </div>
+          </div>
+
+          <div class="pool-step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <strong>שעות פעילות:</strong>
+              <p>הבריכה פתוחה בכל יום מ-<strong>06:00 בבוקר עד 22:00 בלילה</strong>. ה-SkyBar פועל מ-16:00 עד 22:00.</p>
+            </div>
+          </div>
+
+          <div class="pool-step-item">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <strong>איך נכנסים בחינם? (פשוט וקל):</strong>
+              <p>גשו לקבלה של מלון Casati ואמרו שאתם מעוניינים ללכת לבריכה ב-Cortile. הצוות יתאם מולם את הכניסה החופשית שלכם. קחו חלוק ומגבת מהחדר של Casati וצאו ליהנות!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-action-buttons">
+          <a href="https://maps.google.com/?q=Cortile+Budapest+Hotel" target="_blank" rel="noopener" class="btn-primary-action">
+            <span>📍</span> פתח מסלול הליכה ל-Cortile ב-Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== MINI-SITE 4: RESTAURANTS & DINING ==================== -->
+    <section id="view-food" class="minisite-view">
+      <div class="subview-top-bar">
+        <button type="button" class="btn-view-back-home" onclick="switchMiniSite('view-home')">
+          <span class="back-arrow">➔</span>
+          <span>חזרה למסך הראשי</span>
+        </button>
+      </div>
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2><span>🍔</span> קולינריה ומסעדות (ללא חזיר, ללא שרצים)</h2>
+          <p>מדורג מהמומלץ ביותר לפחות מומלץ • 100% בקר, עוף, איטלקי, חלבי וקינוחים</p>
+        </div>
+      </div>
+
+      <!-- Sub-Category Filter Tabs -->
+      <div class="filter-pills-bar" id="food-filter-pills">
+        <button class="filter-pill active" data-filter="all">הכל (26 מקומות)</button>
+        <button class="filter-pill highlight-gold" data-filter="must_taste"><span class="hu-flag-icon"></span> 9 מאכלי חובה לטעום</button>
+        <button class="filter-pill" data-filter="top">🌟 הכי מומלצים</button>
+        <button class="filter-pill" data-filter="steaks">🥩 סטייקים ובשרים (Hot Stone ועוד)</button>
+        <button class="filter-pill" data-filter="asian">🍣 סושי ואסייתי</button>
+        <button class="filter-pill" data-filter="fastfood">⚡ מזון מהיר (6 מקומות)</button>
+        <button class="filter-pill" data-filter="burgers">🍔 המבורגרים וסמאש</button>
+        <button class="filter-pill" data-filter="italian">🍝 איטלקיות ופיצה</button>
+        <button class="filter-pill" data-filter="hungarian">🥣 הונגרי ורחוב</button>
+        <button class="filter-pill" data-filter="desserts">☕ מתוקים ובתי קפה</button>
+      </div>
+
+      <!-- Controls Toolbar: Sort and View Mode Toggle -->
+      <div class="controls-toolbar">
+        <div class="sort-bar">
+          <span class="sort-label">מיון:</span>
+          <button class="sort-pill active" data-grid="food" data-sort="rank">🌟 לפי מומלצים</button>
+          <button class="sort-pill" data-grid="food" data-sort="distance">🚶 הכי קרוב למלון Casati</button>
+        </div>
+
+        <div class="view-mode-bar">
+          <button class="view-mode-btn active" data-grid="food" data-mode="cards" aria-label="תצוגת כרטיסיות">
+            <span>🎴</span> כרטיסיות
+          </button>
+          <button class="view-mode-btn" data-grid="food" data-mode="table" aria-label="תצוגת רשימה / טבלה">
+            <span>📋</span> רשימה / טבלה
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Input within food -->
+      <div class="search-input-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="food-search-input" placeholder="חיפוש מסעדה, מנה או מיקום...">
+      </div>
+
+      <!-- Ranked Restaurants Grid -->
+      <div class="items-card-grid" id="food-items-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+
+    <!-- ==================== MINI-SITE: MUST-TASTE FOODS ==================== -->
+    <section id="view-must-taste" class="minisite-view">
+      <div class="subview-top-bar">
+        <button type="button" class="btn-view-back-home" onclick="switchMiniSite('view-home')">
+          <span class="back-arrow">➔</span>
+          <span>חזרה למסך הראשי</span>
+        </button>
+      </div>
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2><span class="hu-flag-icon hu-flag-icon-lg"></span> 9 מאכלי החובה של בודפשט (You Must Try!)</h2>
+          <p>מדריך הטעמים המסורתיים שחובה לטעום • הנחיות כשרות ואיך להזמין בלי חזיר, איפה הכי שווה לאכול וכמה זה עולה</p>
+        </div>
+      </div>
+
+      <!-- Quick Banner Info -->
+      <div class="must-taste-hero-banner">
+        <div class="banner-pill" dir="ltr"><span class="banner-emoji">🌟</span> <bdi dir="ltr">9 Hungarian Foods You Must Try</bdi></div>
+        <h3>מדריך הטעמים הקולינריים המסורתיים</h3>
+        <p>בדקנו ודייקנו את כל 9 המאכלים המסורתיים: מה המנה, איך להזמין גרסה בטוחה וכשרה (בקר, עוף, צמחוני, חלבי), איפה המסעדה הכי מומלצת הקרובה למלון Casati, והמחיר המקורב בשקלים לפי שיטת מחיקת 2 האפסים!</p>
+      </div>
+
+      <!-- Category Filter Pills for Must Taste -->
+      <div class="filter-pills-bar" id="taste-filter-pills">
+        <button class="filter-pill active" data-filter="all">הכל (9 מאכלים)</button>
+        <button class="filter-pill" data-filter="soups">🥣 מרקים (גולאש, דייגים)</button>
+        <button class="filter-pill" data-filter="mains">🍗 מנות עיקריות (פפריקש, פלצ'ינטה)</button>
+        <button class="filter-pill" data-filter="streetfood">🥖 אוכל רחוב (לנגוש, קיורטוש)</button>
+        <button class="filter-pill" data-filter="desserts">🍰 קינוחים ומתוקים (דובוש, טורוגומבוץ, שומלוי)</button>
+      </div>
+
+      <!-- Controls Toolbar: Sort and View Mode Toggle -->
+      <div class="controls-toolbar">
+        <div class="sort-bar">
+          <span class="sort-label">מיון:</span>
+          <button class="sort-pill active" data-grid="taste" data-sort="rank">🌟 לפי סדר חובה</button>
+          <button class="sort-pill" data-grid="taste" data-sort="price">💰 לפי מחיר (זול ליקר)</button>
+        </div>
+
+        <div class="view-mode-bar">
+          <button class="view-mode-btn active" data-grid="taste" data-mode="cards" aria-label="תצוגת כרטיסיות">
+            <span>🎴</span> כרטיסיות
+          </button>
+          <button class="view-mode-btn" data-grid="taste" data-mode="table" aria-label="תצוגת רשימה / טבלה">
+            <span>📋</span> רשימה / טבלה
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Input within must-taste -->
+      <div class="search-input-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="taste-search-input" placeholder="חיפוש מאכל, קינוח או מסעדה...">
+      </div>
+
+      <!-- Must Taste Container -->
+      <div class="items-card-grid" id="taste-items-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+
+    <!-- ==================== MINI-SITE 5: NIGHTLIFE & BARS ==================== -->
+    <section id="view-bars" class="minisite-view">
+      <div class="subview-top-bar">
+        <button type="button" class="btn-view-back-home" onclick="switchMiniSite('view-home')">
+          <span class="back-arrow">➔</span>
+          <span>חזרה למסך הראשי</span>
+        </button>
+      </div>
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2><span>🍸</span> ברים וחיי לילה קרובים למלון Casati</h2>
+          <p>מדורג לפי איכות ומרחק הליכה ברגל מ-Paulay Ede 31 • מקומות מובילים לסגירת הערב</p>
+        </div>
+      </div>
+
+      <!-- Sort Bar for Bars -->
+      <div class="sort-bar">
+        <span class="sort-label">מיון לפי:</span>
+        <button class="sort-pill" data-grid="bars" data-sort="rank">🌟 לפי מומלצים</button>
+        <button class="sort-pill active" data-grid="bars" data-sort="distance">🚶 הכי קרוב למלון Casati</button>
+      </div>
+
+      <!-- Search Input within bars -->
+      <div class="search-input-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="bars-search-input" placeholder="חיפוש בר, אווירה או מרחק הליכה...">
+      </div>
+
+      <!-- Ranked Bars Grid -->
+      <div class="items-card-grid" id="bars-items-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+
+    <!-- ==================== MINI-SITE 6: SHOPPING & MALLS ==================== -->
+    <section id="view-shopping" class="minisite-view">
+      <div class="subview-top-bar">
+        <button type="button" class="btn-view-back-home" onclick="switchMiniSite('view-home')">
+          <span class="back-arrow">➔</span>
+          <span>חזרה למסך הראשי</span>
+        </button>
+      </div>
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2><span>🛍️</span> שופינג, קניונים ועודפים</h2>
+          <p>מדורג מהמומלץ ביותר לפחות מומלץ • סניף Primark, HalfPrice עד 70% הנחה, מדרחובים ושווקים</p>
+        </div>
+      </div>
+
+      <!-- Sub-Category Filter Tabs -->
+      <div class="filter-pills-bar" id="shopping-filter-pills">
+        <button class="filter-pill active" data-filter="all">הכל</button>
+        <button class="filter-pill" data-filter="malls">🏬 קניונים מובילים</button>
+        <button class="filter-pill" data-filter="outlets">🏷️ עודפים ומעצבים</button>
+        <button class="filter-pill" data-filter="highstreet">🛍️ מדרחובים ושדרות</button>
+        <button class="filter-pill" data-filter="markets">🥖 שווקים מקורים</button>
+      </div>
+
+      <!-- Sort Bar for Shopping -->
+      <div class="sort-bar">
+        <span class="sort-label">מיון לפי:</span>
+        <button class="sort-pill active" data-grid="shopping" data-sort="rank">🌟 לפי מומלצים</button>
+        <button class="sort-pill" data-grid="shopping" data-sort="distance">🚶 הכי קרוב למלון Casati</button>
+      </div>
+
+      <!-- Search Input within shopping -->
+      <div class="search-input-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="shopping-search-input" placeholder="חיפוש קניון, חנות או מותג...">
+      </div>
+
+      <!-- Ranked Shopping Grid -->
+      <div class="items-card-grid" id="shopping-items-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+
+    <!-- ==================== MINI-SITE 7: CHRISTMAS & ATTRACTIONS ==================== -->
+    <section id="view-attractions" class="minisite-view">
+      <div class="subview-top-bar">
+        <button type="button" class="btn-view-back-home" onclick="switchMiniSite('view-home')">
+          <span class="back-arrow">➔</span>
+          <span>חזרה למסך הראשי</span>
+        </button>
+      </div>
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2><span>🎄</span> שווקי כריסמס, רומנטיקה ואטרקציות</h2>
+          <p>מדורג מהמומלץ ביותר לפחות מומלץ • שווקי חג המולד, החלקה על הקרח, מרחצאות, שייט ואקשן</p>
+        </div>
+      </div>
+
+      <!-- Sub-Category Filter Tabs -->
+      <div class="filter-pills-bar" id="attractions-filter-pills">
+        <button class="filter-pill active" data-filter="all">הכל (16 מקומות)</button>
+        <button class="filter-pill highlight-gold" data-filter="viewpoints">🔭 נקודות תצפית (Panoramic)</button>
+        <button class="filter-pill" data-filter="christmas">🎄 שווקי כריסמס</button>
+        <button class="filter-pill" data-filter="romantic">❄️ רומנטיקה וחורף</button>
+        <button class="filter-pill" data-filter="shows">🎭 מופעים וקברט</button>
+        <button class="filter-pill" data-filter="action">🏎️ אקשן וכיף זוגי</button>
+      </div>
+
+      <!-- Sort Bar for Attractions -->
+      <div class="sort-bar">
+        <span class="sort-label">מיון לפי:</span>
+        <button class="sort-pill active" data-grid="attractions" data-sort="rank">🌟 לפי מומלצים</button>
+        <button class="sort-pill" data-grid="attractions" data-sort="distance">🚶 הכי קרוב למלון Casati</button>
+      </div>
+
+      <!-- Search Input within attractions -->
+      <div class="search-input-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="attractions-search-input" placeholder="חיפוש אטרקציה, שוק או פעילות...">
+      </div>
+
+      <!-- Ranked Attractions Grid -->
+      <div class="items-card-grid" id="attractions-items-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+
+    <!-- ==================== MINI-SITE 8: ESSENTIAL TIPS & TRANSPORT ==================== -->
+    <section id="view-tips" class="minisite-view">
+      <div class="subview-top-bar">
+        <button type="button" class="btn-view-back-home" onclick="switchMiniSite('view-home')">
+          <span class="back-arrow">➔</span>
+          <span>חזרה למסך הראשי</span>
+        </button>
+      </div>
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2><span>💡</span> טיפים קריטיים, תחבורה וכספים</h2>
+          <p>כל מה שחשוב לדעת בשטח: קו 100E, Bolt, החזר מס Tax Free, המרת מטבע ואזהרות</p>
+        </div>
+      </div>
+
+      <div class="tips-card-grid" id="tips-items-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+
+    <!-- ==================== MINI-SITE: TAX FREE (החזר מס) ==================== -->
+    <section id="view-taxfree" class="minisite-view">
+      <div class="subview-top-bar" style="margin-bottom: 14px;">
+        <button type="button" class="btn-view-back-home" onclick="switchMiniSite('view-home')">
+          <span class="back-arrow">➔</span>
+          <span>חזרה למסך הראשי</span>
+        </button>
+      </div>
+      <div class="taxfree-container">
+        <!-- Hero Header Card -->
+        <div class="taxfree-hero-card">
+          <div class="taxfree-hero-badge">
+            <span>🛡️</span> מדריך מקיף
+          </div>
+          <h2 class="taxfree-hero-title">החזר מס (Tax Free) על קניות בבודפשט – המדריך המלא</h2>
+          <p class="taxfree-hero-p">
+            קניתם בחנות אחת בסכום של <strong>מעל 68,000 פורינט</strong> (175 €, כ-650 ₪)? אתם זכאים לקבל חזרה כ-<strong>15%</strong> מסכום הקנייה ישירות לחשבון או במזומן! המדריך המלא צעד-אחר-צעד, כולל כל הטיפים הסודיים שלא מספרים לתיירים.
+          </p>
+
+          <div class="taxfree-stats-grid">
+            <div class="taxfree-stat-item">
+              <span class="taxfree-stat-num">68,000 HUF</span>
+              <span class="taxfree-stat-label">סף קנייה מינימלי בחנות</span>
+            </div>
+            <div class="taxfree-stat-item">
+              <span class="taxfree-stat-num">~15%</span>
+              <span class="taxfree-stat-label">החזר מע"מ ממוצע נטו</span>
+            </div>
+            <div class="taxfree-stat-item">
+              <span class="taxfree-stat-num">מוצרים בלבד</span>
+              <span class="taxfree-stat-label">ביגוד, נעליים, אלקטרוניקה</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Tax Free Calculator Widget -->
+        <div class="taxfree-calc-card">
+          <div class="tf-calc-header">
+            <div class="tf-calc-title">
+              <span>🧮</span> מחשבון החזר מס מהיר
+            </div>
+            <span style="font-size: 0.76rem; color: #64748b; font-weight: 600;">מבוסס על מע"מ הונגרי בניכוי עמלות טיפול</span>
+          </div>
+
+          <label style="font-size: 0.8rem; font-weight: 700; color: #475569; display: block; margin-bottom: 6px;">
+            הכניסו סכום קנייה בחנות אחת (HUF):
+          </label>
+          <div class="tf-calc-input-wrap">
+            <input type="number" id="tf-calc-input" value="100000" step="5000" min="68000" placeholder="לדוגמה: 100,000">
+            <span style="font-weight: 800; color: #64748b;">HUF</span>
+          </div>
+
+          <div class="tf-calc-results">
+            <div class="tf-res-col">
+              <span class="tf-res-label">החזר משוער בפורינט</span>
+              <span class="tf-res-val" id="tf-res-huf">~15,000 HUF</span>
+            </div>
+            <div class="tf-res-col">
+              <span class="tf-res-label">החזר משוער באירו</span>
+              <span class="tf-res-val" id="tf-res-eur">~41 €</span>
+            </div>
+            <div class="tf-res-col">
+              <span class="tf-res-label">החזר משוער בשקלים</span>
+              <span class="tf-res-val" id="tf-res-ils">~150 ₪</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Steps -->
+        <div class="taxfree-steps-timeline">
+
+          <!-- Step 1 -->
+          <div class="taxfree-step-card highlight">
+            <div class="tf-step-header">
+              <span class="tf-step-badge">שלב 1</span>
+              <h3 class="tf-step-title">מתחיל כבר בחנות 🧥👢👓👜</h3>
+            </div>
+
+            <ul class="tf-step-list">
+              <li><strong>קחו איתכם את הדרכון לשופינג:</strong> חובה להציג דרכון מקורי פיזי או את הברקוד האישי באפליקציית Global Blue בעת התשלום בקופה.</li>
+              <li><strong>ודאו שהחנות משתתפת בתכנית Tax Free:</strong> לפני שמשלמים, שאלו את המוכר: <em>"Tax Free with Global Blue?"</em> (רוב החנויות בקניונים כמו Etele Plaza, Arena ו-Westend משתתפות).</li>
+              <li><strong>בקשו טופס החזר מס (Tax Free Form) בקופה:</strong> הקופאי ימלא או ידפיס טופס ייעודי עם פירוט החשבונית.</li>
+              <li><strong>בדקו את הפרטים בטופס:</strong> ודאו ששמכם המלא, מספר הדרכון שלכם, סכום הקנייה ופירוט הפריטים מודפסים בצורה תקינה ומדויקת.</li>
+            </ul>
+
+            <div class="tf-callout-box" style="border-right: 4px solid #f59e0b; background: #fffbeb;">
+              ⚠️ <strong>אזהרת אריזה קריטית:</strong> שמרו על כל המוצרים סגורים באריזתם המקורית עם כל התוויות והטיקטים! <strong>אסור בהחלט ללבוש את הבגדים או להשתמש במוצרים לפני הטיסה</strong>. פקידי המכס בשדה עלולים לבדוק פיזית, ואם מוצר נראה משומש – הטופס ייפסל מיידית!
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="taxfree-step-card highlight">
+            <div class="tf-step-header">
+              <span class="tf-step-badge">שלב 2</span>
+              <h3 class="tf-step-title">בשדה התעופה בבודפשט (טרמינל 2B ו-2A) ✈️</h3>
+            </div>
+
+            <ul class="tf-step-list">
+              <li><strong>הגעה לצ'ק-אין בטרמינל 2B:</strong> הגיעו לעמדת הצ'ק-אין של חברת התעופה (בין שעתיים ל-3 שעות לפני הטיסה). בצעו צ'ק-אין וקבלו כרטיס עלייה למטוס (Boarding Pass) ותגי מזוודה.</li>
+              <li><strong>אם שמתם פריטי Tax Free במזוודה הנשלחת לבטן המטוס:</strong> אמרו לפקיד במפורש: <em>"I need Tax Free for this luggage"</em>. הפקיד ישקול ויתייג את המזוודה – אבל <strong>לא ישלח אותה במסוע!</strong> קחו את המזוודה איתכם.</li>
+            </ul>
+
+            <div class="tf-callout-box" style="border-right: 4px solid #10b981; background: #f0fdf4; color: #065f46;">
+              💡 <strong>טיפ זהב (יחסוך לכם המון זמן וריצות!):</strong><br>
+              את פריטי ה-Tax Free הקטנים שימו <strong>בתיק הקטן שעולה איתכם למטוס</strong> (<span class="ltr">⁦40×30×20⁩</span> ס״מ – לא טרולי, אז רק מה שנכנס). כך תמסרו את המזוודה הגדולה מיד בצ'ק-אין בלי לגרור אותה בין הטרמינלים. פריטים גדולים שנשארים במזוודה – בקשו בצ'ק-אין "Tax Free" לפני שהיא נשלחת.
+            </div>
+
+            <ul class="tf-step-list" style="margin-top: 14px;">
+              <li><strong>קבלת אישור וחותמת ממכס (Customs Desk):</strong> גשו עם הקניות, הקבלות, הטפסים וכרטיס העלייה למטוס לעמדת המכס הממוקמת ב<strong>טרמינל 2A</strong> (שתי דקות הליכה לכיוון ימין מטרמינל 2B).</li>
+            </ul>
+
+            <div class="tf-secret-box">
+              📞 <strong>העמדה ריקה? אין פקיד? הגעתם באמצע הלילה?</strong><br>
+              אל תיבהלו! על דלפק המכס מונח מכשיר טלפון פנימי. <strong>חייגו 5757</strong> בשפופרת והמתינו שיענה נציג ויגיע לעמדה. (חשוב לשמור על סבלנות – הם לא תמיד ממהרים, אבל חיוג ל-5757 מזעיק אותם רשמית!).
+            </div>
+
+            <ul class="tf-step-list" style="margin-top: 12px;">
+              <li><strong>בדיקת הפריטים והחתמת הטופס:</strong> כשיגיע פקיד המכס, הציגו לו את הקבלות והטפסים. חלק מהפקידים רק יציצו, וחלקם יבקשו לראות פריט-פריט מול הקבלה. הפקיד יחתים את הטופס בחותמת אדומה רשמית. <strong>ללא חותמת זו – לא תקבלו כסף!</strong></li>
+              <li><strong>סיימתם?</strong> אם נשארתם עם מזוודה גדולה מתויגת – חוזרים לדלפק ב-2B ומוסרים אותה ישר למטוס (היא כבר מסומנת).</li>
+            </ul>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="taxfree-step-card highlight">
+            <div class="tf-step-header">
+              <span class="tf-step-badge">שלב 3</span>
+              <h3 class="tf-step-title">קבלת ההחזר הכספי (מזומן או אשראי) 💵💳</h3>
+            </div>
+
+            <ul class="tf-step-list">
+              <li><strong>מעבר בידוק ביטחוני (Security):</strong> לאחר החתמת המכס, עברו את הבידוק הביטחוני והיכנסו למתחם הדיוטי פרי המרכזי (SkyCourt).</li>
+              <li><strong>עמדות Interchange הכתומות:</strong> חפשו את העמדות הממותגות בכתום:
+                <br>• <strong>עמדה 1:</strong> ב-SkyCourt ליד חנות הספרים Relay Bookstore.
+                <br>• <strong>עמדה 2:</strong> בטרמינל 2B אחרי ביקורת הדרכונים (ממש בדרך לשערי העלייה למטוס).
+              </li>
+              <li><strong>קבלת ההחזר:</strong> הציגו את טפסי המכס המוחתמים, ותקבלו את ההחזר במקום במזומן (באירו) או כזיכוי ישיר לכרטיס האשראי שלכם.</li>
+            </ul>
+
+            <div class="tf-callout-box" style="border-right: 4px solid #6366f1; background: #eef2ff; color: #3730a3;">
+              📮 <strong>מה עושים אם אין נציג בעמדת Interchange?</strong><br>
+              ניתן לשלשל את הטפסים המוחתמים לתיבת השירות (Drop Box) הייעודית שנמצאת לצד העמדה.<br>
+              📸 <strong>חשוב מאוד:</strong> צלמו היטב בטלפון את כל הטפסים והקבלות המוחתמים לפני השלשול לתיבה כדי שיהיה לכם תיעוד והוכחה! ההחזר מועבר לכרטיס האשראי תוך עד 30 יום.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Global Blue App Extended Showcase -->
+        <div class="global-blue-app-card">
+          <div class="gb-app-header">
+            <div>
+              <span class="gb-badge">הטיפ הכי שווה לשופינג חכם</span>
+              <h3 class="gb-title">📱 אפליקציית Global Blue – הדרך הקלה לעשות Tax Free</h3>
+            </div>
+            <div style="font-size: 2.4rem;">📲</div>
+          </div>
+
+          <p class="gb-subtitle">
+            במקום לעמוד בחנויות ולמלא טפסים ידנית בעט עם הדרכון, מורידים את אפליקציית <strong>Global Blue Shop Tax Free</strong> והופכים את כל התהליך לדיגיטלי, מהיר ונקי!
+          </p>
+
+          <div class="gb-features-grid">
+            <div class="gb-feature-item">
+              <div class="gb-feat-title">
+                <span>💳</span> כרטיס חבר וברקוד דיגיטלי
+              </div>
+              <div class="gb-feat-desc">
+                מזינים פעם אחת את פרטי הדרכון וכרטיס האשראי באפליקציה. בקופה בחנות (זארה, אטלה, ארנה וכו') רק מציגים את הברקוד במסך הטלפון – הקופאי סורק, והפרטים נשאבים אוטומטית בלי לכתוב שום דבר בעט!
+              </div>
+            </div>
+
+            <div class="gb-feature-item">
+              <div class="gb-feat-title">
+                <span>📍</span> מעקב החזרים חי (Live Tracker)
+              </div>
+              <div class="gb-feat-desc">
+                רואים בזמן אמת כל קנייה שבוצעה, כמה כסף מגיע לכם בדיוק באירו ובשקלים, ומה הסטטוס של הטיפול עד שהכסף נכנס לחשבון.
+              </div>
+            </div>
+
+            <div class="gb-feature-item">
+              <div class="gb-feat-title">
+                <span>⚡</span> זיכוי ישיר ומהיר לכרטיס האשראי
+              </div>
+              <div class="gb-feat-desc">
+                מגדירים באפליקציה את כרטיס האשראי הישראלי שלכם לקבלת ההחזר, והכסף מזוכה ישירות לחשבון הבנק בלי צורך לעמוד בתורים למזומן בשדה התעופה.
+              </div>
+            </div>
+
+            <div class="gb-feature-item">
+              <div class="gb-feat-title">
+                <span>🗺️</span> מפת שדה התעופה בודפשט
+              </div>
+              <div class="gb-feat-desc">
+                האפליקציה כוללת מפה חיה של טרמינל 2A ו-2B, ומראה לכם בדיוק איפה נמצאות עמדות המכס ועמדות ה-Refund הפתוחות באותו רגע.
+              </div>
+            </div>
+          </div>
+
+          <div class="gb-buttons-row">
+            <a href="https://apps.apple.com/app/global-blue/id1082136015" target="_blank" rel="noopener" class="gb-store-btn">
+              <span>🍏</span> הורדה ל-iPhone (App Store)
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.globalblue.shopstayfree" target="_blank" rel="noopener" class="gb-store-btn">
+              <span>🤖</span> הורדה ל-Android (Google Play)
+            </a>
+            <a href="https://www.globalblue.com/en/shoppers/how-to-shop-tax-free/destinations/hungary" target="_blank" rel="noopener" class="gb-store-btn official-site">
+              <span>🌐</span> אתר Global Blue Hungary הרשמי
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Floating Mobile Quick Currency Calculator Bottom Bar -->
+  <div class="floating-quick-bar">
+    <button class="floating-calc-btn" id="open-currency-floating-btn">
+      <span class="calc-icon">💱</span>
+      <span class="calc-text">מחשבון פורינט לשקל מהיר</span>
+      <span class="calc-formula">חוק 2 האפסים</span>
+    </button>
+  </div>
+
+  <!-- Bottom Sheet Currency Converter Modal -->
+  <div class="modal-backdrop" id="currency-modal-backdrop">
+    <div class="bottom-sheet-modal" id="currency-modal">
+      <div class="sheet-top-nav-bar">
+        <button type="button" class="sheet-back-action-btn" onclick="closeCurrencyModal()" aria-label="חזור">
+          <span class="btn-arrow-icon">➔</span>
+          <span>חזור לאפליקציה</span>
+        </button>
+        <button type="button" class="sheet-circle-close-btn" id="close-currency-modal-btn" onclick="closeCurrencyModal()" aria-label="סגור">✕</button>
+      </div>
+      <div class="sheet-drag-handle"></div>
+      <div class="sheet-header">
+        <div class="sheet-title-group">
+          <h3>💱 ממיר פורינט מהיר (HUF ⇄ ILS)</h3>
+          <p>שיטת מחיקת שני האפסים: מורידים 2 אפסים!</p>
+        </div>
+      </div>
+
+      <div class="sheet-body">
+        <div class="calc-inputs-row">
+          <div class="calc-input-box">
+            <label for="modal-huf-input">פורינט הונגרי (HUF)</label>
+            <div class="input-with-symbol">
+              <input type="number" id="modal-huf-input" placeholder="10,000" value="10000" inputmode="numeric">
+              <span>HUF</span>
+            </div>
+          </div>
+
+          <div class="calc-equals">⇄</div>
+
+          <div class="calc-input-box">
+            <label for="modal-ils-input">שקלים חדשים (₪)</label>
+            <div class="input-with-symbol highlight">
+              <input type="number" id="modal-ils-input" placeholder="105" value="105" inputmode="decimal">
+              <span>₪</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quick-chips-group">
+          <span class="chips-label">סכומים נפוצים להמרה מהירה:</span>
+          <div class="quick-chip-buttons">
+            <button class="chip-val-btn" data-val="1000">1,000 HUF (כ-10 ₪)</button>
+            <button class="chip-val-btn" data-val="2500">2,500 HUF (קיורטוש/קפה)</button>
+            <button class="chip-val-btn" data-val="5000">5,000 HUF (כ-50 ₪)</button>
+            <button class="chip-val-btn" data-val="10000">10,000 HUF (כ-100 ₪)</button>
+            <button class="chip-val-btn" data-val="20000">20,000 HUF (ארוחה זוגית)</button>
+            <button class="chip-val-btn" data-val="75000">75,000 HUF (רף Tax Free!)</button>
+          </div>
+        </div>
+
+        <div class="calc-warning-notice">
+          ⚠️ <strong>אזהרה:</strong> לשלם תמיד באשראי (Apple/Google Pay). לעולם לא למשוך מזומן מכספומטי Euronet הצהובים-כחולים ברחוב (עמלות גזל של 20%).
+        </div>
+
+        <button type="button" class="btn-modal-footer-close" onclick="closeCurrencyModal()">
+          <span>✕</span> סגור מחשבון וחזור
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Attraction Detail Modal (Full Screen / Bottom Sheet with Real Photo Gallery & Verdict) -->
+  <div class="modal-backdrop" id="attraction-detail-modal-backdrop">
+    <div class="bottom-sheet-modal attraction-detail-sheet" id="attraction-detail-modal">
+      <div class="sheet-top-nav-bar">
+        <button type="button" class="sheet-back-action-btn" onclick="closeAttractionDetail()" aria-label="חזור לרשימה">
+          <span class="btn-arrow-icon">➔</span>
+          <span>חזור לרשימה</span>
+        </button>
+        <button type="button" class="sheet-circle-close-btn" id="close-attraction-modal-btn" onclick="closeAttractionDetail()" aria-label="סגור">✕</button>
+      </div>
+      <div class="sheet-drag-handle"></div>
+      <div class="sheet-header">
+        <div class="sheet-title-group" id="attraction-modal-title-group">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+
+      <div class="sheet-body attraction-modal-body" id="attraction-modal-body">
+        <!-- Populated dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA Install Modal (iOS & Android Guide) -->
+  <div class="modal-backdrop" id="install-modal-backdrop">
+    <div class="bottom-sheet-modal install-modal-sheet" id="install-modal">
+      <div class="sheet-top-nav-bar">
+        <button type="button" class="sheet-back-action-btn" onclick="closeInstallModal()" aria-label="חזור">
+          <span class="btn-arrow-icon">➔</span>
+          <span>חזור לאפליקציה</span>
+        </button>
+        <button type="button" class="sheet-circle-close-btn" id="close-install-modal-btn" onclick="closeInstallModal()" aria-label="סגור">✕</button>
+      </div>
+      <div class="sheet-drag-handle"></div>
+
+      <div class="sheet-header">
+        <div class="sheet-title-group">
+          <h3>📲 התקנת האפליקציה למסך הבית (PWA)</h3>
+          <p>המדריך והלו״ז תמיד איתכם בכיס — עובד גם בלי אינטרנט בחו״ל!</p>
+        </div>
+        <div class="install-icon-preview">
+          <img src="images/icon-192.png" alt="אייקון האפליקציה" width="64" height="64">
+          <span>בודפשט 2026</span>
+        </div>
+      </div>
+
+      <div class="sheet-body install-modal-body">
+        <div class="install-devices-grid">
+          <!-- iPhone Instructions -->
+          <div class="device-install-card ios-card">
+            <div class="device-badge-row">
+              <span class="device-badge ios">🍏 באייפון (iPhone / Safari)</span>
+            </div>
+            <h4>התקנה ב-4 שלבים קלים:</h4>
+            <ol class="install-steps-list">
+              <li>ודאו שפתחתם את הקישור בדפדפן <strong>Safari</strong> הרגיל באייפון.</li>
+              <li>לחצו בתחתית המסך על כפתור השיתוף <strong>⎋ (Share / ריבוע עם חץ)</strong>.</li>
+              <li>גללו מעט למטה בתפריט ובחרו <strong>➕ הוסף למסך הבית (Add to Home Screen)</strong>.</li>
+              <li>לחצו על <strong>"הוסף" (Add)</strong> בפינה העליונה.</li>
+            </ol>
+            <div class="install-success-note">
+              🎉 <strong>מושלם!</strong> האייקון הסגול 💜 יתווסף ישירות למסך הבית, ייפתח במסך מלא בלי סרגלים של דפדפן, ויפעל מהר וחלק בכל מקום.
+            </div>
+          </div>
+
+          <!-- Android Instructions -->
+          <div class="device-install-card android-card">
+            <div class="device-badge-row">
+              <span class="device-badge android">🤖 באנדרואיד (Android / Chrome)</span>
+            </div>
+            <h4>התקנה מהירה:</h4>
+            <div id="android-direct-install-box" style="margin-bottom: 12px;">
+              <button type="button" id="btn-pwa-install-trigger" class="btn-native-install-action" onclick="triggerPwaInstall()">
+                <span>📲</span> לחצו כאן להתקנה מיידית
+              </button>
+            </div>
+            <ol class="install-steps-list">
+              <li>לחצו על <strong>3 הנקודות (⋮)</strong> בפינה העליונה של דפדפן Chrome.</li>
+              <li>לחצו על <strong>"התקנת אפליקציה" (Install App)</strong> או <strong>"הוספה למסך הבית"</strong>.</li>
+              <li>אשרו את החלון הקופץ.</li>
+            </ol>
+            <div class="install-success-note">
+              ⚡ <strong>זהו!</strong> כל התמונות והמסלולים נשמרים מקומית על הטלפון שלכם לנסיעה.
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn-modal-footer-close" onclick="closeInstallModal()">
+          <span>✕</span> סגור וחזור לאפליקציה
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories Menu Bottom Sheet / Drawer -->
+  <div class="modal-backdrop" id="categories-modal-backdrop">
+    <div class="bottom-sheet-modal categories-sheet" id="categories-sheet" onclick="event.stopPropagation()">
+      <div class="sheet-drag-handle"></div>
+      <div class="sheet-top-nav-bar">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.4rem;">🗂️</span>
+          <h3 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: var(--text-dark);">תפריט קטגוריות</h3>
+        </div>
+        <button type="button" class="sheet-circle-close-btn" id="close-categories-top-btn" onclick="closeCategoriesMenu()" aria-label="סגור תפריט">✕</button>
+      </div>
+
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0 0 16px;">
+        בחרו קטגוריה כדי לקפוץ ישירות לחלק הרצוי בטיול 💜
+      </p>
+
+      <div class="categories-menu-grid">
+        <div class="cat-menu-item" onclick="switchMiniSite('view-home'); closeCategoriesMenu();">
+          <span class="cat-menu-icon" style="background: #e0f2fe; color: #0284c7;">🏠</span>
+          <div class="cat-menu-details">
+            <strong>מסך ראשי וטיסות</strong>
+            <small>פרטי Wizz Air, המלון וספירה לאחור</small>
+          </div>
+          <span class="cat-menu-arrow">‹</span>
+        </div>
+
+        <div class="cat-menu-item" onclick="switchMiniSite('view-itinerary'); closeCategoriesMenu();">
+          <span class="cat-menu-icon" style="background: #fef3c7; color: #b45309;">📅</span>
+          <div class="cat-menu-details">
+            <strong>לו"ז יומי מפורט</strong>
+            <small>תוכנית מלאה לפי ימים (24-28.11)</small>
+          </div>
+          <span class="cat-menu-arrow">‹</span>
+        </div>
+
+        <div class="cat-menu-item" onclick="switchMiniSite('view-hotel'); closeCategoriesMenu();">
+          <span class="cat-menu-icon" style="background: #ede9fe; color: #7c3aed;">🏨</span>
+          <div class="cat-menu-details">
+            <strong>מלון בוטיק Casati</strong>
+            <small>חדר Superior, בריכת הגג והסאונה</small>
+          </div>
+          <span class="cat-menu-arrow">‹</span>
+        </div>
+
+        <div class="cat-menu-item" onclick="switchMiniSite('view-food'); closeCategoriesMenu();">
+          <span class="cat-menu-icon" style="background: #fee2e2; color: #dc2626;">🍔</span>
+          <div class="cat-menu-details">
+            <strong>מסעדות ואוכל</strong>
+            <small>המבורגרים, בשרים, איטלקי, For Sale Pub</small>
+          </div>
+          <span class="cat-menu-arrow">‹</span>
+        </div>
+
+        <div class="cat-menu-item" onclick="switchMiniSite('view-must-taste'); closeCategoriesMenu();">
+          <span class="cat-menu-icon" style="background: #f0fdf4; display: flex; align-items: center; justify-content: center;"><span class="hu-flag-icon" style="margin: 0;"></span></span>
+          <div class="cat-menu-details">
+            <strong>מאכלי חובה הונגריים</strong>
+            <small>לנגוש, קיורטוש, גולאש, שומלואי גלושקה</small>
+          </div>
+          <span class="cat-menu-arrow">‹</span>
+        </div>
+
+        <div class="cat-menu-item" onclick="switchMiniSite('view-attractions'); closeCategoriesMenu();">
+          <span class="cat-menu-icon" style="background: #fef9c3; color: #ca8a04;">🎄</span>
+          <div class="cat-menu-details">
+            <strong>אטרקציות ושווקי כריסמס</strong>
+            <small>שווקי חג המולד, סצ'ניי, שייט וקארטינג</small>
+          </div>
+          <span class="cat-menu-arrow">‹</span>
+        </div>
+
+        <div class="cat-menu-item highlight-gold" onclick="switchMiniSite('view-attractions'); setTimeout(() => setAttractionsFilter('viewpoints'), 100); closeCategoriesMenu();">
+          <span class="cat-menu-icon" style="background: #fef08a; color: #854d0e;">🔭</span>
+          <div class="cat-menu-details">
+            <strong>נקודות תצפית פנורמיות</strong>
+            <small>כיפת הבזיליקה 360°, גבעת גלרט, מצודת הדייגים</small>
+          </div>
+          <span class="cat-menu-arrow">‹</span>
+        </div>
+
+        <div class="cat-menu-item" onclick="switchMiniSite('view-shopping'); closeCategoriesMenu();">
+          <span class="cat-menu-icon" style="background: #e0e7ff; color: #4338ca;">🛍️</span>
+          <div class="cat-menu-details">
+            <strong>שופינג, קניונים ועודפים</strong>
+            <small>סניף Primark, קניון Etele, HalfPrice, אאוטלט</small>
+          </div>
+          <span class="cat-menu-arrow">‹</span>
+        </div>
+
+        <div class="cat-menu-item" onclick="switchMiniSite('view-taxfree'); closeCategoriesMenu();">
+          <span class="cat-menu-icon" style="background: #ccfbf1; color: #0d9488;">💶</span>
+          <div class="cat-menu-details">
+            <strong>מדריך החזר מס (Tax Free)</strong>
+            <small>החזר מע"מ 15%, שלבים בשדה ואפליקציה</small>
+          </div>
+          <span class="cat-menu-arrow">‹</span>
+        </div>
+
+        <div class="cat-menu-item" onclick="switchMiniSite('view-bars'); closeCategoriesMenu();">
+          <span class="cat-menu-icon" style="background: #f3e8ff; color: #9333ea;">🍸</span>
+          <div class="cat-menu-details">
+            <strong>ברים וחיי לילה</strong>
+            <small>High Note Rooftop, 360 Bar, Szimpla</small>
+          </div>
+          <span class="cat-menu-arrow">‹</span>
+        </div>
+
+        <div class="cat-menu-item" onclick="switchMiniSite('view-tips'); closeCategoriesMenu();">
+          <span class="cat-menu-icon" style="background: #ffedd5; color: #ea580c;">💡</span>
+          <div class="cat-menu-details">
+            <strong>טיפים, שדה תעופה ותחבורה</strong>
+            <small>חוק 100 מ"ל, טיפ ביקורת דרכונים, מוניות Bolt</small>
+          </div>
+          <span class="cat-menu-arrow">‹</span>
+        </div>
+
+        <div class="cat-menu-item" onclick="closeCategoriesMenu(); openInstallModal();" style="border: 1.5px dashed #cbd5e1; background: #f8fafc;">
+          <span class="cat-menu-icon" style="background: #e2e8f0; color: #334155;">📲</span>
+          <div class="cat-menu-details">
+            <strong>התקנת אפליקציה למסך הבית</strong>
+            <small>שמירה באייפון ובאנדרואיד • גישה אופליין מלאה</small>
+          </div>
+          <span class="cat-menu-arrow">‹</span>
+        </div>
+      </div>
+
+      <button type="button" class="btn-modal-footer-close" id="close-categories-footer-btn" onclick="closeCategoriesMenu()" style="margin-top: 16px;">
+        <span>✕</span> סגור תפריט
+      </button>
+    </div>
+  </div>
+
+  <!-- Fixed Mobile Bottom Navigation Bar (Screenshot Style) -->
+  <nav class="mobile-bottom-nav" id="mobile-bottom-nav">
+    <button type="button" class="bottom-nav-item active" data-target="view-home" onclick="switchMiniSite('view-home')">
+      <span class="bottom-nav-icon">🏠</span>
+      <span class="bottom-nav-label">ראשי</span>
+    </button>
+    <button type="button" class="bottom-nav-item" data-target="view-itinerary" onclick="switchMiniSite('view-itinerary')">
+      <span class="bottom-nav-icon">📅</span>
+      <span class="bottom-nav-label">לו"ז</span>
+    </button>
+    <button type="button" class="bottom-nav-item" data-target="view-hotel" onclick="switchMiniSite('view-hotel')">
+      <span class="bottom-nav-icon">🏨</span>
+      <span class="bottom-nav-label">מלון</span>
+    </button>
+    <button type="button" class="bottom-nav-item" data-target="view-food" onclick="switchMiniSite('view-food')">
+      <span class="bottom-nav-icon">🍔</span>
+      <span class="bottom-nav-label">אוכל</span>
+    </button>
+    <button type="button" class="bottom-nav-item btn-open-menu-bottom" onclick="openCategoriesMenu()">
+      <span class="bottom-nav-icon">☰</span>
+      <span class="bottom-nav-label">כל הקטגוריות</span>
+    </button>
+  </nav>
+
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p>💜 <strong>הטיסה של חבר וחברה</strong> • בודפשט 2026</p>
+      <p class="footer-sub">נבנה באהבה ❤️</p>
+      <details class="footer-credits">
+        <summary>קרדיט לתמונות</summary>
+        <p>מ-Wikimedia Commons:
+          <a href="https://commons.wikimedia.org/wiki/File:Light_Art_Museum_(Budapest).jpg" target="_blank" rel="noopener">Light Art Museum</a> – Elekes Andor (CC BY-SA 4.0) ·
+          <a href="https://commons.wikimedia.org/wiki/File:Sweet_and_selfie_museum.jpg" target="_blank" rel="noopener">Museum of Sweets</a> – Davidi Vardi (CC BY-SA 4.0) ·
+          <a href="https://commons.wikimedia.org/wiki/File:Danubius_sz%C3%B6k%C5%91k%C3%BAt_%C3%A9s_%C3%B3ri%C3%A1sker%C3%A9k_%C3%A9jjel,_Budapest,_Erzs%C3%A9bet_t%C3%A9r,_3.jpg" target="_blank" rel="noopener">Budapest Eye</a> – Christo (CC BY-SA 4.0) ·
+          <a href="https://commons.wikimedia.org/wiki/File:Thai_massage_(2362463368).jpg" target="_blank" rel="noopener">Thai massage</a> – Roberto Faccenda (CC BY-SA 2.0) ·
+          <a href="https://commons.wikimedia.org/wiki/File:Goulash_soup_2014.jpg" target="_blank" rel="noopener">Goulash</a> – ainudil (CC BY-SA 2.0).
+          תמונות מסעדות ואירועים: באדיבות העסקים עצמם.</p>
+      </details>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

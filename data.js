@@ -1,0 +1,2647 @@
+// מאגר נתונים מקיף ומדורג - הטיסה של חבר וחברה 💜 (בודפשט 2026)
+// כולל מרחקים מדויקים ממלון Casati (Paulay Ede u. 31), סינונים לפי מרחק/מומלצים, ומזון מהיר
+const TRIP_DATA = {
+  tripInfo: {
+    title: "הטיסה של חבר וחברה 💜",
+    subtitle: "בודפשט 2026 | 24–28 בנובמבר",
+    dates: "24-28 בנובמבר 2026",
+    duration: "5 ימים (4 לילות)",
+    hotel: {
+      name: "Hotel Casati Budapest (Adults Only 14+)",
+      address: "Paulay Ede u. 31, 1061 Budapest (רובע 6, צמוד לאופרה ולאנדראשי)",
+      phone: "+36 1 343 1198",
+      checkIn: "14:00",
+      checkOut: "11:00",
+      mapsQuery: "Casati Budapest Hotel Paulay Ede u 31",
+      mapsLink: "https://maps.google.com/?q=Casati+Budapest+Hotel",
+      images: [
+        "images/casati-1.jpg",
+        "images/casati-2.jpg",
+        "images/cortile-pool.jpg"
+      ],
+      perks: [
+        {
+          title: "כניסה חינם לבריכה המחוממת על הגג ב-Cortile",
+          desc: "מלון האחות Cortile (רחוב Dessewffy 14) נמצא 600 מטר בלבד (7 דק' הליכה). בריכת אינפיניטי מקורה בזכוכית ומחוממת מול השמיים + סקייבר!",
+          hours: "בריכה 06:00-22:00 | סקייבר 16:00-22:00",
+          howTo: "פשוט מבקשים בקבלה של מלון Casati שיתאמו לכם כניסה חופשית ללא תשלום."
+        },
+        {
+          title: "בר קוקטיילים TukTuk בתוך המלון",
+          desc: "בר אסייתי אינטימי בסגנון שנות ה-30 ממש בתוך Casati לסגירת ערב חמימה בלי לצאת לקור.",
+          hours: "18:00 - 01:00"
+        },
+        {
+          title: "סאונה פנימית וחדר כושר חינם",
+          desc: "לרשותכם במלון Casati ללא עלות נוספת 24/7 להרפיית השרירים אחרי יום הליכות.",
+          hours: "פתוח 24/7"
+        },
+        {
+          title: "ארוחת בוקר בופה עשירה כלולה",
+          desc: "ארוחת בוקר איכותית עם קפה משובח ומאפים טריים כל בוקר.",
+          hours: "07:30 - 10:30"
+        }
+      ]
+    },
+    flights: {
+      outbound: {
+        airline: "Wizz Air",
+        flightNumber: "",
+        confirmationCode: "",
+        date: "יום שלישי, 24 בנובמבר 2026",
+        departure: "10:10 - נמל תעופה בן גוריון (טרמינל 1)",
+        arrival: "12:45 - נמל תעופה בודפשט פרנץ ליסט (BUD טרמינל 2B)",
+        duration: "3 שעות ו-35 דקות",
+        seats: "",
+        luggage: "מזוודה אחת 32 ק\"ג + מזוודה אחת 26 ק\"ג, ולכל אחד תיק קטן מתחת למושב (40×30×20 ס\"מ)",
+        notes: "צ'ק אין חינם נפתח 24 שעות לפני הטיסה באפליקציית Wizz Air. מומלץ להגיע לטרמינל 1 סביב 07:15-07:30."
+      },
+      inbound: {
+        airline: "Wizz Air",
+        flightNumber: "",
+        confirmationCode: "",
+        date: "יום שבת, 28 בנובמבר 2026",
+        departure: "14:20 - בודפשט (BUD טרמינל 2B)",
+        arrival: "18:35 - תל אביב (נתב\"ג)",
+        duration: "3 שעות ו-15 דקות",
+        seats: "",
+        luggage: "מזוודה אחת 32 ק\"ג + מזוודה אחת 26 ק\"ג, ולכל אחד תיק קטן מתחת למושב (40×30×20 ס\"מ)",
+        notes: "טיסת צהריים מפנקת! מתעוררים בנחת במלון Casati, נהנים מארוחת בוקר בופה, צ'ק אאוט ב-11:00, ויוצאים במונית Bolt ב-11:15 לשדה (טרמינל 2B) להחתמת טפסי Tax Free וסיבוב בדיוטי פרי."
+      }
+    },
+    weather: {
+      tempRange: "2°C עד 8°C",
+      summary: "חורפי, קריר ורומנטי. אידיאלי לשווקי חג המולד, בריכות מחוממות ומרק גולאש חם.",
+      clothingTip: "שיטת השכבות: גופיה תרמית, סוודר/קפוצ'ון, מעיל טוב נגד רוח, כפפות, צעיף ונעלי הליכה נוחות ומחממות."
+    },
+    currency: {
+      rateFormula: "שיטת מחיקת שני האפסים: מורידים 2 אפסים!",
+      example: "10,000 פורינט (HUF) ≈ 95-100 ש\"ח (ILS)",
+      tips: "משלמים הכל ב-Apple Pay / Google Pay. לא מושכים מכספומטים של Euronet (עמלות מופקעות)! רק בנקים מקומיים כמו OTP Bank."
+    }
+  },
+
+  // לו״ז יומי מדויק (מותאם לנחיתה ב-12:45 ביום 1 ולטיסת צהריים ביום 5)
+  itinerary: [
+    {
+      "dayNumber": 1,
+      "date": "24.11",
+      "dayName": "יום שלישי",
+      "title": "נחיתה, מעילים ב-Váci ושוק הכריסמס בבזיליקה",
+      "theme": "נוחתים, צ'ק אין ב-Casati, קונים מעילים ב-HalfPrice ושופינג ב-Váci, ובערב שוק הבזיליקה ו-Hot Stone",
+      "textSummary": "נחיתה ב-12:45, ביקורת דרכונים ומזוודות, Bolt למלון Casati וצ'ק אין. ב-14:45 Bolt קצר לכיכר וורושמרטי: קודם כול מעילים, כפפות וכובע ב-HalfPrice (קר מאוד השבוע, עד מינוס 4 בלילה), ואחר כך שופינג ב-Váci וב-Fashion Street (Zara, H&M, Bershka, Pull&Bear, Stradivarius). חוזרים למלון עם השקיות, ב-20:00 שוק הכריסמס בבזיליקה וגלידת Gelato Rosa, וב-21:00 ארוחת ערב ב-Hot Stone ממש ליד.",
+      "highlights": [
+        "נחיתה וצ'ק אין",
+        "מעילים ב-HalfPrice",
+        "שופינג ב-Váci",
+        "שוק הבזיליקה",
+        "Hot Stone"
+      ],
+      "schedule": [
+        {
+          "id": "d1-1",
+          "image": "images/casati-1.jpg",
+          "time": "12:45 - 14:30",
+          "duration": "שעה ו-45 דק'",
+          "title": "נחיתה, Bolt למלון Casati וצ'ק אין",
+          "categoryLabel": "הגעה ומלון • טרמינל 2B ורובע 6",
+          "category": "transport",
+          "location": "Paulay Ede u. 31, רובע 6",
+          "distanceText": "25–35 דק' במונית מהשדה",
+          "mapsQuery": "Casati Budapest Hotel",
+          "description": "נחיתה ב-12:45 בטרמינל 2B. ישראלים עוברים ביקורת דרכונים מלאה – הולכים לשורה של All passports / Non-EU. אחרי המזוודות מזמינים Bolt ישר מהאפליקציה למלון. צ'ק אין מ-14:00, מניחים מזוודות ומתלבשים בכל השכבות.",
+          "tip": "קר מאוד השבוע (עד מינוס 4–5 בלילה). עד שקונים מעיל – ללבוש סוודר על סוודר.",
+          "transitToNext": "🚕 Bolt 5 דק' • לכיכר וורושמרטי",
+          "rank": 1
+        },
+        {
+          "id": "d1-2",
+          "image": "images/vorosmarty-xmas.jpg",
+          "time": "14:45 - 15:45",
+          "duration": "שעה",
+          "title": "🧥 מעילים, כפפות וכובע ב-HalfPrice",
+          "categoryLabel": "שופינג • כיכר וורושמרטי",
+          "category": "shopping",
+          "location": "Vörösmarty tér (תחילת Váci)",
+          "distanceText": "10–12 דק' הליכה מהמלון",
+          "mapsQuery": "HalfPrice Vörösmarty tér Budapest",
+          "description": "חנות מותגים בהנחה – מעילי מותג במחיר נמוך. הקנייה הראשונה של הטיול: מעילים, כפפות, כובע צמר וצעיף, לפני האיזיריידר של מחר ב-0 מעלות.",
+          "tip": "לוודא בגוגל מפות שהחנות פתוחה ומה השעות. אם לא – מעילים יש גם ב-Zara וב-H&M ממש באותו רחוב.",
+          "transitToNext": "🚶‍♂️ הליכה 1 דק' • לתחילת Váci",
+          "rank": 2
+        },
+        {
+          "id": "d1-3",
+          "image": "images/shop-vaci.jpg",
+          "time": "15:45 - 19:00",
+          "duration": "3 שעות ורבע",
+          "title": "שופינג ב-Váci utca וב-Fashion Street",
+          "categoryLabel": "שופינג • מרכז פשט",
+          "category": "shopping",
+          "location": "Váci utca ו-Deák Ferenc utca",
+          "distanceText": "10–15 דק' הליכה מהמלון",
+          "mapsQuery": "Váci utca Budapest",
+          "description": "כל הרשתות במרחק הליכה: Zara, H&M, Bershka, Pull&Bear, Stradivarius. מודדים וקונים את מה שאהבתם במחיר מלא – אם ביום שישי זה יורד ב-Black Friday, מחזירים וקונים מחדש בזול (ב-Zara יש 30 יום להחזרה, עם התוויות).",
+          "tip": "לשמור קבלות ולא להוריד תוויות עד שישי. טפסי Tax Free מבקשים רק ביום שישי, על הקבלות הסופיות.",
+          "transitToNext": "🚕 Bolt / הליכה • חזרה למלון עם השקיות",
+          "rank": 3
+        },
+        {
+          "id": "d1-4",
+          "image": "images/basilica-xmas.jpg",
+          "time": "20:00 - 21:00",
+          "duration": "שעה",
+          "title": "שוק הכריסמס בבזיליקה + Gelato Rosa",
+          "categoryLabel": "שוק כריסמס • כיכר סנט סטפן",
+          "category": "market",
+          "location": "Szent István tér",
+          "distanceText": "6 דק' הליכה מהמלון",
+          "mapsQuery": "St Stephen Basilica Budapest",
+          "description": "השוק שנבחר כמה פעמים ליפה באירופה: עץ ענק, מופע אורות על חזית הבזיליקה, יין חם וקיורטוש. פתוח עד 22:00.",
+          "tip": "קיורטוש – לבחור דוכן שמכין במקום על גחלים, רך ועבה.",
+          "transitToNext": "🚶‍♂️ הליכה 3 דק' • ל-Hot Stone",
+          "rank": 4
+        },
+        {
+          "id": "d1-5",
+          "image": "images/hot-stone.jpg",
+          "time": "21:00 - 22:30",
+          "duration": "שעה וחצי",
+          "title": "ארוחת ערב ב-Hot Stone 🔥",
+          "categoryLabel": "ארוחת ערב • ליד הבזיליקה",
+          "category": "food",
+          "location": "Október 6. u. 7",
+          "distanceText": "650 מ' מהמלון",
+          "mapsQuery": "Hot Stone Steakhouse Budapest",
+          "description": "צולים בעצמכם נתחי בקר על אבן לבה לוהטת בשולחן. מאוד פופולרי – להזמין מראש.",
+          "tip": "להזמין ל-21:00 ולשאול עד מתי המטבח מקבל הזמנות.",
+          "transitToNext": "🚕 Bolt 5 דק' • חזרה למלון לשינה",
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "dayNumber": 2,
+      "date": "25.11",
+      "dayName": "יום רביעי",
+      "title": "איזיריידר בבודה, Primark, שייט ו-Aleli",
+      "theme": "סיור איזיריידר בעברית ב-10:30, Primark ב-Arena, שייט לילי, שוק וורושמרטי וארוחה רומנטית ב-Aleli",
+      "textSummary": "ארוחת בוקר במלון, וב-10:30 סיור איזיריידר בעברית עם קורטוש מ-Pilvax köz (כשעתיים): גשר אליזבת, ארמון המלך, כיכר אדם קלארק, גשר השלשלאות ומצודת הדייגים. צהריים ב-Gordon Ramsay Burger, ואחר הצהריים Arena Mall בשביל Primark. ב-17:30 שייט לילי מחומם מול הפרלמנט המואר, אחר כך שוק הכריסמס בוורושמרטי, וב-20:30 ארוחת ערב ב-Aleli.",
+      "highlights": [
+        "איזיריידר קורטוש 10:30",
+        "Gordon Ramsay",
+        "Primark ב-Arena",
+        "שייט לילי",
+        "שוק וורושמרטי",
+        "Aleli"
+      ],
+      "schedule": [
+        {
+          "id": "d2-1",
+          "image": "images/casati-2.jpg",
+          "time": "08:45 - 09:45",
+          "duration": "שעה",
+          "title": "ארוחת בוקר במלון",
+          "categoryLabel": "ארוחת בוקר • Casati",
+          "category": "food",
+          "location": "Hotel Casati Budapest",
+          "distanceText": "במלון שלכם",
+          "mapsQuery": "Casati Budapest Hotel",
+          "description": "בופה ארוחת בוקר כלול במחיר. מתלבשים חם מאוד לסיור – היום עד 1 מעלה.",
+          "tip": "כפפות, כובע צמר וצעיף – חובה לאיזיריידר.",
+          "transitToNext": "🚶‍♂️ הליכה 12 דק' • ל-Pilvax köz (לצאת ב-10:15)",
+          "rank": 1
+        },
+        {
+          "id": "d2-2",
+          "image": "images/fishermans-bastion.jpg",
+          "time": "10:30 - 12:30",
+          "duration": "שעתיים",
+          "title": "✅ סיור איזיריידר בעברית – קורטוש",
+          "categoryLabel": "סיור מודרך • בודה",
+          "category": "attraction",
+          "location": "Pilvax köz 1-3, Budapest 1052",
+          "distanceText": "12 דק' הליכה מהמלון",
+          "mapsQuery": "Pilvax köz 1-3 Budapest",
+          "description": "סגור ✅ סיור בעברית על כלי חשמלי בעל 4 גלגלים: גשר אליזבת, חצר ארמון המלך, כיכר אדם קלארק, גשר השלשלאות ומצודת הדייגים. לפני היציאה הדרכה קצרה ותרגול, חובה קסדה. 60 € לרוכב, משלמים בתחילת הסיור.",
+          "tip": "נקודת מפגש: https://maps.app.goo.gl/XPwbM8TCGQ2oe9ua7 – אפשר לשאול את המדריך אם עוצרים ב-Ruszwurm לקרמשניט.",
+          "transitToNext": "🚶‍♂️ הליכה קצרה • לצהריים",
+          "rank": 2
+        },
+        {
+          "id": "d2-3",
+          "image": "images/gordon-ramsay.jpg",
+          "time": "12:45 - 13:45",
+          "duration": "שעה",
+          "title": "צהריים ב-Gordon Ramsay Burger",
+          "categoryLabel": "צהריים • מרכז פשט",
+          "category": "food",
+          "location": "מרכז פשט",
+          "distanceText": "10 דק' מהמלון",
+          "mapsQuery": "Gordon Ramsay Burger Budapest",
+          "description": "להתחמם אחרי הסיור עם המבורגר של השף גורדון רמזי וצ'יפס פרמז'ן וכמהין.",
+          "tip": "לבקש בלי בייקון: 'No bacon please'.",
+          "transitToNext": "🚕 Bolt 10–15 דק' • ל-Arena Mall",
+          "rank": 3
+        },
+        {
+          "id": "d2-4",
+          "image": "images/shop-arena.jpg",
+          "time": "14:00 - 17:00",
+          "duration": "3 שעות",
+          "title": "🛍️ Arena Mall – Primark",
+          "categoryLabel": "שופינג • קניון Arena",
+          "category": "shopping",
+          "location": "Kerepesi út 9 (ליד Keleti)",
+          "distanceText": "2.8 ק\"מ (10 דק' במונית)",
+          "mapsQuery": "Arena Mall Budapest",
+          "description": "ה-Primark היחיד בבודפשט (קומה ראשונה, ליד SportsDirect, פתוח עד 20:00). ל-Primark אין Black Friday – אז קונים כאן היום. יש בקניון גם Zara, H&M, Bershka, Pull&Bear ו-Stradivarius למה שלא מצאתם ב-Váci.",
+          "tip": "אפשר לקנות כאן משקל מזוודות קטן – מזוודה אחת עד 32 ק\"ג והשנייה עד 26.",
+          "transitToNext": "🚕 Bolt 15 דק' • לרציף השייט",
+          "rank": 4
+        },
+        {
+          "id": "d2-5",
+          "image": "images/danube-cruise.jpg",
+          "time": "17:30 - 18:45",
+          "duration": "שעה ורבע",
+          "title": "שייט לילי מחומם על הדנובה",
+          "categoryLabel": "שייט • רציפי הדנובה",
+          "category": "attraction",
+          "location": "רציפי הדנובה (Legenda)",
+          "distanceText": "1.1 ק\"מ מהמלון",
+          "mapsQuery": "Legenda City Cruises Budapest",
+          "description": "ספינה מחוממת עם חלונות פנורמיים. ב-17:30 כבר חושך – הפרלמנט וכל הגשרים מוארים בזהב.",
+          "tip": "להזמין מראש לשעה הזו.",
+          "transitToNext": "🚶‍♂️ הליכה 8 דק' • לכיכר וורושמרטי",
+          "rank": 5
+        },
+        {
+          "id": "d2-6",
+          "image": "images/vorosmarty-xmas.jpg",
+          "time": "19:00 - 20:15",
+          "duration": "שעה ורבע",
+          "title": "שוק הכריסמס בוורושמרטי",
+          "categoryLabel": "שוק כריסמס • וורושמרטי",
+          "category": "market",
+          "location": "Vörösmarty tér",
+          "distanceText": "10 דק' מהמלון",
+          "mapsQuery": "Vörösmarty tér Christmas market",
+          "description": "שוק החג הגדול והוותיק בעיר, עם כ-100 דוכנים, יין חם, אוכל ומלאכות יד. פתוח עד 21:00.",
+          "tip": "",
+          "transitToNext": "🚶‍♂️ הליכה 10 דק' • ל-Aleli",
+          "rank": 6
+        },
+        {
+          "id": "d2-7",
+          "image": "images/aleli-pasta.jpg",
+          "time": "20:30 - 22:30",
+          "duration": "שעתיים",
+          "title": "✅ ארוחת ערב רומנטית ב-Aleli",
+          "categoryLabel": "ארוחת ערב • איטלקית",
+          "category": "food",
+          "location": "מרכז פשט (Sas u.)",
+          "distanceText": "750 מ' מהמלון",
+          "mapsQuery": "Aleli Restaurant Budapest",
+          "description": "מסעדה איטלקית רומנטית: פסטות טריות, פילה בקר וטירמיסו.",
+          "tip": "",
+          "transitToNext": "🚶‍♂️ הליכה 9 דק' • חזרה למלון",
+          "rank": 7
+        }
+      ]
+    },
+    {
+      "dayNumber": 3,
+      "date": "26.11",
+      "dayName": "יום חמישי",
+      "title": "השוק המקורה, For Sale, שוק העירייה ומסאז' זוגי",
+      "theme": "שוק מקורה ביום שלג, גולאש ב-For Sale, שוק הכריסמס בפארק העירייה, בריכה ומסאז' תאילנדי זוגי",
+      "textSummary": "צפוי שלג (75%). מתחילים ב-10:15 בשוק המקורה הגדול – מקורה וחמים: פפריקה, שוקולד ומזכרות. צהריים ב-For Sale Pub מול השוק. אחר הצהריים שוק הכריסמס בפארק העירייה ובכיכר Deák, מנוחה או בריכה ב-Cortile, וב-18:15 מסאז' תאילנדי זוגי ב-Thai 5. ב-19:30 בודקים באפליקציית Zara מה ירד ב-Black Friday, וב-20:00 ארוחת ערב.",
+      "highlights": [
+        "השוק המקורה",
+        "For Sale Pub",
+        "שוק פארק העירייה",
+        "Thai 5 מסאז' זוגי",
+        "בדיקת Black Friday"
+      ],
+      "schedule": [
+        {
+          "id": "d3-1",
+          "image": "images/shop-market-hall.jpg",
+          "time": "10:15 - 12:00",
+          "duration": "שעה ו-45 דק'",
+          "title": "השוק המקורה הגדול (Great Market Hall)",
+          "categoryLabel": "שוק ומזכרות • רובע 9",
+          "category": "shopping",
+          "location": "Vámház krt. 1-3",
+          "distanceText": "1.7 ק\"מ (7 דק' במונית)",
+          "mapsQuery": "Great Market Hall Budapest",
+          "description": "מקורה – מושלם ליום שלג. פפריקה, שוקולד, יין טוקאי ומזכרות במחירים הכי טובים בעיר.",
+          "tip": "",
+          "transitToNext": "🚶‍♂️ חציית כביש 1 דק' • ל-For Sale",
+          "rank": 1
+        },
+        {
+          "id": "d3-2",
+          "image": "images/forsale-front.jpg",
+          "time": "12:15 - 13:45",
+          "duration": "שעה וחצי",
+          "title": "צהריים ב-For Sale Pub",
+          "categoryLabel": "צהריים • מול השוק",
+          "category": "food",
+          "location": "Vámház krt. 2",
+          "distanceText": "מול השוק",
+          "mapsQuery": "For Sale Pub Budapest",
+          "description": "אלפי פתקים על הקירות, בוטנים על הרצפה וגולאש בקר בקדרה ענקית.",
+          "tip": "מנות ענקיות – גולאש אחד ושניצל מספיקים לשניים.",
+          "transitToNext": "🚕 Bolt 8 דק' • לכיכר Deák",
+          "rank": 2
+        },
+        {
+          "id": "d3-3",
+          "image": "images/shop-halfprice.jpg",
+          "time": "14:00 - 16:00",
+          "duration": "שעתיים",
+          "title": "שוק הכריסמס בפארק העירייה ובכיכר Deák",
+          "categoryLabel": "שוק כריסמס • Városháza park",
+          "category": "market",
+          "location": "Városháza park / Deák Ferenc tér",
+          "distanceText": "8 דק' הליכה מהמלון",
+          "mapsQuery": "Városháza park Budapest Christmas market",
+          "description": "השוק הרשמי של העירייה, עם מסלול החלקה מואר, דוכני אוכל, יין חם ומלאכות יד. פחות תיירותי מוורושמרטי.",
+          "tip": "",
+          "transitToNext": "🚶‍♂️ הליכה 8 דק' • למלון / Cortile",
+          "rank": 3
+        },
+        {
+          "id": "d3-4",
+          "image": "images/cortile-pool.jpg",
+          "time": "16:15 - 17:30",
+          "duration": "שעה ורבע",
+          "title": "בריכה מחוממת ב-Cortile או מנוחה במלון",
+          "categoryLabel": "מנוחה • הטבת VIP",
+          "category": "bath",
+          "location": "Dessewffy u. 14",
+          "distanceText": "7 דק' הליכה מהמלון",
+          "mapsQuery": "Cortile Budapest Hotel",
+          "description": "בריכה מחוממת על הגג – חינם לאורחי Casati (לתאם בקבלה). או פשוט מנוחה בחדר.",
+          "tip": "",
+          "transitToNext": "🚶‍♂️ הליכה 7 דק' • ל-Thai 5",
+          "rank": 4
+        },
+        {
+          "id": "d3-5",
+          "image": "images/massage.jpg",
+          "time": "18:15 - 19:30",
+          "duration": "שעה ורבע",
+          "title": "💆 מסאז' תאילנדי זוגי ב-Thai 5",
+          "categoryLabel": "ספא • ליד כיכר Deák",
+          "category": "bath",
+          "location": "Fehér Hajó u. 8-10",
+          "distanceText": "7 דק' הליכה מהמלון",
+          "mapsQuery": "Thai 5 Budapest Feher Hajo utca",
+          "description": "מסאז' תאילנדי זוגי אחרי יום של הליכה.",
+          "tip": "להזמין מראש (Fresha) ולבקש חדר זוגי.",
+          "transitToNext": "📱 19:30 בודקים באפליקציית Zara • מה ירד ב-Black Friday",
+          "rank": 5
+        },
+        {
+          "id": "d3-6",
+          "image": "images/menza.jpg",
+          "time": "20:00 - 21:30",
+          "duration": "שעה וחצי",
+          "title": "ארוחת ערב ב-Menza",
+          "categoryLabel": "ארוחת ערב • כיכר ליסט",
+          "category": "food",
+          "location": "Liszt Ferenc tér 2",
+          "distanceText": "200 מ' מהמלון",
+          "mapsQuery": "Menza Budapest",
+          "description": "ביסטרו הונגרי מודרני 2 דקות מהמלון. חלופות: Pizzica (פיצה רומאית) או Art of Sushi.",
+          "tip": "בזמן הארוחה מסמנים מה קונים מחר בבוקר ב-Black Friday.",
+          "transitToNext": "🚶‍♂️ הליכה 2 דק' • חזרה למלון",
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "dayNumber": 4,
+      "date": "27.11",
+      "dayName": "יום שישי",
+      "title": "Black Friday, מרחצאות סצ'ני ו-La Pampa",
+      "theme": "Black Friday ב-Váci בבוקר, מרחצאות סצ'ני בחושך ובאדים, הטירה ומשטח הקרח המוארים, וארוחת סיום ב-La Pampa",
+      "textSummary": "Black Friday: ב-10:00 ב-Váci וב-Fashion Street קונים את מה שירד במחיר ומחזירים את מה שנקנה קודם (אותו כרטיס אשראי). טפסי Tax Free רק על הקבלות הסופיות. צהריים ועצירה במלון, ב-14:30 מרחצאות סצ'ני, ב-17:15 סיבוב תמונות ליד משטח הקרח וטירת ויידהוניאד המוארת, וב-20:00 ארוחת סיום ב-La Pampa. בערב שוקלים מזוודות (32 ו-26 ק\"ג).",
+      "highlights": [
+        "Black Friday ב-Váci",
+        "מרחצאות סצ'ני",
+        "טירת ויידהוניאד המוארת",
+        "La Pampa"
+      ],
+      "schedule": [
+        {
+          "id": "d4-1",
+          "image": "images/shop-andrassy.jpg",
+          "time": "10:00 - 13:00",
+          "duration": "3 שעות",
+          "title": "🛍️ Black Friday ב-Váci וב-Fashion Street",
+          "categoryLabel": "שופינג • Black Friday",
+          "category": "shopping",
+          "location": "Váci utca ו-Deák Ferenc utca",
+          "distanceText": "10–15 דק' הליכה מהמלון",
+          "mapsQuery": "Váci utca Budapest",
+          "description": "ב-Zara, Bershka, Stradivarius ו-Pull&Bear הנחות של עד 40–50% על פריטים נבחרים, וב-H&M בדרך כלל 20–25%. לוקחים את אותו פריט במחיר המוזל ומחזירים את מה שנקנה קודם. מה שלא ירד – נשאר אצלכם.",
+          "tip": "להחזיר עם אותו כרטיס אשראי. Tax Free: מעל 68,000 פורינט בחנות אחת ובאותו יום – לבקש טופס בקופה.",
+          "transitToNext": "🚶‍♂️ הליכה • צהריים ועצירה במלון",
+          "rank": 1
+        },
+        {
+          "id": "d4-2",
+          "image": "images/pizzica.jpg",
+          "time": "13:00 - 14:15",
+          "duration": "שעה ורבע",
+          "title": "צהריים קלים ועצירה במלון",
+          "categoryLabel": "צהריים • ליד המלון",
+          "category": "food",
+          "location": "ליד Casati",
+          "distanceText": "קרוב למלון",
+          "mapsQuery": "Pizzica Budapest",
+          "description": "Pizzica (פיצה רומאית, 3 דק' מהמלון) או Eggdrop. מניחים שקיות ולוקחים בגדי ים, מגבת וכפכפים.",
+          "tip": "",
+          "transitToNext": "🚇 מטרו M1 7 דק' • מ-Opera ל-Széchenyi fürdő",
+          "rank": 2
+        },
+        {
+          "id": "d4-3",
+          "image": "images/szechenyi-baths.jpg",
+          "time": "14:30 - 17:15",
+          "duration": "שעתיים ו-45 דק'",
+          "title": "♨️ מרחצאות סצ'ני",
+          "categoryLabel": "מרחצאות תרמיים • הפארק העירוני",
+          "category": "bath",
+          "location": "Állatkerti krt. 9-11",
+          "distanceText": "מטרו M1, 7 דק'",
+          "mapsQuery": "Szechenyi Baths Budapest",
+          "description": "בריכות חיצוניות חמות כשבחוץ מינוס – ובחושך (מ-16:00) עם האדים זה הכי יפה.",
+          "tip": "לקנות כרטיסים מראש באתר הרשמי ולקחת Cabin (תא פרטי).",
+          "transitToNext": "🚶‍♂️ הליכה 5 דק' • למשטח הקרח",
+          "rank": 3
+        },
+        {
+          "id": "d4-4",
+          "image": "images/ice-rink.jpg",
+          "time": "17:15 - 17:45",
+          "duration": "חצי שעה",
+          "title": "משטח הקרח וטירת ויידהוניאד המוארת",
+          "categoryLabel": "תמונות • הפארק העירוני",
+          "category": "attraction",
+          "location": "Városligeti Műjégpálya",
+          "distanceText": "צמוד לסצ'ני",
+          "mapsQuery": "City Park Ice Rink Budapest",
+          "description": "משטח הקרח הפתוח הגדול באירופה מול טירה מהאגדות, מואר בערב. סיבוב ותמונות, בלי להחליק.",
+          "tip": "",
+          "transitToNext": "🚇 מטרו M1 • חזרה למלון והתארגנות",
+          "rank": 4
+        },
+        {
+          "id": "d4-5",
+          "image": "images/la-pampa.jpg",
+          "time": "20:00 - 22:00",
+          "duration": "שעתיים",
+          "title": "🥩 ארוחת סיום חגיגית ב-La Pampa",
+          "categoryLabel": "ארוחת ערב • סטייקהאוס",
+          "category": "food",
+          "location": "Bajcsy-Zsilinszky út 21",
+          "distanceText": "650 מ' מהמלון",
+          "mapsQuery": "La Pampa Steakhouse Budapest",
+          "description": "סטייקהאוס ארגנטינאי – אנטריקוט ופילה על הגחלים.",
+          "tip": "להזמין שולחן ל-20:00.",
+          "transitToNext": "🚶‍♂️ הליכה 8 דק' • חזרה למלון",
+          "rank": 5
+        },
+        {
+          "id": "d4-6",
+          "image": "images/bar-tuktuk.jpg",
+          "time": "22:00 - 23:30",
+          "duration": "שעה וחצי",
+          "title": "דרינק אחרון ב-TukTuk ואריזות",
+          "categoryLabel": "ערב אחרון • בלובי של Casati",
+          "category": "nightlife",
+          "location": "Hotel Casati Budapest",
+          "distanceText": "במלון שלכם",
+          "mapsQuery": "Casati Budapest Hotel",
+          "description": "דרינק אחרון בבר של המלון, ואריזות. שוקלים מזוודות: אחת עד 32 ק\"ג, השנייה עד 26 ק\"ג.",
+          "tip": "כל קבלות ה-Tax Free והדרכונים במעטפה אחת בתיק הקטן.",
+          "transitToNext": "🛏️ לישון • מחר טיסת צהריים",
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "dayNumber": 5,
+      "date": "28.11",
+      "dayName": "יום שבת",
+      "title": "בוקר רגוע, Tax Free וטיסה הביתה",
+      "theme": "בריכה אופציונלית, ארוחת בוקר, צ'ק אאוט ב-10:30, Tax Free בשדה והמראה ב-14:20",
+      "textSummary": "אופציה לשעה בבריכה ב-Cortile ב-07:30, ארוחת בוקר ואריזות אחרונות. צ'ק אאוט ב-10:30 ו-Bolt לשדה (טרמינל 2B) – הגעה ב-11:15, 3 שעות לפני, בגלל ה-Tax Free. ב-13:30 הולכים לשער – ביקורת הדרכונים אחרי הדיוטי פרי. המראה ב-14:20 ונחיתה בנתב\"ג ב-18:35.",
+      "highlights": [
+        "בריכה (אופציונלי)",
+        "צ'ק אאוט 10:30",
+        "Tax Free בשדה",
+        "המראה 14:20"
+      ],
+      "schedule": [
+        {
+          "id": "d5-1",
+          "image": "images/cortile-pool.jpg",
+          "time": "07:30 - 08:30",
+          "duration": "שעה",
+          "title": "בריכה מחוממת ב-Cortile (אופציונלי)",
+          "categoryLabel": "בוקר • הטבת VIP",
+          "category": "bath",
+          "location": "Dessewffy u. 14",
+          "distanceText": "7 דק' הליכה",
+          "mapsQuery": "Cortile Budapest Hotel",
+          "description": "הבריכה נפתחת ב-06:00. שעה אחרונה של פינוק – או לישון עוד שעה.",
+          "tip": "",
+          "transitToNext": "🚶‍♂️ הליכה 7 דק' • חזרה למלון",
+          "rank": 1
+        },
+        {
+          "id": "d5-2",
+          "image": "images/casati-2.jpg",
+          "time": "08:45 - 10:30",
+          "duration": "שעה ו-45 דק'",
+          "title": "ארוחת בוקר ואריזות אחרונות",
+          "categoryLabel": "בוקר • Casati",
+          "category": "food",
+          "location": "Hotel Casati Budapest",
+          "distanceText": "במלון שלכם",
+          "mapsQuery": "Casati Budapest Hotel",
+          "description": "בופה ארוחת בוקר ואריזות אחרונות.",
+          "tip": "נוזלים מעל 100 מ\"ל (יין, פלינקה) – רק במזוודה. התיק הקטן 40×30×20.",
+          "transitToNext": "🛎️ צ'ק אאוט 10:30 • Bolt לשדה 25–30 דק'",
+          "rank": 2
+        },
+        {
+          "id": "d5-3",
+          "image": "images/tax-free-banner.jpg",
+          "time": "11:15 - 13:30",
+          "duration": "שעתיים ורבע",
+          "title": "צ'ק אין, Tax Free ובידוק ביטחוני",
+          "categoryLabel": "שדה תעופה • טרמינל 2B",
+          "category": "transport",
+          "location": "נמל התעופה בודפשט – טרמינל 2B",
+          "distanceText": "21 ק\"מ מהמלון",
+          "mapsQuery": "Budapest Airport Terminal 2B",
+          "description": "אם יש קניות Tax Free במזוודה – אומרים לפקיד הצ'ק אין לפני שהיא נשלחת. מחתימים את הטפסים בעמדת המכס, ואחר כך בידוק ביטחוני ודיוטי פרי.",
+          "tip": "מזוודה אחת עד 32 ק\"ג, השנייה עד 26 ק\"ג – כל אחת נשקלת לחוד.",
+          "transitToNext": "⚠️ 13:30 הולכים לשער • ביקורת הדרכונים אחרי הדיוטי פרי",
+          "rank": 3
+        },
+        {
+          "id": "d5-4",
+          "image": "images/danube-cruise.jpg",
+          "time": "13:30 - 18:35",
+          "duration": "טיסה 3:15",
+          "title": "ביקורת דרכונים, בורדינג והמראה ב-14:20",
+          "categoryLabel": "טיסת החזור • נחיתה בנתב\"ג 18:35",
+          "category": "transport",
+          "location": "טיסת החזור (בודפשט ← תל אביב)",
+          "distanceText": "שער טרמינל 2B",
+          "mapsQuery": "Budapest Airport Terminal 2B",
+          "description": "ביקורת הדרכונים בבודפשט נמצאת אחרי הדיוטי פרי, בדרך לשער – עוזבים את החנויות ב-13:30. המראה ב-14:20 ונחיתה בישראל ב-18:35.",
+          "tip": "",
+          "transitToNext": "🏠 נחיתה בשלום • מזל טוב ל-7 שנים ביחד ❤️",
+          "rank": 4
+        }
+      ]
+    }
+  ],
+
+  // מאגר קולינריה, מסעדות ומזון מהיר (מדורג מהמומלץ ביותר לפחות מומלץ - ללא חזיר, ללא שרצים!) עם תמונות ומרחקים מדויקים מקאסטי
+  restaurants: [
+    {
+      id: "res-1",
+      rank: 1,
+      name: "For Sale Pub",
+      nameOrig: "For Sale Pub Budapest",
+      type: "hungarian",
+      rating: "⭐⭐⭐⭐⭐ חובת ביקור!",
+      badge: "#1 המקום המיתולוגי של בודפשט 🥜",
+      distanceMeters: 1700,
+      distanceText: "1.7 ק\"מ (20 דק' הליכה / 7 דק' בחשמלית 47/49)",
+      image: "images/forsale-notes.jpg",
+      address: "Vámház krt. 2 (מול השוק המקורה)",
+      hours: "א'-ה': 12:00 - 01:00 בלילה | ו': 12:00 - 01:00 בלילה | שבת: 12:00 - 01:00 בלילה | יום א': 12:00 - 01:00 בלילה",
+      kosherNote: "בקר / עוף בלבד (להזמין גולאש בקר ושניצל עוף/בקר, לא חזיר).",
+      description: "הפאב הכי מפורסם בעיר. אלפי פתקים וכרטיסי ביקור של מטיילים מכל העולם מכסים את כל הקירות והתקרה, קערות בוטנים חינם על השולחנות וקליפות על הרצפה. מרק הגולאש מוגש בקדרה זוגית ענקית ומטורפת.",
+      mustOrder: "מרק גולאש בקר מסורתי (ענקי!), שניצל עוף או בקר ענק, בוטנים חופשי.",
+      mapsLink: "https://maps.google.com/?q=For+Sale+Pub+Budapest"
+    },
+    {
+      id: "res-menza",
+      rank: 2,
+      name: "Menza (מנזה - ביסטרו הונגרי מודרני מיתולוגי)",
+      nameOrig: "Menza Étterem és Kávéház",
+      type: "hungarian",
+      rating: "⭐⭐⭐⭐⭐ מיתולוגיה מקומית (23,000+ ביקורות בגוגל!)",
+      badge: "🥣 #2 המטבח ההונגרי הטוב בעיר (2 דק' מקאסטי)",
+      distanceMeters: 200,
+      distanceText: "200 מטר (2 דק' הליכה בלבד מקאסטי - כיכר ליסט פרנץ!)",
+      image: "images/menza.jpg",
+      address: "Liszt Ferenc tér 2 (רובע 6 המרכזי)",
+      hours: "א'-ה': 11:00 - 00:00 (חצות) | ו': 11:00 - 00:00 | שבת: 11:00 - 00:00 | יום א': 11:00 - 00:00",
+      kosherNote: "בקר, עוף, ברווז ודגים כשרים ללא פירות ים. פפריקש עוף וגולאש בקר נקיים ומצוינים (להימנע ממנות חזיר מנגליצה).",
+      description: "מוסד קולינרי אייקוני ואחת המסעדות האהובות והמפורסמות ביותר בבודפשט. ממוקמת בכיכר ליסט פרנץ במרחק 2 דקות הליכה מקאסטי. מעוצבת בסגנון רטרו-שיק של שנות ה-70 ומגישה קלאסיקות הונגריות משובחות בטוויסט מודרני, טעים ואלגנטי.",
+      mustOrder: "פפריקש עוף מסורתי עם נוקדלי (Chicken Paprikash), מרק גולאש בקר עשיר, או חזה ברווז צרוב עם פירה כמהין.",
+      mapsLink: "https://maps.google.com/?q=Menza+Budapest+Liszt+Ferenc+ter"
+    },
+    {
+      id: "res-hot-stone",
+      rank: 3,
+      name: "Hot Stone Steakhouse (בשרים על אבן לבה 400°C)",
+      nameOrig: "Hot Stone Steakhouse Budapest",
+      type: "steaks",
+      rating: "⭐⭐⭐⭐⭐ חוויה אינטראקטיבית מטורפת",
+      badge: "🔥 #3 צלייה עצמית על אבני לבה לוהטות 🥩",
+      distanceMeters: 650,
+      distanceText: "650 מטר (8 דק' הליכה ברגל מקאסטי - סמוך לבזיליקה!)",
+      image: "images/hot-stone.jpg",
+      address: "Október 6. u. 7 (ליד הבזיליקה וכיכר ארז'בט)",
+      hours: "א'-ה': 12:00 - 23:00 | ו': 12:00 - 23:30 | שבת: 12:00 - 23:30 | יום א': 12:00 - 22:30",
+      kosherNote: "100% בקר טהור, פילה, אנטרקוט, סינטה, כבש ודגי סלמון. אתם מקבלים את הבשר חי וצולים בעצמכם על האבן – רואים כל גרגר בעיניים, נקי לחלוטין וללא חשש.",
+      description: "אחת החוויות המדליקות ביותר בבודפשט! מקבלים לשולחן פלטת אבן געשית שהתחממה ל-400 מעלות, בוחרים נתחי בשר פרימיום (אנטרקוט ארגנטינאי, פילה בקר נימוח, טומהוק או סלמון), וצולים כל ביס בדיוק במידת העשייה שאתם הכי אוהבים עם מלח גס ורטבים.",
+      mustOrder: "נתח פילה בקר מובחר או אנטרקוט על אבן לבה עם תפו\"א אפוי ורוטב צ'ימיצ'ורי.",
+      mapsLink: "https://maps.app.goo.gl/H8jGwZ4892MM1pCs6"
+    },
+    {
+      id: "res-11",
+      rank: 4,
+      name: "New York Café",
+      nameOrig: "New York Café Budapest",
+      type: "desserts",
+      rating: "⭐⭐⭐⭐ ארמון פאר היסטורי",
+      badge: "#4 בית הקפה המפואר ביותר בעולם ✨",
+      distanceMeters: 1200,
+      distanceText: "1.2 ק\"מ (14 דק' הליכה ברגל)",
+      image: "images/newyork-cafe.jpg",
+      address: "Erzsébet krt. 9-11",
+      hours: "א'-ה': 08:00 - 00:00 (חצות) | ו': 08:00 - 00:00 | שבת: 08:00 - 00:00 | יום א': 08:00 - 00:00",
+      kosherNote: "קפה, מאפים, עוגות ושוקו חם.",
+      description: "נבחר פעמים רבות לבית הקפה היפה ביותר בעולם. תקרות מעוטרות בציורי קיר מוזהבים, נברשות קריסטל, נגני פסנתר חיה ואווירה של ארמון מלכותי אמיתי.",
+      mustOrder: "שוקו חם איטלקי סמיך עם קצפת ועוגת דובוש מסורתית.",
+      mapsLink: "https://maps.google.com/?q=New+York+Cafe+Budapest"
+    },
+    {
+      id: "res-art-sushi",
+      rank: 5,
+      name: "Art of Sushi (ארט אוף סושי)",
+      nameOrig: "Art of Sushi Budapest - Liszt Ferenc tér",
+      type: "asian",
+      rating: "⭐⭐⭐⭐⭐ 4.8 כוכבים | סושי פרימיום ו-All You Can Eat",
+      badge: "🍣 #5 סושי פרימיום 3 דקות מהמלון!",
+      distanceMeters: 220,
+      distanceText: "220 מטר (3 דק' הליכה בלבד מקאסטי - כיכר ליסט פרנץ!)",
+      image: "images/art-of-sushi.jpg",
+      address: "Liszt Ferenc tér 5 (רובע 6 המרכזי)",
+      hours: "א'-ה': 12:00 - 22:30 | ו': 12:00 - 23:30 | שבת: 12:00 - 23:30 | יום א': 12:00 - 22:00",
+      kosherNote: "100% דגים כשרים: סלמון, טונה אדומה, אבוקדו, רולים צמחוניים, פוקי בול, אודון וראמן עוף. יש להימנע ממנות שרימפס / פירות ים.",
+      description: "מסעדת הסושי והאסייתי מהמבוקשות והמדורגות ביותר בבודפשט (4.8 כוכבים ברשת!), השוכנת ממש מעבר לפינה ממלון Casati בכיכר ליסט פרנץ היפהפייה. מציעה סושי פרימיום טרי, מנות ווק, ראמן ופוקי בול, לצד מסלול All You Can Eat מפורסם בהזמנה חופשית לשולחן בעיצוב מרהיב.",
+      mustOrder: "רולים מיוחדים של סלמון ספייסי וקראנץ' בטטה, סשימי טונה וסלמון טריים, פוקי בול סלמון או ראמן עוף עשיר (להקפיד להזמין ללא שרימפס/סרטנים).",
+      mapsLink: "https://maps.google.com/?q=Art+of+Sushi+Liszt+Ferenc+ter+Budapest"
+    },
+    {
+      id: "res-4",
+      rank: 6,
+      name: "Aleli Italian Restaurant",
+      nameOrig: "Aleli Budapest",
+      type: "italian",
+      rating: "⭐⭐⭐⭐⭐ ערב רומנטי מושלם",
+      badge: "#6 מסעדת שף איטלקית יוקרתית 🍷",
+      distanceMeters: 750,
+      distanceText: "750 מטר (9 דק' הליכה ברגל מקאסטי)",
+      image: "images/aleli-pasta.jpg",
+      address: "מרכז פשט (רחוב Sas u.)",
+      hours: "א'-ה': 12:00 - 23:00 | ו': 12:00 - 23:30 | שבת: 12:00 - 23:30 | יום א': 12:00 - 22:30",
+      kosherNote: "פסטות, דגים כשרים, פילה בקר, פיצות וגבינות איטלקיות ללא פירות ים וללא חזיר.",
+      description: "המסעדה האיטלקית האלגנטית והרומנטית ביותר בעיר. פסטות טריות שנעשות במקום מדי יום, גבינות בוראטה עשירות המיובאות מאיטליה, נתחי פילה בקר ויינות מובחרים.",
+      mustOrder: "פסטה טרייה בעבודת יד עם כמהין, פיצה נפוליטנית מהטאבון, טירמיסו שף.",
+      mapsLink: "https://maps.google.com/?q=Aleli+Restaurant+Budapest"
+    },
+    {
+      id: "res-2",
+      rank: 7,
+      name: "Gordon Ramsay Burger",
+      nameOrig: "GRBG Budapest",
+      type: "burgers",
+      rating: "⭐⭐⭐⭐⭐ המבורגר פרימיום",
+      badge: "#7 ההמבורגר של השף המפורסם 🍔",
+      distanceMeters: 800,
+      distanceText: "800 מטר (10 דק' הליכה ברגל מקאסטי)",
+      image: "images/gordon-ramsay.jpg",
+      address: "מרכז העיר פשט",
+      hours: "א'-ד': 12:00 - 23:00 | ה'-שבת: 12:00 - 00:00 (חצות) | יום א': 12:00 - 23:00",
+      kosherNote: "100% בקר טהור ואיכותי. פשוט לבקש בלי בייקון ('No bacon please'). גבינות ורטבים מותרים.",
+      description: "מסעדת ההמבורגרים הרשמית של השף גורדון רמזי. קציצות בקר משובחות, לחמניות בריוש רכות ונימוחות, צ'יפס פרמז'ן כמהין אגדי ורטבים שאין בשום מקום אחר.",
+      mustOrder: "Hell's Kitchen Burger (לבקש בלי בייקון), צ'יפס כמהין ופרמז'ן, מילקשייק עשיר.",
+      mapsLink: "https://maps.google.com/?q=Gordon+Ramsay+Burger+Budapest"
+    },
+    {
+      id: "res-7",
+      rank: 8,
+      name: "קונדיטוריית רוזוורום (Ruszwurm)",
+      nameOrig: "Ruszwurm Cukrászda",
+      type: "desserts",
+      rating: "⭐⭐⭐⭐⭐ מורשת היסטורית",
+      badge: "#8 הקרמשניט המקורי משנת 1827 👑",
+      distanceMeters: 2100,
+      distanceText: "2.1 ק\"מ (בגבעת הטירה בבודה / 10 דק' במונית)",
+      image: "images/ruszwurm.jpg",
+      address: "Szentháromság u. 7 (גבעת הטירה בבודה)",
+      hours: "א'-ה': 10:00 - 18:00 | ו': 10:00 - 18:00 | שבת: 10:00 - 18:00 | יום א': 10:00 - 18:00",
+      kosherNote: "חלבי / מאפים מסורתיים.",
+      description: "בית הקפה העתיק ביותר בבודה, שפעל עוד בימי המלכים והקיסרית סיסי. מפורסם בקרמשניט הוניל החלומי והעשיר שלו הנאפה לפי מתכון סודי של כמעט 200 שנה.",
+      mustOrder: "Ruszwurm Krémes מקורי (קרמשניט וניל חלומי) ועוגת דובוש.",
+      mapsLink: "https://maps.google.com/?q=Ruszwurm+Confectionery+Budapest"
+    },
+    {
+      id: "res-5",
+      rank: 9,
+      name: "Street Food Karavan",
+      nameOrig: "Street Food Karavan Budapest",
+      type: "hungarian",
+      rating: "⭐⭐⭐⭐ אווירת רחוב צעירה",
+      badge: "#9 מתחם פוד-טראקס ליד הסימפלה 🚚",
+      distanceMeters: 700,
+      distanceText: "700 מטר (8 דק' הליכה ברגל)",
+      image: "images/karavan.jpg",
+      address: "Kazinczy u. 18 (הרובע היהודי)",
+      hours: "א'-ד': 11:30 - 23:00 | ה'-שבת: 11:30 - 01:00 בלילה | יום א': 11:30 - 23:00",
+      kosherNote: "מגוון דוכנים: לנגוש גבינות ושום צמחוני, המבורגרים מבקר, צ'יפס הולנדי. יש לבחור דוכנים ללא נקניקיות חזיר.",
+      description: "חצר פתוחה מקסימה עם משאיות אוכל רחוב שמציעות מנות מכל הסוגים: לנגוש בורגר ייחודי, לנגוש מסורתי עמוס גבינה צהובה ושמנת חמוצה, צ'יפס וקיורטוש חם.",
+      mustOrder: "לנגוש גבינה צהובה ושום קלאסי (צמחוני ומדהים) או לנגוש בורגר בקר.",
+      mapsLink: "https://maps.google.com/?q=Street+Food+Karavan+Budapest"
+    },
+    {
+      id: "res-pizzica",
+      rank: 10,
+      name: "Pizzica (פיציקה - פיצה רומאית אותנטית)",
+      nameOrig: "Pizzica Budapest - Nagymező utca",
+      type: "italian",
+      rating: "⭐⭐⭐⭐⭐ 4.7 כוכבים (אלפי ביקורות)",
+      badge: "#10 הפיצה הרומאית הטובה בעיר (3 דק' מקאסטי) 🍕",
+      distanceMeters: 260,
+      distanceText: "260 מטר (3 דק' הליכה ברגל מקאסטי ברחוב Nagymező!)",
+      image: "images/pizzica.jpg",
+      address: "Nagymező u. 21 (רחוב הברודוויי של בודפשט)",
+      hours: "ב'-ה': 11:30 - 23:00 | ו': 11:30 - 23:30 | שבת: 11:30 - 23:30 | יום א': סגור",
+      kosherNote: "100% צמחוני / חלבי: מרגריטה, תפוחי אדמה וכמהין, 4 גבינות (להימנע מסלייסים עם פרושוטו/חזיר).",
+      description: "פיצריית בוטיק רומאית אגדית ברחוב נג'מזו (3 דק' הליכה מקאסטי). בצק מחמצת שמוטפח 72 שעות ונאפה בתבניות ברזל מרובעות – מתפצח וקריספי להפליא, ונחתך במספריים איטלקיים מסורתיים.",
+      mustOrder: "סלייס פיצה תפוחי אדמה, שמן כמהין ורוזמרין (חוויה קולינרית מדהימה!) או מרגריטה קלאסית עם גבינת מוצרלה עשירה.",
+      mapsLink: "https://maps.google.com/?q=Pizzica+Budapest"
+    },
+    {
+      id: "res-26",
+      rank: 11,
+      name: "Eggdrop Project (טוסט ביצים קוריאני)",
+      nameOrig: "Eggdrop Project Budapest",
+      type: "asian",
+      rating: "⭐⭐⭐⭐⭐ להיט אינסטגרם לבוקר",
+      badge: "#11 טוסט בריוש קוריאני עם ביצה רכה 🍳",
+      distanceMeters: 600,
+      distanceText: "600 מטר (7 דק' הליכה ברגל מקאסטי, ליד כיכר דיאק)",
+      image: "images/eggdrop.jpg",
+      address: "Fehér Hajó u. 5 (סמוך לכיכר Deák)",
+      hours: "ב'-ה' ויום א': 08:00 - 15:45 | ו'-שבת: 09:00 - 20:45 (לפי Wolt – כדאי לוודא לפני)",
+      kosherNote: "יש בתפריט מנות חזיר (Pork Belly, בייקון/האם) – להזמין Bulgogi בקר, Torikatsu עוף, סלמון או Simply (ביצה וגבינה).",
+      description: "רשת טוסטים קוריאנית צבעונית: בריוש חמאתי קלוי עם ביצה מקושקשת רכה, גבינה נמסה, רטבים וירקות, ולצד זה Egg Tots פריכים ולימונדות. מושלם לארוחת בוקר או צהריים מהירה ושונה.",
+      mustOrder: "Bulgogi Eggdrop (בקר קוריאני) או Torikatsu (עוף פריך) בקומבו עם Egg Tots ושתייה.",
+      mapsLink: "https://maps.google.com/?q=Eggdrop+Project+Feher+Hajo+utca+5+Budapest"
+    },
+    {
+      id: "res-beef-bone",
+      rank: 12,
+      name: "Beef & Bone (בשרים מיושנים מול הדנובה)",
+      nameOrig: "Beef & Bone Budapest",
+      type: "steaks",
+      rating: "⭐⭐⭐⭐⭐ איכות יישון Dry-Aged ללא פשרות",
+      badge: "🥩 #12 מומחי הבשר המיושן וה-T-Bone 🦴",
+      distanceMeters: 1600,
+      distanceText: "1.6 ק\"מ (19 דק' הליכה נופית / 6 דק' במונית מקאסטי)",
+      image: "images/beef-bone.jpg",
+      address: "Belgrád rkp. 17 (טיילת הדנובה מול הנהר)",
+      hours: "א'-ד': 12:00 - 23:00 | ה'-שבת: 12:00 - 00:00 (חצות) | יום א': 12:00 - 22:30",
+      kosherNote: "נתחי בקר משובחים מיושנים ביישון יבש (Dry-Aged) ללא חזיר או פירות ים. יש לוודא תוספות נקיות.",
+      description: "מקדש לאוהבי בשר אמיתיים השוכן על טיילת הדנובה. מקררי יישון שקופים שבהם נתחי בקר מובחרים עוברים תהליך יישון יבש קפדני של שבועות. בשר בעל טעם עמוק, מרקם חמאתי וצלייה מושלמת על ידי שפים מומחים.",
+      mustOrder: "סטייק T-Bone מיושן או פורטרהאוס זוגי עסיסי עם ירקות צלויים.",
+      mapsLink: "https://maps.app.goo.gl/AsQWWqtqDu7ezFvE7"
+    },
+    {
+      id: "res-pampas",
+      rank: 13,
+      name: "Pampas Argentin Steakhouse (המוסד הוותיק מול השוק)",
+      nameOrig: "Pampas Argentin Steakhouse Budapest",
+      type: "steaks",
+      rating: "⭐⭐⭐⭐ קלאסיקה ארגנטינאית מפורסמת",
+      badge: "🐂 #13 סטייקים ארגנטינאיים מול השוק המקורה 🍷",
+      distanceMeters: 1700,
+      distanceText: "1.7 ק\"מ (מול השוק המקורה / 7 דק' בחשמלית 47/49 מקאסטי)",
+      image: "images/pampas.jpg",
+      address: "Vámház krt. 6 (בדיוק מול השוק המקורה - Great Market Hall)",
+      hours: "א'-ה': 12:00 - 00:00 (חצות) | ו': 12:00 - 00:00 | שבת: 12:00 - 00:00 | יום א': 12:00 - 00:00",
+      kosherNote: "100% נתחי בקר מובחרים (ארגנטינה, ארה\"ב, ווגיו) ללא חזיר או פירות ים.",
+      description: "המסעדה הארגנטינאית הקלאסית והמפורסמת ביותר של בודפשט שפועלת כבר שנים מול השוק המקורה. מתמחה בבשר ארגנטינאי אמיתי, אווירה חמימה בגווני אדום וזהב, תפריט יינות מלבק עשיר ובשרים מובחרים.",
+      mustOrder: "נתח אנטרקוט ארגנטינאי קלאסי (Rib Eye) במידת עשייה מדיום עם רוטב צ'ימיצ'ורי ירוק.",
+      mapsLink: "https://maps.app.goo.gl/bMnf3yqX5B5orMV37?g_st=ipc"
+    },
+    {
+      id: "res-8",
+      rank: 14,
+      name: "La Pampa Steakhouse",
+      nameOrig: "La Pampa Steakhouse Budapest",
+      type: "steaks",
+      rating: "⭐⭐⭐⭐ בשרים פרימיום",
+      badge: "#14 סטייקים ארגנטינאיים על גחלים (8 דק' מקאסטי) 🥩",
+      distanceMeters: 650,
+      distanceText: "650 מטר (8 דק' הליכה ברגל מקאסטי)",
+      image: "images/la-pampa.jpg",
+      address: "Bajcsy-Zsilinszky út 21 (קרוב מאוד למלון Casati)",
+      hours: "א'-ה': 12:00 - 23:00 | ו': 12:00 - 23:30 | שבת: 12:00 - 23:30 | יום א': 12:00 - 23:00",
+      kosherNote: "100% בקר וכבש איכותיים ללא חזיר וללא פירות ים.",
+      description: "סטייקהאוס ארגנטינאי אותנטי ויוקרתי. נתחי בשר מובחרים המיובאים מארגנטינה ונצלים על גחלי אלון טבעיים עם רטבי צ'ימיצ'ורי ויינות דרום אמריקאיים.",
+      mustOrder: "סטייק אנטרקוט ריב-איי ארגנטינאי 300 גרם עם תפוח אדמה אפוי.",
+      mapsLink: "https://maps.google.com/?q=La+Pampa+Steakhouse+Budapest"
+    },
+    {
+      id: "res-3",
+      rank: 15,
+      name: "Smashy Burger",
+      nameOrig: "Smashy Burger Budapest",
+      type: "burgers",
+      rating: "⭐⭐⭐⭐⭐ הסמאש הכי טוב בעיר",
+      badge: "#15 סמאש בורגר קראנצ'י מושחת 🔥",
+      distanceMeters: 1100,
+      distanceText: "1.1 ק\"מ (13 דק' הליכה ברגל)",
+      image: "images/smashy-burger.jpg",
+      address: "Baross u. 4 (סמוך לתחנת קלווין טר)",
+      hours: "א'-ה': 11:30 - 21:30 | ו': 11:30 - 22:30 | שבת: 11:30 - 22:30 | יום א': 11:30 - 21:30",
+      kosherNote: "100% בקר טהור. גבינת צ'דר נמסה, לחמניית תפו\"א רכה.",
+      description: "המקום שהפך לתופעה בבודפשט. קציצות בקר דקות שנצרבות בלחץ על הפלנצ'ה ומקבלות קצוות פריכים ומקורמלים, עטופות בגבינה נמסה בתוך לחמנייה שמתמסרת בכל ביס.",
+      mustOrder: "דאבל סמאש צ'יזבורגר בקר עם צ'יפס דק וקריספי.",
+      mapsLink: "https://maps.google.com/?q=Smashy+Burger+Budapest"
+    },
+    {
+      id: "res-6",
+      rank: 16,
+      name: "Cookie Beacon",
+      nameOrig: "Cookie Beacon Waffle & Cookie Bar",
+      type: "desserts",
+      rating: "⭐⭐⭐⭐⭐ שחיתות מתוקה",
+      badge: "#16 עוגיות ענק חמות ומושחתות 🍪",
+      distanceMeters: 1000,
+      distanceText: "1.0 ק\"מ (12 דק' הליכה ברגל מקאסטי)",
+      image: "images/cookie-beacon.jpg",
+      address: "Haris köz 6 (מרחק הליכה קצר מואצי)",
+      hours: "א'-ה': 08:00 - 17:00 | ו': 08:00 - 17:00 | שבת: 08:00 - 17:00 | יום א': 08:00 - 17:00",
+      kosherNote: "חלבי / צמחוני לחלוטין (עוגיות, וופלים, קפה, שוקו).",
+      description: "המקום הוויראלי ביותר למתוקים בבודפשט. עוגיות ענק חמות ועמוסות שוקולד נמס במגוון מילויים מטורפים: קינדר בואנו, פיסטוק עשיר, קרמל מלוח ושוקולד לבן.",
+      mustOrder: "עוגיית קינדר בואנו חמה עם כוס קפה לאטה קר או חם.",
+      mapsLink: "https://maps.google.com/?q=Cookie+Beacon+Budapest"
+    },
+    {
+      id: "res-beerstro",
+      rank: 17,
+      name: "Beerstro 14 (סטייקים, בורגרים ובירות בוטיק)",
+      nameOrig: "Beerstro14 Steak House",
+      type: "steaks",
+      rating: "⭐⭐⭐⭐⭐ תמורה מדהימה למחיר",
+      badge: "🍺 #17 שילוב מנצח של בשר מעולה ובירה 🍻",
+      distanceMeters: 1100,
+      distanceText: "1.1 ק\"מ (13 דק' הליכה ברגל מקאסטי)",
+      image: "images/beerstro14.jpg",
+      address: "Károlyi u. 12 (רובע 5 המרכזי)",
+      hours: "א'-ה': 12:00 - 23:00 | ו': 12:00 - 23:30 | שבת: 12:00 - 23:30 | יום א': 12:00 - 22:30",
+      kosherNote: "סטייקים מבקר, המבורגרים איכותיים, מנות עוף ודגים. יש לבחור נתחים ללא שילוב בייקון/חזיר.",
+      description: "שילוב מושלם בין סטייקהאוס איכותי לבר בירות בוטיק. סטייקים עסיסיים, המבורגרים מובחרים ותפריט של 14 בירות קראפט טריות מהברז. אווירה צעירה, עיצוב מודרני ומחירים סופר משתלמים וזולים משמעותית מישראל.",
+      mustOrder: "סטייק ריב-איי אנגוס עסיסי לצד כוס בירת בוטיק קרה מהחבית וצ'יפס מתובל.",
+      mapsLink: "https://maps.app.goo.gl/FQsBtYkHW2t1aQgb6"
+    },
+    {
+      id: "res-10",
+      rank: 18,
+      name: "Gelato Rosa",
+      nameOrig: "Gelato Rosa Budapest",
+      type: "desserts",
+      rating: "⭐⭐⭐⭐ גלידה לאינסטגרם",
+      badge: "#18 גלידה בעיצוב פרח שושנה 🌹",
+      distanceMeters: 500,
+      distanceText: "500 מטר (6 דק' הליכה ברגל)",
+      image: "images/gelato-rosa.jpg",
+      address: "Szent István tér 3",
+      hours: "א'-ה': 11:00 - 22:00 | ו': 11:00 - 22:00 | שבת: 11:00 - 22:00 | יום א': 11:00 - 22:00",
+      kosherNote: "גלידה חלבית וסורבה פירות טבעוני.",
+      description: "ממש ליד שוק הכריסמס בבזיליקה. עובדי המקום מפסלים את הגלידה בעבודת יד בצורת עלי כותרת של פרח שושנה מושלם ומרהיב לצילום.",
+      mustOrder: "שילוב של פיסטוק, מנגו ושוקולד בלגי בשושנה תלת-שכבתית.",
+      mapsLink: "https://maps.google.com/?q=Gelato+Rosa+Budapest"
+    },
+    {
+      id: "res-9",
+      rank: 19,
+      name: "Best Bagel Basilica",
+      nameOrig: "Best Bagel Budapest",
+      type: "hungarian",
+      rating: "⭐⭐⭐⭐ בוקר קליל וטעים",
+      badge: "#19 בייגלים חמים ליד הבזיליקה 🥯",
+      distanceMeters: 600,
+      distanceText: "600 מטר (7 דק' הליכה ברגל)",
+      image: "images/best-bagel.jpg",
+      address: "Zrínyi u. 16",
+      hours: "א'-ה': 08:00 - 17:00 | ו': 08:00 - 17:00 | שבת: 08:30 - 17:00 | יום א': 08:30 - 17:00",
+      kosherNote: "בייגלים עם סלמון מעושן, ביצים, גבינות, אבוקדו וירקות (לוודא הזמנה ללא בייקון).",
+      description: "בייגלייה אמריקאית מדליקה ממש מול בזיליקת סנט סטפן. בייגלים חמים עם סלמון מעושן, גבינת שמנת עשירה, ביצת עין ואבוקדו טרי.",
+      mustOrder: "בייגל סלמון שמנת וצלפים או בייגל חביתת ירק וגבינה.",
+      mapsLink: "https://maps.google.com/?q=Best+Bagel+Basilica+Budapest"
+    },
+    {
+      id: "res-12",
+      rank: 20,
+      name: "The Magic",
+      nameOrig: "The Magic Budapest",
+      type: "burgers",
+      rating: "⭐⭐⭐⭐ חוויית הארי פוטר",
+      badge: "#20 מסעדת קסמים ושיקויים מעשנים 🧙‍♂️",
+      distanceMeters: 400,
+      distanceText: "400 מטר (5 דק' הליכה בלבד מקאסטי!)",
+      image: "images/the-magic.jpg",
+      address: "Hajós u. 25 (מרחק 5 דק' מ-Casati)",
+      hours: "א'-ה': 10:00 - 22:00 | ו': 10:00 - 23:00 | שבת: 10:00 - 23:00 | יום א': 10:00 - 22:00",
+      kosherNote: "המבורגרים מבקר, שיקויים מתוקים ללא חזיר או פירות ים.",
+      description: "מסעדה קונספטואלית בעיצוב עולם הקסמים של הארי פוטר. שרביטים, שיקויים מעשנים בקרח יבש, המבורגרים עם לחמניות צבעוניות וקינוחים מכושפים.",
+      mustOrder: "שיקוי קסמים מבעבע בקרח יבש והמבורגר שחור מיוחד.",
+      mapsLink: "https://maps.google.com/?q=The+Magic+Budapest"
+    },
+    {
+      id: "ff-1",
+      rank: 21,
+      name: "McDonald's Nyugati (המקדונלד'ס היפה בעולם)",
+      nameOrig: "The World's Most Beautiful McDonald's",
+      type: "fastfood",
+      rating: "⭐⭐⭐⭐⭐ אטרקציה עולמית",
+      badge: "⚡ #1 מקדונלד'ס היפה בעולם (אייפל 1877) 🍟",
+      distanceMeters: 1100,
+      distanceText: "1.1 ק\"מ (13 דק' הליכה / 2 תחנות במטרו M3)",
+      image: "images/mcdonalds-nyugati.jpg",
+      address: "Teréz krt. 55 (בניין תחנת ניוגטי ההיסטורי)",
+      hours: "א'-ה': 06:00 - 00:00 | ו': פתוח 24 שעות | שבת: פתוח 24 שעות | יום א': 06:00 - 00:00",
+      kosherNote: "100% בקר / עוף / צ'יפס (ללא חזיר בהזמנת המבורגרים רגילים).",
+      description: "נבחר רשמית לסניף מקדונלד'ס היפה והמפואר ביותר בעולם! שוכן באגף ההיסטורי של תחנת הרכבת ניוגטי שנבנה על ידי חברת גוסטב אייפל בשנת 1877. נברשות קריסטל, תקרות סטוקו עתיקות וריהוט עץ מלכותי.",
+      mustOrder: "ביג מק, נאגטס וצ'יפס חם, לצד קפה ומאפה ב-McCafe המפואר.",
+      mapsLink: "https://maps.google.com/?q=McDonalds+Nyugati+Budapest"
+    },
+    {
+      id: "ff-2",
+      rank: 22,
+      name: "Retro Lángos Budapest (מלך הלנגוש המהיר)",
+      nameOrig: "Retro Lángos Budapest",
+      type: "fastfood",
+      rating: "⭐⭐⭐⭐⭐ הלנגוש הטוב בעיר",
+      badge: "⚡ #2 לנגוש חם ומהיר ב-4 דקות מהמלון 🥖",
+      distanceMeters: 300,
+      distanceText: "300 מטר (4 דק' הליכה ברגל מקאסטי!)",
+      image: "images/langos.jpg",
+      address: "Bajcsy-Zsilinszky út 25 (קרוב מאוד למלון Casati)",
+      hours: "א'-ה': 10:00 - 00:00 (חצות) | ו': 10:00 - 01:00 בלילה | שבת: 10:00 - 01:00 בלילה | יום א': 10:00 - 00:00",
+      kosherNote: "חלבי / צמחוני מושלם: שום, שמנת חמוצה והררי גבינה צהובה (ללא בייקון).",
+      description: "המקום הכי מפורסם ואהוב בבודפשט למזון רחוב מהיר ומסורתי. בצק לנגוש פריך שנאפה ומוגש לוהט תוך דקה עם שום טרי, שמנת חמוצה קרירה והררי גבינת גאודה מותכת.",
+      mustOrder: "לנגוש שמנת חמוצה וגבינה מסורתי (Sajtos-Tejfölös) - פשוט חלום!",
+      mapsLink: "https://maps.google.com/?q=Retro+Langos+Budapest"
+    },
+    {
+      id: "ff-3",
+      rank: 23,
+      name: "Bamba Marha Burger Bar (הסמאש-בורגר המהיר)",
+      nameOrig: "Bamba Marha Burger Bar Bazilika",
+      type: "fastfood",
+      rating: "⭐⭐⭐⭐⭐ רשת הבורגרים #1 בהונגריה",
+      badge: "⚡ #3 בורגר מהיר עטור פרסים 🍔",
+      distanceMeters: 550,
+      distanceText: "550 מטר (6 דק' הליכה ברגל מקאסטי)",
+      image: "images/bamba-marha.jpg",
+      address: "Október 6. u. 6 (סמוך לבזיליקה)",
+      hours: "א'-ד': 11:30 - 23:00 | ה'-שבת: 11:30 - 00:00 (חצות) | יום א': 11:30 - 23:00",
+      kosherNote: "100% בקר טהור, פשוט לבקש בלי בייקון.",
+      description: "רשת ההמבורגרים המהירה המובילה בבודפשט שזכתה שוב ושוב בפרסי ההמבורגר הטוב בעיר. שירות סופר מהיר, קציצות בקר עסיסיות, צ'יפס מתובל ומגוון רטבי בית מיוחדים.",
+      mustOrder: "Bamba Marha Burger עם גבינת צ'דר ורוטב הבית + צ'יפס בטטה.",
+      mapsLink: "https://maps.google.com/?q=Bamba+Marha+Burger+Bar+Bazilika"
+    },
+    {
+      id: "ff-6",
+      rank: 24,
+      name: "Zing Burger (סמאש בורגר מקומי מהיר)",
+      nameOrig: "Zing Burger Budapest",
+      type: "fastfood",
+      rating: "⭐⭐⭐⭐ בורגרים מקומיים איכותיים",
+      badge: "⚡ #4 סמאש בורגר מקומי מהיר 🔥",
+      distanceMeters: 450,
+      distanceText: "450 מטר (5 דק' הליכה ברגל מקאסטי)",
+      image: "images/zing-burger.jpg",
+      address: "Király u. 60 (סמוך לאוקטוגון)",
+      hours: "א'-ד': 11:00 - 23:00 | ה'-שבת: 11:00 - 01:00 בלילה | יום א': 11:00 - 23:00",
+      kosherNote: "100% בקר טהור, לבקש בלי בייקון.",
+      description: "התחיל ממשאית אוכל רחוב והפך לאחת מאימפריות הבורגרים של בודפשט. בשר אנגוס טחון טרי, לחמניות בריוש רכות וצ'יפס עם רטבי כמהין.",
+      mustOrder: "Guitar Hero Burger או צ'יזבורגר קלאסי עם צ'יפס רוזמרין.",
+      mapsLink: "https://maps.google.com/?q=Zing+Burger+Kiraly+Budapest"
+    },
+    {
+      id: "ff-5",
+      rank: 25,
+      name: "Pizza Me (ביי דה סלייס - משולשים לוהטים)",
+      nameOrig: "Pizza Me Király utca",
+      type: "fastfood",
+      rating: "⭐⭐⭐⭐ פיצה רומאית מהירה",
+      badge: "⚡ #5 משולש פיצה רומאי ב-2 דקות 🍕",
+      distanceMeters: 220,
+      distanceText: "220 מטר (2 דק' הליכה בלבד מקאסטי!)",
+      image: "images/pizza-slice.jpg",
+      address: "Király u. 20 (צמוד למלון Casati!)",
+      hours: "א'-ד': 10:00 - 02:00 בלילה | ה'-שבת: 10:00 - 05:00 לפנות בוקר | יום א': 10:00 - 02:00",
+      kosherNote: "חלבי / צמחוני: מרגריטה, 4 גבינות, פטריות (לבחור סלייסים ללא פפרוני חזיר).",
+      description: "רשת הפיצות בסגנון רומאי הכי נפוצה ואהובה בעיר. בצק פריך שמתפצח, רטבי עגבניות איטלקיים והמון מוצרלה. בוחרים סלייס שחומם בתנור אבן תוך 60 שניות וממשיכים לטייל.",
+      mustOrder: "משולש פיצה 4 גבינות עם שמן שום חם או משולש פטריות וכמהין.",
+      mapsLink: "https://maps.google.com/?q=Pizza+Me+Kiraly+utca+Budapest"
+    },
+    {
+      id: "ff-4",
+      rank: 26,
+      name: "KFC Deák Ferenc tér",
+      nameOrig: "KFC Budapest Deák",
+      type: "fastfood",
+      rating: "⭐⭐⭐⭐ קריספי צ'יקן מהיר",
+      badge: "⚡ #6 עוף פריך וחם בכיכר דיאק 🍗",
+      distanceMeters: 400,
+      distanceText: "400 מטר (5 דק' הליכה ברגל מקאסטי)",
+      image: "images/kfc-chicken.jpg",
+      address: "Deák Ferenc tér 3 (מרחק 5 דק' מ-Casati)",
+      hours: "א'-ד': 08:00 - 01:00 בלילה | ה'-שבת: 08:00 - 03:00 לפנות בוקר | יום א': 08:00 - 01:00",
+      kosherNote: "100% עוף נקי (סטריפס, כנפיים, בורגר עוף) - ללא חזיר.",
+      description: "סניף KFC מרכזי ונוח מאוד שנמצא ממש בכיכר דיאק. סטריפס עוף פריכים וחמים, כריכי עוף קריספי, צ'יפס ופחיות שתייה קרה. פתרון מהיר, זול וסופר טעים לנשנוש לילה או צהריים מהירים.",
+      mustOrder: "באקט סטריפס עוף פריך עם רוטב שום וצ'יפס.",
+      mapsLink: "https://maps.google.com/?q=KFC+Deak+Ferenc+ter+Budapest"
+    }
+  ],
+
+  // מאגר ברים וחיי לילה (מדורג לפי איכות וקרבה ברגל למלון Casati) עם תמונות ומרחקים מדויקים
+  bars: [
+    {
+      id: "bar-6",
+      rank: 1,
+      name: "סמטת Gozsdu Udvar ו-Szimpla Kert",
+      nameOrig: "Gozsdu Passage & Szimpla Kert",
+      distanceMeters: 650,
+      distanceText: "650 מטר (8 דק' הליכה ברגל מקאסטי)",
+      rating: "⭐⭐⭐⭐ לב חיי הלילה",
+      badge: "#1 פאב החרבות המפורסם וסמטת הברים 🍻",
+      image: "images/bar-szimpla.jpg",
+      address: "Kazinczy u. 14 / Gozsdu Udvar",
+      hours: "א'-ה': 15:00 - 04:00 לפנות בוקר | ו'-שבת: 12:00 - 04:00 לפנות בוקר | יום א': 09:00 - 04:00 לפנות בוקר",
+      vibe: "חי, תוסס, המוני, היפסטרי ובינלאומי",
+      description: "מתחם הבילויים הגדול של הרובע היהודי. סמטת גוז'דו מלאה מסעדות, פאבים ומוזיקה חיה, ובמרחק 2 דקות ממנה שוכן Szimpla Kert - פאב החרבות המיתולוגי עם מכונית טראבנט ישנה שמשמשת כשולחן ואמנות רחוב בכל פינה.",
+      mustOrder: "בירה מקומית מהחבית או צ'ייסר פאלינקה הונגרית.",
+      mapsLink: "https://maps.google.com/?q=Szimpla+Kert+Budapest"
+    },
+    {
+      id: "bar-2",
+      rank: 2,
+      name: "Boutiq'Bar (טופ 50 בעולם!)",
+      nameOrig: "Boutiq'Bar Budapest",
+      distanceMeters: 250,
+      distanceText: "250 מטר (3 דק' הליכה ברגל מקאסטי - באותו רחוב!)",
+      rating: "⭐⭐⭐⭐⭐ בר קוקטיילים ברמה עולמית",
+      badge: "#2 בין 50 הברים הטובים בעולם 🏆",
+      image: "images/bar-boutiq.jpg",
+      address: "Paulay Ede u. 5",
+      hours: "א'-ג': סגור | ד'-ה': 18:00 - 01:00 | ו'-שבת: 18:00 - 02:00 לפנות בוקר | יום א': סגור",
+      vibe: "סודי, יוקרתי, שיקי ומתוחכם",
+      description: "אגדת קוקטיילים בינלאומית שנבחרה שוב ושוב לרשימת 'World's 50 Best Bars'. נמצא ממש באותו הרחוב של מלון Casati! תפריט קוקטיילים יצירתי, מיקסולוגים ברמה הגבוהה ביותר ואווירה מהפנטת.",
+      mustOrder: "קוקטייל הבית המעושן או בקשו מהברמן שיתאים משקה לפי הטעם שלכם.",
+      mapsLink: "https://maps.google.com/?q=Boutiq+Bar+Budapest"
+    },
+    {
+      id: "bar-5",
+      rank: 3,
+      name: "High Note SkyBar (מלון Aria)",
+      nameOrig: "High Note SkyBar Budapest",
+      distanceMeters: 650,
+      distanceText: "650 מטר (8 דק' הליכה ברגל מקאסטי)",
+      rating: "⭐⭐⭐⭐⭐ תצפית פנורמית יוקרתית",
+      badge: "#3 נוף ישיר לכיפת הבזיליקה המוארת 🌆",
+      image: "images/bar-highnote.jpg",
+      address: "Hercegprímás u. 5",
+      hours: "א'-ה': 12:00 - 00:00 (חצות) | ו'-שבת: 12:00 - 01:00 בלילה | יום א': 12:00 - 00:00",
+      vibe: "אלגנטי, יוקרתי ונוף מהפנט",
+      description: "רופטופ-בר פנורמי יוקרתי בקומה העליונה של מלון המוזיקה Aria. נמצא במרחק נגיעה מכיפת בזיליקת סנט סטפן המוארת בלילה. בחורף יש מתחם מקורה, מחומם וסגור בזכוכית.",
+      mustOrder: "קוקטייל חתימה לצד צילום עם כיפת הבזיליקה ברקע.",
+      mapsLink: "https://maps.google.com/?q=High+Note+SkyBar+Budapest"
+    },
+    {
+      id: "bar-7",
+      rank: 4,
+      name: "360 Bar (איגלו חורפי מחומם)",
+      nameOrig: "360 Bar Budapest",
+      distanceMeters: 450,
+      distanceText: "450 מטר (5 דק' הליכה ברגל מקאסטי)",
+      rating: "⭐⭐⭐⭐ חוויית איגלו חורפית",
+      badge: "#4 איגלו שקוף ומחומם על הגג 🔮",
+      image: "images/bar-360.jpg",
+      address: "Andrássy út 39",
+      hours: "א'-ה': 14:00 - 00:00 (חצות) | ו'-שבת: 14:00 - 01:00 בלילה | יום א': 14:00 - 00:00",
+      vibe: "מגניב, צעיר, נוף 360 מעלות על העיר",
+      description: "רופטופ הממוקם על שדרת אנדראשי שמשתנה בחורף למתחם של איגלואים שקופים ומחוממים. יושבים בתוך איגלו חם ורואים את כל אורות בודפשט בלי לקפוא.",
+      mustOrder: "יין חם מתובל (Forralt bor) או קוקטייל חורפי.",
+      mapsLink: "https://maps.google.com/?q=360+Bar+Budapest"
+    },
+    {
+      id: "bar-1",
+      rank: 5,
+      name: "TukTuk Bar (בתוך המלון שלכם!)",
+      nameOrig: "TukTuk Cocktail Bar",
+      distanceMeters: 0,
+      distanceText: "0 מטר (בלובי של מלון Casati שלכם!)",
+      rating: "⭐⭐⭐⭐⭐ הכי נוח שיש",
+      badge: "#5 בר הבית שלכם ב-Casati 🍸",
+      image: "images/bar-tuktuk.jpg",
+      address: "Paulay Ede u. 31",
+      hours: "א'-ה': 18:00 - 01:00 בלילה | ו': 18:00 - 02:00 בלילה | שבת: 18:00 - 02:00 בלילה | יום א': 18:00 - 01:00 בלילה",
+      vibe: "אינטימי, אסייתי, רומנטי ושקט",
+      description: "בר קוקטיילים אינטימי, מעוצב ומזמין בסגנון אסייתי של שנות ה-30 הממוקם ממש בתוך מלון Casati שלכם. אין צורך לצאת לקור, רק לרדת מהחדר וליהנות מקוקטיילים מעולים באווירה חמימה.",
+      mustOrder: "קוקטייל חתימה אסייתי על בסיס ג'ין, למון גראס ופסיפלורה.",
+      mapsLink: "https://maps.google.com/?q=Casati+Budapest+Hotel"
+    },
+    {
+      id: "bar-3",
+      rank: 6,
+      name: "Twentysix Budapest (ג'ונגל מקורה מחומם)",
+      nameOrig: "Twentysix Budapest",
+      distanceMeters: 240,
+      distanceText: "240 מטר (3 דק' הליכה ברגל מקאסטי)",
+      rating: "⭐⭐⭐⭐⭐ אווירה ירוקה ומחוממת",
+      badge: "#6 ג'ונגל טרופי מחומם ל-26 מעלות 🌿",
+      image: "images/bar-twentysix.jpg",
+      address: "Király u. 26",
+      hours: "א'-ה': 07:30 - 00:00 (חצות) | ו'-שבת: 07:30 - 01:00 בלילה | יום א': 07:30 - 00:00",
+      vibe: "יוקרתי, טבעי, מוזיקה מעולה וטרנדי",
+      description: "חלל ענק ומרהיב שהוא גן בוטני מקורה עם מאות צמחים ועצים חיים, המחומם קבוע ל-26 מעלות נעימות כל השנה. בר קוקטיילים יוקרתי, אווירה מדהימה ומוזיקה שמכניסה לאנרגיה מושלמת.",
+      mustOrder: "קוקטייל בוטני מרענן או כוס יין איכותי בלב הג'ונגל.",
+      mapsLink: "https://maps.google.com/?q=Twentysix+Budapest"
+    },
+    {
+      id: "bar-4",
+      rank: 7,
+      name: "Cortile SkyBar (רופטופ מול הבריכה המחוממת)",
+      nameOrig: "Cortile SkyBar & Pool",
+      distanceMeters: 600,
+      distanceText: "600 מטר (7 דק' הליכה ברגל מקאסטי)",
+      rating: "⭐⭐⭐⭐ הטבת מלון ייחודית",
+      badge: "#7 דרינק על הגג ליד הבריכה 🏊",
+      image: "images/cortile-pool.jpg",
+      address: "Dessewffy u. 14 (מלון Cortile)",
+      hours: "א'-ה': 16:00 - 22:00 | ו': 16:00 - 23:00 | שבת: 16:00 - 23:00 | יום א': 16:00 - 22:00",
+      vibe: "רגוע, רומנטי, נוף פתוח לשמיים",
+      description: "בר הגג של מלון האחות Cortile, הממוקם בצמוד לבריכת האינפיניטי המחוממת המקורה בזכוכית. מושלם לטבילה חורפית במים החמים ולאחריה דרינק קליל מול שמי בודפשט.",
+      mustOrder: "קוקטייל ג'ין-טוניק פרימיום או שוקו חם מתובל.",
+      mapsLink: "https://maps.google.com/?q=Cortile+Budapest+Hotel"
+    }
+  ],
+
+  // מאגר שופינג ומרכזי קניות (מדורג מהמומלץ ביותר לפחות מומלץ) עם תמונות ומרחקים מדויקים מקאסטי
+  shopping: [
+    {
+        "id": "shop-1",
+        "rank": 1,
+        "name": "קניון ארנה מול (Arena Mall)",
+        "nameOrig": "Arena Mall Budapest",
+        "type": "malls",
+        "rating": "⭐⭐⭐⭐⭐ הקניון המועדף לישראלים",
+        "badge": "#1 סניף Primark הראשון בהונגריה 🛍️",
+        "distanceMeters": 2800,
+        "distanceText": "2.8 ק\"מ (8 דק' במונית Bolt / קו מטרו M2)",
+        "image": "images/shop-arena.jpg",
+        "address": "Kerepesi út 9 (רובע 8, סמוך לתחנת Keleti)",
+        "hours": "שני-שבת 10:00-21:00, ראשון 10:00-19:00",
+        "description": "הקניון הגדול והפופולרי ביותר בקרב תיירים ישראלים. כולל את סניף פריימרק (Primark) הענק והראשון בהונגריה, רשתות אופנה בינלאומיות מובילות, סופרמרקט ענק, חנויות אלקטרוניקה ומתחם קולנוע וקומת אוכל.",
+        "tip": "סניף פריימרק נמצא בקומה 1 – מומלץ להגיע בשעות הבוקר (10:00-12:00) כדי ליהנות מקניות רגועות בלי תורים ארוכים בקופות.",
+        "partnerQuote": "המקום הכי טוב לחטוף בגדים בסיסיים, פיג'מות חורפיות וסריגים ב-Primark במחירי רצפה!",
+        "verdictScore": "⭐⭐⭐⭐⭐ חובת ביקור לחובבי Primark",
+        "pros": "סניף Primark ענק וחדש, חנויות Zara, Bershka, Pull&Bear, H&M, מתחם ענק וממוזג, חניה ענקית וסופרמרקט גדול.",
+        "cons": "עמוס מאוד בסופי שבוע ולקראת הערב (במיוחד בפריימרק).",
+        "bottomLine": "אם Primark ברשימת הקניות שלכם – זה המקום להגיע אליו בבודפשט. מומלץ לשלב עם קו מטרו M2 האדום.",
+        "howToGetThere": "\n      <div class=\"how-to-item\"><strong>🚇 קו מטרו M2 האדום (מהיר וקל):</strong> 6 דקות הליכה מ-Casati לתחנת Deák Ferenc tér, עולים על מטרו M2 לכיוון Örs vezér tere ונוסעים 3 תחנות עד <strong>Keleti pályaudvar</strong>. מהתחנה הליכה קצרה של כ-5 דקות לפתח הקניון.</div>\n      <div class=\"how-to-item\"><strong>🚕 מונית Bolt:</strong> כ-8-10 דקות נסיעה מפתח מלון Casati (כ-2,500-3,200 HUF).</div>\n    ",
+        "stores": [
+            {
+                "category": "🛍️ עוגן מרכזי",
+                "icon": "✨",
+                "items": [
+                    "Primark (סניף הדגל הענק בהונגריה - 2 קומות)"
+                ]
+            },
+            {
+                "category": "👗 אופנה בינלאומית",
+                "icon": "👗",
+                "items": [
+                    "Zara",
+                    "H&M",
+                    "Bershka",
+                    "Stradivarius",
+                    "Pull&Bear",
+                    "Mango",
+                    "New Yorker",
+                    "Peek & Cloppenburg",
+                    "Reserved",
+                    "Cropp",
+                    "House",
+                    "Mohito"
+                ]
+            },
+            {
+                "category": "👟 ספורט והנעלה",
+                "icon": "👟",
+                "items": [
+                    "Nike",
+                    "Adidas",
+                    "Foot Locker",
+                    "JD Sports",
+                    "Deichmann",
+                    "CCC",
+                    "Humanic",
+                    "Skechers"
+                ]
+            },
+            {
+                "category": "💄 טיפוח וקוסמטיקה",
+                "icon": "💄",
+                "items": [
+                    "Sephora / Douglas",
+                    "dm drogerie",
+                    "Yves Rocher",
+                    "Mac Cosmetics",
+                    "KIKO Milano"
+                ]
+            },
+            {
+                "category": "🍔 אוכל וקפה",
+                "icon": "🍔",
+                "items": [
+                    "McDonald's",
+                    "KFC",
+                    "Burger King",
+                    "Costa Coffee",
+                    "Starbucks",
+                    "Bellozzo Italian",
+                    "מתחם מסעדות אסייתיות"
+                ]
+            }
+        ],
+        "mapsLink": "https://maps.google.com/?q=Arena+Mall+Budapest",
+        "websiteLink": "https://www.arenamall.hu/"
+    },
+    {
+        "id": "shop-3",
+        "rank": 2,
+        "name": "קניון ווסט-אנד (Westend Shopping Center)",
+        "nameOrig": "Westend Budapest",
+        "type": "malls",
+        "rating": "⭐⭐⭐⭐⭐ מרכזי ונוח מאוד",
+        "badge": "#2 צמוד לתחנת ניוגטי + סניף Sports Direct 🏬",
+        "distanceMeters": 1200,
+        "distanceText": "1.2 ק\"מ (14 דק' הליכה / 2 תחנות במטרו M3)",
+        "image": "images/shop-westend.jpg",
+        "address": "Váci út 1-3 (רובע 6, צמוד לתחנת הרכבת Nyugati)",
+        "hours": "שני-שבת 10:00-20:00, ראשון 10:00-18:00",
+        "description": "קניון ענק של 3 קומות עם כ-400 חנויות מגוונות. היתרון הגדול שלו הוא המיקום המרכזי (קרוב מאוד למלון Casati) וסניף ענק של Sports Direct (נעלי ספורט, ביגוד אדידס, נייקי וציוד חורף במחירים זולים במיוחד), לצד Zara, Mango, Pull&Bear, HalfPrice ומתחם אוכל גדול.",
+        "tip": "נמצא במרחק 14 דקות הליכה רגלית או 2 תחנות בלבד במטרו M3 הכחול. משתלב נהדר עם ביקור במקדונלד'ס היפהפה בתחנת Nyugati הצמודה!",
+        "partnerQuote": "הקניון הכי קרוב למלון Casati! מעולה לשופינג מהיר כשמתחיל לרדת גשם או שלג.",
+        "verdictScore": "⭐⭐⭐⭐⭐ שופינג סופר נוח ונגיש",
+        "pros": "קרוב ברגל למלון (14 דק'), מעבר ישיר לתחנת מטרו M3 Nyugati, סניף Sports Direct ענקי, סניף HalfPrice נוסף, כל הרשתות המוכרות.",
+        "cons": "המבנה ארוך מאוד ודורש הליכה רבה בין הקצוות.",
+        "bottomLine": "קניון מעולה, נוח וקרוב שסוגר את כל פינות השופינג בלי צורך בנסיעות ארוכות.",
+        "howToGetThere": "\n      <div class=\"how-to-item\"><strong>🚶 הליכה ברגל (14 דקות):</strong> יוצאים מ-Casati, פונים ימינה לרחוב Nagymező utca וממשיכים צפונה דרך רחוב Bajcsy-Zsilinszky ישירות לתחנת Nyugati וקניון Westend.</div>\n      <div class=\"how-to-item\"><strong>🚇 מטרו M3 הכחול (5 דקות):</strong> עולים בתחנת Arany János utca או Deák tér ונוסעים 1-2 תחנות צפונה עד <strong>Nyugati pályaudvar</strong> – יש יציאה ישירה ומקורה מקומת המטרו לתוך הקניון.</div>\n    ",
+        "stores": [
+            {
+                "category": "👟 ספורט ענקי",
+                "icon": "⚡",
+                "items": [
+                    "Sports Direct (מתחם ענק לנעלי סניקרס וביגוד ספורט בזול)",
+                    "Nike",
+                    "Adidas",
+                    "Intersport"
+                ]
+            },
+            {
+                "category": "👗 אופנה בינלאומית",
+                "icon": "👗",
+                "items": [
+                    "Zara",
+                    "Mango",
+                    "Pull&Bear",
+                    "Bershka",
+                    "Stradivarius",
+                    "H&M",
+                    "C&A",
+                    "New Yorker",
+                    "Reserved",
+                    "Mohito"
+                ]
+            },
+            {
+                "category": "🏷️ מציאות וטיפוח",
+                "icon": "💄",
+                "items": [
+                    "HalfPrice (סניף קניון Westend)",
+                    "Douglas",
+                    "dm",
+                    "Müller",
+                    "Yves Rocher",
+                    "Rossmann"
+                ]
+            },
+            {
+                "category": "🍔 קומת אוכל",
+                "icon": "🍟",
+                "items": [
+                    "KFC",
+                    "McDonald's",
+                    "Burger King",
+                    "Bellozzo",
+                    "Subway",
+                    "סושי בר",
+                    "מסעדות הונגריות"
+                ]
+            }
+        ],
+        "mapsLink": "https://maps.google.com/?q=Westend+Shopping+Center+Budapest",
+        "websiteLink": "https://westend.hu/"
+    },
+    {
+        "id": "shop-5",
+        "rank": 3,
+        "name": "השוק המקורה הגדול (Great Market Hall)",
+        "nameOrig": "Nagy Vásárcsarnok",
+        "type": "markets",
+        "rating": "⭐⭐⭐⭐ שוק אוכל ומזכרות אותנטי",
+        "badge": "#3 פפריקה, שוקולדים ומזכרות בזול 🥖",
+        "distanceMeters": 1700,
+        "distanceText": "1.7 ק\"מ (20 דק' הליכה / 7 דק' בחשמלית 47/49)",
+        "image": "images/shop-market-hall.jpg",
+        "address": "Vámház krt. 1-3 (רובע 9, סמוך לגשר החירות)",
+        "hours": "שני 06:00-17:00, שלישי-שישי 06:00-18:00, שבת 06:00-15:00, ⚠️ סגור ביום ראשון!",
+        "description": "השוק המקורה הגדול והמרשים ביותר באירופה, שוכן במבנה ניאו-גותי יפהפה עם גג אריחי ז'ולנאי צבעוניים. 3 קומות ענקיות: קומת הקרקע מוקדשת למאכלים הונגריים (פפריקה מתוקה/חריפה בפחיות וינטג', יינות טוקאי, גבינות, ממתקים); הקומה השנייה עמוסה במזכרות, עבודות יד, צעיפי צמר, כפפות ומגנטים.",
+        "tip": "המקום הכי משתלם לקנות פפריקה הונגרית ומזכרות הביתה למשפחה! שימו לב: השוק סגור לחלוטין ביום ראשון.",
+        "partnerQuote": "קונים כאן פפריקה איכותית בפחית מעוטרת ויין טוקאי אסו מתוק – המתנה הכי שווה שמביאים מהונגריה.",
+        "verdictScore": "⭐⭐⭐⭐ אתר חובה למזכרות ואוכל",
+        "pros": "מבנה ארכיטקטוני מרהיב, מחירי מזכרות ופפריקה זולים משמעותית מהחנויות במדרחוב, חוויה הונגרית אותנטית.",
+        "cons": "קומה שנייה צפופה בשעות הצהריים; סגור ביום ראשון.",
+        "bottomLine": "חובה להגיע לקנות מתנות הביתה – חוויה כיפית, ריחנית וצבעונית.",
+        "howToGetThere": "\n      <div class=\"how-to-item\"><strong>🚋 חשמלית 47 / 49 (הכי נוח - 7 דקות):</strong> עולים בכיכר Deák Ferenc ויורדים בתחנת Fővám tér ממש מול פתח השוק.</div>\n      <div class=\"how-to-item\"><strong>🚶 הליכה ברגל (20 דקות):</strong> הליכה נעימה לאורך כל מדרחוב ואצי עד סופו הדרומי בגשר החירות.</div>\n    ",
+        "stores": [
+            {
+                "category": "🌶️ קומת קרקע - מעדנים הונגריים",
+                "icon": "🌶️",
+                "items": [
+                    "פפריקה הונגרית מסורתית (Édes Nemes)",
+                    "יינות Tokaji Aszú מתוקים",
+                    "שוקולדים הונגריים מסורתיים (Stühmer / Szamos)",
+                    "דבש מקומי וריבות פירות יער"
+                ]
+            },
+            {
+                "category": "🧣 קומה 2 - מזכרות וטקסטיל",
+                "icon": "🎁",
+                "items": [
+                    "מגנטים, גלויות ופריטי עץ",
+                    "צעיפי משי וצמר, כובעי חורף וכפפות עור הונגריות",
+                    "רקמות מסורתיות וכלי קרמיקה"
+                ]
+            }
+        ],
+        "mapsLink": "https://maps.google.com/?q=Great+Market+Hall+Budapest",
+        "websiteLink": "https://piacok.budapest.hu/"
+    },
+    {
+        "id": "shop-4",
+        "rank": 4,
+        "name": "מדרחוב ואצי (Váci utca) ו-Fashion Street",
+        "nameOrig": "Váci utca & Deák Ferenc utca",
+        "type": "highstreet",
+        "rating": "⭐⭐⭐⭐ אווירת רחוב ואורות חג",
+        "badge": "#4 רחובות השופינג הראשיים במרכז פשט ✨",
+        "distanceMeters": 700,
+        "distanceText": "700 מטר (8 דק' הליכה ברגל מקאסטי)",
+        "image": "images/shop-vaci.jpg",
+        "address": "Váci utca & Deák Ferenc u. (מרכז פשט)",
+        "hours": "חנויות פתוחות לרוב 10:00-20:00",
+        "description": "מדרחוב הקניות המפורסם והתוסס של בודפשט. החלק הצפוני מתמקד באופנה בינלאומית, וסמוך אליו רחוב Deák Ferenc המכונה 'Fashion Street' עם מותגי פרימיום כמו הוגו בוס, טומי הילפיגר, לאקוסט ומסימו דוטי. בסוף נובמבר כל הרחוב מואר במיליוני נורות חג מולד קסומות.",
+        "tip": "בחלק הצפוני יש את חנויות הבגדים והאופנה, ואילו בחלק הדרומי חנויות מזכרות, ספרים ובתי קפה. שילוב מושלם של שופינג ואווירת חג.",
+        "partnerQuote": "טיול ערב מושלם לשניים: חלונות ראווה מקושטים, אורות כריסמס, שוקו חם ושופינג בכיף.",
+        "verdictScore": "⭐⭐⭐⭐ חוויית רחוב חובה",
+        "pros": "קרוב ברגל למלון (8 דק'), אווירת כריסמס מהאגדות, מותגי אופנה ובוטיקים יוקרתיים.",
+        "cons": "מחירים מעט גבוהים במסעדות ברחוב (עדיף לאכול ברובע היהודי).",
+        "bottomLine": "חובה לטייל בו ברגל בשעות בין הערביים כשהאורות נדלקים.",
+        "howToGetThere": "\n      <div class=\"how-to-item\"><strong>🚶 הליכה ברגל (8 דקות):</strong> יורדים מ-Casati דרומה דרך כיכר Deák Ferenc, חוצים לכיכר Vörösmarty ומשם נכנסים ישירות לתחילת המדרחוב.</div>\n    ",
+        "stores": [
+            {
+                "category": "💎 Fashion Street (מותגי פרימיום)",
+                "icon": "✨",
+                "items": [
+                    "Hugo Boss",
+                    "Tommy Hilfiger",
+                    "Massimo Dutti",
+                    "Lacoste",
+                    "Furla",
+                    "Michael Kors",
+                    "Bobbi Brown",
+                    "COS"
+                ]
+            },
+            {
+                "category": "👗 אופנה במדרחוב ואצי",
+                "icon": "👗",
+                "items": [
+                    "Zara (סניף דגל ענק)",
+                    "H&M",
+                    "Mango",
+                    "Bershka",
+                    "Promod",
+                    "HalfPrice (Váci 16)",
+                    "Flying Tiger Copenhagen"
+                ]
+            }
+        ],
+        "mapsLink": "https://maps.google.com/?q=Vaci+utca+Budapest",
+        "websiteLink": "https://fashionstreet.hu/"
+    },
+    {
+        "id": "shop-2",
+        "rank": 5,
+        "name": "HalfPrice (סניף הדגל בואצי וב-Westend)",
+        "nameOrig": "HalfPrice Budapest",
+        "type": "outlets",
+        "rating": "⭐⭐⭐⭐⭐ מציאות מעצבים עד 70% הנחה",
+        "badge": "#5 חנות מותגים ענקית בהנחות ענק 🏷️",
+        "distanceMeters": 900,
+        "distanceText": "900 מטר (11 דק' הליכה ברגל מקאסטי)",
+        "image": "images/shop-halfprice.jpg",
+        "address": "סניף דגל: Váci u. 16 | סניף נוסף בקניון Westend",
+        "hours": "שני-שבת 10:00-21:00, ראשון 10:00-19:00",
+        "description": "רשת ה'אוף-פרייס' המובילה באירופה (המקבילה האירופית ל-TK Maxx האמריקאי). מותגי על כמו קלווין קליין, מייקל קורס, טומי הילפיגר, פולו ראלף לורן, גאס, נעלי סניקרס, מעילי חורף, תיקי מעצבים וכלי בית יוקרתיים בהנחות אמיתיות של עד 70%.",
+        "tip": "סניף הדגל במדרחוב ואצי 16 מתפרש על פני 3 קומות ענקיות – שווה להתחיל מקומת המרתף (נעליים וסניקרס לפי מידה) ולעלות לקומת הגברים והנשים.",
+        "partnerQuote": "חובה לעבור שם! אפשר למצוא שם סריג של טומי או מעיל של קלווין קליין ברבע מחיר מהארץ.",
+        "verdictScore": "⭐⭐⭐⭐⭐ חנות המציאות הכי שווה במרכז העיר",
+        "pros": "מיקום מרכזי בואצי (10 דק' הליכה מהמלון), מותגי יוקרה אמיתיים במחירים נמוכים מאוד, חוויית ציד מציאות כיפית.",
+        "cons": "דורש סבלנות לחטט בין הקולבים לפי מידות.",
+        "bottomLine": "שווה להיכנס לחצי שעה-שעה כשמטיילים בואצי – כמעט תמיד יוצאים עם פריט מותג שווה במחיר מצחיק.",
+        "howToGetThere": "\n      <div class=\"how-to-item\"><strong>🚶 הליכה ברגל (הכי קל ומהיר):</strong> יוצאים ממלון Casati, יורדים דרומה ברחוב Paulay Ede לכיוון Deák Ferenc tér, חוצים למדרחוב Váci utca ומגיעים למספר 16 תוך 10-11 דקות בלבד.</div>\n    ",
+        "stores": [
+            {
+                "category": "🏷️ מותגים בולטים בחנות",
+                "icon": "✨",
+                "items": [
+                    "Calvin Klein",
+                    "Tommy Hilfiger",
+                    "Polo Ralph Lauren",
+                    "Michael Kors",
+                    "Guess",
+                    "DKNY",
+                    "Hugo Boss",
+                    "Karl Lagerfeld",
+                    "Champion",
+                    "Levi's"
+                ]
+            },
+            {
+                "category": "👟 מחלקות החנות (3 קומות)",
+                "icon": "🏬",
+                "items": [
+                    "קומת קרקע: תיקי יוקרה, ארנקים, בשמים, אקססוריז ומתוקים",
+                    "קומה 1: אופנת נשים, מעילים, סריגים והלבשה תחתונה",
+                    "קומת מרתף: אופנת גברים, קיר נעליים ענקי לפי מידות, כלי בית ועיצוב"
+                ]
+            }
+        ],
+        "mapsLink": "https://maps.google.com/?q=HalfPrice+Vaci+utca+Budapest",
+        "websiteLink": "https://halfprice.eu/hu"
+    },
+    {
+        "id": "shop-7",
+        "rank": 6,
+        "name": "שדרת אנדראשי (Andrássy út)",
+        "nameOrig": "Andrássy út",
+        "type": "highstreet",
+        "rating": "⭐⭐⭐⭐ שדרת יוקרה ומותגי על",
+        "badge": "#6 השאנז אליזה ההונגרי צמוד למלון 💎",
+        "distanceMeters": 100,
+        "distanceText": "100 מטר (דקה אחת בלבד ברגל מקאסטי!)",
+        "image": "images/shop-andrassy.jpg",
+        "address": "Andrássy út (רובע 6, מקביל למלון Casati)",
+        "hours": "10:00 - 19:00/20:00",
+        "description": "שדרת המותרות המלכותית של בודפשט (אתר מורשת עולמית של אונסק\"ו). ארכיטקטורה מרהיבה מהמאה ה-19, בית האופרה הלאומי, חנויות דגל של מותגי יוקרה בינלאומיים (גוצ'י, לואי ויטון, ברברי, מייקל קורס) ובתי קפה אלגנטיים.",
+        "tip": "ממש דקה הליכה מפתח מלון Casati. מקום מדהים לטיול ערב כשהעצים והארמונות מוארים באורות פיות חגיגיים.",
+        "partnerQuote": "השדרה הכי רומנטית בעיר – דקה אחת מהמיטה שלכם במלון Casati!",
+        "verdictScore": "⭐⭐⭐⭐ טיול ערב רומנטי חובה",
+        "pros": "דקה אחת בלבד מפתח המלון, יופי ארכיטקטוני עוצר נשימה, בית האופרה, אווירת יוקרה אירופאית.",
+        "cons": "מחירים גבוהים בחנויות היוקרה (בעיקר חלונות ראווה לרוב המטיילים).",
+        "bottomLine": "חובה לטייל בה ערב-ערב – הדרך הכי יפה לחזור למלון Casati ברגל.",
+        "howToGetThere": "\n      <div class=\"how-to-item\"><strong>🚶 ברגל (דקה אחת בלבד!):</strong> יוצאים ממלון Casati ברחוב Paulay Ede, הולכים 50 מטר בסמטה המקבילה ויוצאים ישירות לשדרת אנדראשי מול בית האופרה.</div>\n    ",
+        "stores": [
+            {
+                "category": "💎 מותגי יוקרה ובוטיקים",
+                "icon": "👑",
+                "items": [
+                    "Louis Vuitton",
+                    "Gucci",
+                    "Burberry",
+                    "Michael Kors",
+                    "Moncler",
+                    "Max Mara",
+                    "Zegna",
+                    "Rolex / Hublot Boutique"
+                ]
+            },
+            {
+                "category": "☕ קפה ותרבות",
+                "icon": "🎭",
+                "items": [
+                    "בית האופרה ההונגרי (Magyar Állami Operaház)",
+                    "בתי קפה היסטוריים וברים אלגנטיים"
+                ]
+            }
+        ],
+        "mapsLink": "https://maps.google.com/?q=Andrassy+ut+Budapest",
+        "websiteLink": "https://www.budapestinfo.hu/andrassy-avenue"
+    },
+    {
+        "id": "shop-6",
+        "rank": 7,
+        "name": "קניון אטלה פלאזה (Etele Plaza)",
+        "nameOrig": "Etele Plaza Budapest",
+        "type": "malls",
+        "rating": "⭐⭐⭐⭐⭐ הקניון החדש, המודרני והגדול ביותר",
+        "badge": "#7 הקניון הכי חדיש ומודרני בבודפשט 🛍️",
+        "distanceMeters": 5500,
+        "distanceText": "5.5 ק\"מ (15 דק' ישיר במטרו M4 / חשמלית 47/49)",
+        "image": "images/shop-etele.jpg",
+        "address": "Hadak útja 1, 1119 Budapest (תחנה סופית של מטרו M4 - Kelenföld vasútállomás)",
+        "hours": "שני-שבת 10:00-21:00, ראשון 10:00-19:00",
+        "description": "הקניון החדש ביותר בבודפשט, מודרני וגדול עם מגוון ענק של חנויות, אופנה, ספורט, קוסמטיקה, נעליים, סופר ואוכל. מקום שאפשר להעביר בו כמה שעות בכיף וליהנות משופינג רגוע, מחומם ומרווח בחורף.",
+        "tip": "סופרמרקט SPAR ענק לקניות, חנות בוטיק של Lindt לשוקולדים מטורפים, קומת אוכל מגוונת ומשחקייה.",
+        "partnerQuote": "🛋️ ויש בו גם משחקיה גדולה ופינות ישיבה לבני זוג מיואשים!",
+        "verdictScore": "⭐⭐⭐⭐⭐ מומלץ בחום ענקי!",
+        "pros": "הקניון הכי חדיש ומרווח בבודפשט. כל המותגים המובילים תחת קורת גג אחת, תקרות זכוכית גבוהות, אווירה נעימה ומודרנית, חנות Lindt, סופרמרקט SPAR ענק וקומת אוכל עצומה.",
+        "cons": "נמצא בצד של בודה (נסיעה של כ-15 דקות במטרו M4 הירוק ממרכז העיר), אך המטרו מגיע ישר לתוך פתח הקניון בלי לצאת לקור.",
+        "bottomLine": "הקניון מספר 1 בבודפשט לשופינג אמיתי! שווה לחלוטין את הנסיעה הקצרה במטרו.",
+        "howToGetThere": "\n      <div class=\"how-to-item\"><strong>🚇 מטרו ישיר M4 (הכי מומלץ):</strong> עולים ב-Kálvin tér או Fővám tér על קו המטרו הירוק M4 ונוסעים עד לתחנה האחרונה <strong>Kelenföld vasútállomás</strong>. היציאה מהמטרו מובילה ישירות לתוך פתח הקניון!</div>\n      <div class=\"how-to-item\"><strong>🚋 חשמלית 47 / 49 ממרכז העיר:</strong> עולים בכיכר Deák Ferenc (4 דק' הליכה מהמלון Casati) על חשמלית 47 או 49 ונוסעים בנוחות ישירות לאזור הקניון.</div>\n      <div class=\"how-to-item\"><strong>🚕 מונית Bolt:</strong> כ-15-18 דקות נסיעה מפתח המלון Casati (עלות של כ-3,800-4,500 HUF, כ-38-45 ₪).</div>\n    ",
+        "stores": [
+            {
+                "category": "👗 אופנה",
+                "icon": "👗",
+                "items": [
+                    "Zara",
+                    "H&M",
+                    "Bershka",
+                    "Stradivarius",
+                    "Pull&Bear",
+                    "New Yorker",
+                    "MOHITO",
+                    "Springfield",
+                    "Peek & Cloppenburg",
+                    "Tommy Hilfiger",
+                    "Calvin Klein",
+                    "HUGO"
+                ]
+            },
+            {
+                "category": "👟 ספורט",
+                "icon": "👟",
+                "items": [
+                    "Nike",
+                    "Foot Locker",
+                    "Hervis"
+                ]
+            },
+            {
+                "category": "👠 נעליים ותיקים",
+                "icon": "👠",
+                "items": [
+                    "CCC",
+                    "Deichmann",
+                    "Office Shoes",
+                    "ECCO",
+                    "Humanic",
+                    "Tamaris"
+                ]
+            },
+            {
+                "category": "💄 קוסמטיקה וטיפוח",
+                "icon": "💄",
+                "items": [
+                    "Douglas",
+                    "dm",
+                    "Müller",
+                    "PUPA Milano"
+                ]
+            },
+            {
+                "category": "🩲 הלבשה תחתונה",
+                "icon": "🩲",
+                "items": [
+                    "Tezenis",
+                    "Intimissimi"
+                ]
+            },
+            {
+                "category": "💎 תכשיטים ואביזרים",
+                "icon": "💎",
+                "items": [
+                    "Pandora",
+                    "Swarovski"
+                ]
+            },
+            {
+                "category": "🕶️ אופטיקה",
+                "icon": "🕶️",
+                "items": [
+                    "Vision Express"
+                ]
+            },
+            {
+                "category": "📱 סלולר",
+                "icon": "📱",
+                "items": [
+                    "Yettel – טלפונים, SIM וחבילות סלולר"
+                ]
+            },
+            {
+                "category": "🛒 שופינג זול, לבית ולקשקושים",
+                "icon": "🛒",
+                "items": [
+                    "Pepco",
+                    "KiK",
+                    "Flying Tiger Copenhagen",
+                    "UOUOROSE"
+                ]
+            },
+            {
+                "category": "🛍️ עוד & מתוקים",
+                "icon": "🍫",
+                "items": [
+                    "SPAR – סופרמרקט גדול",
+                    "Lindt – שוקולד 🍫",
+                    "Starbucks ☕️"
+                ]
+            },
+            {
+                "category": "🍔 קומת האוכל",
+                "icon": "🍔",
+                "items": [
+                    "Zing Burger 🍔",
+                    "Bellozzo – איטלקי 🍝",
+                    "אוכל אסייתי 🍜",
+                    "אוכל הונגרי מסורתי",
+                    "Pizza 🍕",
+                    "Las Vegan’s – טבעוני 🌱",
+                    "KFC 🍗",
+                    "Burger King 🍔"
+                ]
+            }
+        ],
+        "mapsLink": "https://maps.google.com/?q=Etele+Plaza+Budapest",
+        "websiteLink": "https://eteleplaza.hu/"
+    },
+    {
+        "id": "shop-8",
+        "rank": 8,
+        "name": "אאוטלט פרמייר (Premier Outlet Budapest)",
+        "nameOrig": "Premier Outlet",
+        "type": "outlets",
+        "rating": "⭐⭐⭐ אאוטלט כפר מחוץ לעיר",
+        "badge": "#8 מתחם אאוטלט פתוח 30-70% הנחה 🏷️",
+        "distanceMeters": 18000,
+        "distanceText": "18 ק\"מ (כ-25 דק' ברכב / שאטל מאורגן)",
+        "image": "images/shop-premier.jpg",
+        "address": "Budaörs, Vasút u. 4 (מחוץ לעיר)",
+        "hours": "כל השבוע 10:00 - 20:00",
+        "description": "כפר אאוטלט פתוח בעיצוב אירופי עם כ-100 חנויות מותגים בינלאומיים המציעות עודפים והנחות של 30% עד 70% לאורך כל השנה.",
+        "tip": "נמצא כ-20-25 דקות נסיעה מחוץ לבודפשט. מתאים למי שמחפש יום קניות ספציפי למותגי ספורט והנעלה.",
+        "partnerQuote": "שווה רק אם אתם חולי שופינג שרוצים יום שלם מחוץ לעיר. אם לא – Etele Plaza ו-Arena Mall סוגרים הכל בקלות ובמרכז!",
+        "verdictScore": "⭐⭐⭐ מומלץ רק לחובבי אאוטלטים מושבעים",
+        "pros": "הנחות אמיתיות על מותגי ספורט (נייקי, אדידס, פומה), מתחם פתוח ומרווח.",
+        "cons": "מחוץ לעיר (דורש נסיעה של 25 דקות במונית או אוטובוס ייעודי), פתוח לשמיים (קר בנובמבר).",
+        "bottomLine": "עדיף להישאר ב-Etele Plaza או Arena Mall המחוממים והמודרניים בתוך העיר.",
+        "howToGetThere": "\n      <div class=\"how-to-item\"><strong>🚕 מונית Bolt (הכי נוח):</strong> כ-20-25 דקות נסיעה ממרכז בודפשט (כ-7,000-8,500 HUF).</div>\n      <div class=\"how-to-item\"><strong>🚌 אוטובוס מטרופוליטן 760 / 762:</strong> מתחנת Kelenföld (תחנה סופית של מטרו M4) ישירות לשער האאוטלט.</div>\n    ",
+        "stores": [
+            {
+                "category": "👟 מותגי ספורט באאוטלט",
+                "icon": "🏃",
+                "items": [
+                    "Nike Factory Store",
+                    "Adidas Outlet",
+                    "Puma",
+                    "Under Armour",
+                    "Converse",
+                    "Vans"
+                ]
+            },
+            {
+                "category": "👗 אופנה בינלאומית בהנחות",
+                "icon": "🏷️",
+                "items": [
+                    "Tommy Hilfiger Outlet",
+                    "Calvin Klein Outlet",
+                    "Guess",
+                    "Levi's",
+                    "Gant",
+                    "Mango Outlet",
+                    "Desigual"
+                ]
+            }
+        ],
+        "mapsLink": "https://maps.google.com/?q=Premier+Outlet+Budapest",
+        "websiteLink": "https://www.premieroutlet.hu/"
+    }
+],
+
+  // מאגר שווקי כריסמס ואטרקציות (מדורג מהמומלץ ביותר לפחות מומלץ) עם תמונות ומרחקים מדויקים מקאסטי
+  attractions: [
+    {
+        "id": "att-1",
+        "rank": 1,
+        "name": "שוק הכריסמס בבזיליקת סטפן הקדוש",
+        "nameOrig": "Advent Feast at the Basilica",
+        "type": "christmas",
+        "categories": [
+            "christmas",
+            "romantic"
+        ],
+        "rating": "⭐⭐⭐⭐⭐ שוק חג המולד היפה באירופה",
+        "badge": "#1 עץ ענק ומופע לייזר תלת-ממדי 🎄",
+        "distanceMeters": 500,
+        "distanceText": "500 מטר (6 דק' הליכה ברגל מקאסטי)",
+        "image": "images/basilica-xmas.jpg",
+        "gallery": [
+            "images/basilica-xmas.jpg",
+            "images/basilica-dome.jpg",
+            "images/vorosmarty-xmas.jpg"
+        ],
+        "address": "Szent István tér (מרחק 6 דק' הליכה מ-Casati)",
+        "hours": "שני-חמישי 11:00-22:00, שישי-שבת 11:00-23:00, ראשון 11:00-22:00",
+        "priceText": "כניסה חופשית לכיכר ולשוק! (קניות לפי בחירה)",
+        "verdictScore": "חובת ביקור מוחלטת! 👑⭐⭐⭐⭐⭐",
+        "pros": "נבחר מספר פעמים לשוק חג המולד הטוב ביותר באירופה! עץ אשוח ענק מואר, מופע לייזר 3D מרהיב שמוקרן על חזית הבזיליקה בכל 30 דקות, בקתות עץ ריחניות, יין חם, קיורטוש טרי ואווירה מהפנטת.",
+        "cons": "בשעות הערב בסופי שבוע יש עומס מבקרים סביב דוכני האוכל המרכזיים.",
+        "bottomLine": "חובת ביקור ראשונה בעיר! נמצא רק 6 דקות הליכה רגלית מהמלון שלכם Casati – תפסו מקום מול הבזיליקה לקראת 17:00 למופע האורות.",
+        "howToGetThere": "הליכה רגלית קלילה של 6 דקות מ-Hotel Casati: יוצאים לרחוב Paulay Ede, פונים ימינה לרחוב Bajcsy-Zsilinszky ומגיעים ישר לרחבת הבזיליקה.",
+        "description": "נבחר מספר פעמים לשוק חג המולד הטוב ביותר בכל אירופה! במרכז הכיכר עומד עץ אשוח ענק ומואר, סביבו עשרות בקתות עץ עם עבודות יד, מתנות, יין חם מתובל וקיורטוש טרי. בכל 30 דקות מרדת החשכה מוקרן על חזית הבזיליקה מופע אנימציה ולייזר 3D מהפנט.",
+        "tip": "מופע האורות מתחיל סביב 16:30 וחוזר בכל חצי שעה בדיוק. תפסו מקום במרכז הכיכר עם כוס יין חם!",
+        "ticketInfo": {
+            "whereToBuy": "כניסה חופשית לחלוטין לכיכר ולשוק! אין צורך בכרטיסים כלל.",
+            "recommendedType": "חינם (המופעים והסיור בין הבקתות פתוחים לכולם)",
+            "priceApprox": "0 ₪ לכניסה | שתייה ומאכלים בדוכנים לפי בחירה",
+            "proTip": "המופע התלת-ממדי על חזית הבזיליקה מוקרן חינם בכל חצי שעה החל מ-16:30. תפסו מקום מול הבזיליקה עם כוס יין חם או שוקו!",
+            "ticketUrl": "https://adventbazilika.hu/en"
+        },
+        "mapsLink": "https://maps.google.com/?q=St+Stephens+Basilica+Budapest",
+        "ticketLink": "https://adventbazilika.hu/en"
+    },
+    {
+        "id": "att-2",
+        "rank": 2,
+        "name": "שייט לילי זוהר בדנובה (ספינה מחוממת)",
+        "nameOrig": "Danube Evening Sightseeing Cruise",
+        "type": "romantic",
+        "categories": [
+            "romantic",
+            "viewpoints"
+        ],
+        "rating": "⭐⭐⭐⭐⭐ הנוף הכי יפה שתראו",
+        "badge": "#2 הפרלמנט והגשרים מוארים בזהב 🚢",
+        "distanceMeters": 1100,
+        "distanceText": "1.1 ק\"מ (13 דק' הליכה ברגל מקאסטי)",
+        "image": "images/danube-cruise.jpg",
+        "gallery": [
+            "images/danube-cruise.jpg"
+        ],
+        "address": "רציפי הדנובה (ליד גשר השלשלאות / חברת Legenda Dock 7)",
+        "hours": "הפלגות ערב מ-18:00 עד 21:30 (הכי מומלץ: 19:00-20:00)",
+        "priceText": "כ-9,500-11,000 HUF לאדם (כ-95-110 ₪ כולל כוס שמפניה/שתייה)",
+        "verdictScore": "חובת ביקור מוחלטת לזוג! 🚢⭐⭐⭐⭐⭐",
+        "pros": "הנוף המרגש והיפה ביותר שתראו בכל בודפשט. בניין הפרלמנט העצום מואר כולו בזהב ומשתקף במים, גשר השלשלאות ומצודת הדייגים. ספינה מודרנית מחוממת עם חלונות ענק פנורמיים.",
+        "cons": "חובה להזמין מקום מראש לשעה מבוקשת (19:00/19:30) כדי להבטיח מקום ליד החלון.",
+        "bottomLine": "חוויית שיא רומנטית לציון 7 השנים שלכם – אי אפשר לחזור מבודפשט בלי השייט הזה!",
+        "howToGetThere": "13 דקות הליכה רגלית מ-Hotel Casati דרך כיכר Deák ישירות לרציפי הדנובה ליד גשר השלשלאות (רציף Legenda Dock 7). או 5 דקות במונית Bolt (כ-1,800 פורינט / ~18 ₪).",
+        "description": "שייט של 60-70 דקות על נהר הדנובה בספינה מודרנית מחוממת עם חלונות פנורמיים ענקיים ומשקה כלול. בניין הפרלמנט ההונגרי הענק, מצודת הדייגים, ארמון בודה וגשר השלשלאות מוארים כולם באור זהב מהפנט שמשתקף בנהר.",
+        "tip": "שווה להזמין מראש לשעה 19:00 או 19:30 דרך GetYourGuide או אתר Legenda Cruises.",
+        "ticketInfo": {
+            "whereToBuy": "אונליין מראש באתר חברת Legenda (legenda.hu) או GetYourGuide",
+            "recommendedType": "שייט ערב 70 דקות עם כוס שמפניה/יין (Evening Cruise with Drink)",
+            "priceApprox": "כ-9,500 HUF (~95 ₪ לאדם)",
+            "proTip": "להזמין מראש לשעה 19:00 או 19:30 כשהאורות של הפרלמנט בשיאם! לא לקחת שייט עם ארוחת ערב (האוכל בינוני ויקר פי 3 – עדיף לאכול לפני במסעדה אמיתית).",
+            "ticketUrl": "https://legenda.hu/en"
+        },
+        "mapsLink": "https://maps.google.com/?q=Legenda+City+Cruises+Budapest",
+        "ticketLink": "https://legenda.hu/en"
+    },
+    {
+        "id": "att-4",
+        "rank": 3,
+        "name": "מרחצאות סצ'ני (Széchenyi Gyógyfürdő)",
+        "nameOrig": "Széchenyi Thermal Baths",
+        "type": "romantic",
+        "categories": [
+            "romantic"
+        ],
+        "rating": "⭐⭐⭐⭐⭐ בריכות תרמיות לוהטות",
+        "badge": "#3 טבילה ב-38 מעלות באוויר החורף ♨️",
+        "distanceMeters": 2500,
+        "distanceText": "2.5 ק\"מ (6 דק' במטרו M1 מתחנת אופרה)",
+        "image": "images/szechenyi-baths.jpg",
+        "gallery": [
+            "images/szechenyi-baths.jpg"
+        ],
+        "address": "Állatkerti krt. 9-11 (הפארק העירוני)",
+        "hours": "כל יום 07:00 - 20:00",
+        "priceText": "כ-10,500-12,500 HUF (כ-105-125 ₪ לאדם עם קבינה פרטית)",
+        "verdictScore": "חוויה חורפית אדירה! ♨️⭐⭐⭐⭐⭐",
+        "pros": "המרחצאות המפורסמים באירופה. בריכות חיצוניות ענקיות ב-38 מעלות. אדים לבנים עולים באוויר החורפי מול הארמון הניאו-בארוקי הצהוב.",
+        "cons": "תור ארוך בקופות בסופי שבוע – חובה לקנות כרטיס אונליין מראש!",
+        "bottomLine": "חוויה שלא תשכחו – במיוחד החיבור בין קור החורף למים המינרליים הרותחים.",
+        "howToGetThere": "מטרו M1 מתחנת Opera (2 דק' מ-Casati) 7 תחנות ישירות עד תחנת Széchenyi fürdő.",
+        "description": "המרחצאות התרמיים המפורסמים והגדולים באירופה. בריכות חיצוניות ענקיות עם מים מינרליים חמים בטמפרטורה של 38 מעלות.",
+        "tip": "חובה להביא: כפכפים, בגד ים ומגבת גדולה. מומלץ לקנות כרטיס עם תא הלבשה פרטי (Cabin).",
+        "ticketInfo": {
+            "whereToBuy": "אונליין מראש באתר szechenyibath.hu או ב-GetYourGuide (דילוג על התור)",
+            "recommendedType": "כרטיס יומי עם קבינה פרטית (Daily Ticket with Cabin)",
+            "priceApprox": "כ-10,500-12,500 HUF (~105-125 ₪ לאדם)",
+            "proTip": "רק קבינה פרטית! זה חדר הלבשה אישי נעול שבו מחליפים בגדים ביחד ומשאירים את המעילים בבטחה. חובה כפכפים, מגבות ובגדי ים מהארץ (בכניסה גובים הון על השכרה).",
+            "ticketUrl": "https://www.szechenyibath.hu/"
+        },
+        "mapsLink": "https://maps.google.com/?q=Szechenyi+Thermal+Baths",
+        "ticketLink": "https://www.szechenyibath.hu/"
+    },
+    {
+        "id": "att-5",
+        "rank": 4,
+        "name": "מצודת הדייגים וכנסיית מתיאש בשקיעה",
+        "nameOrig": "Fisherman's Bastion & Matthias Church",
+        "type": "viewpoints",
+        "categories": [
+            "viewpoints",
+            "romantic"
+        ],
+        "rating": "⭐⭐⭐⭐⭐ התצפית והתמונות הכי יפות",
+        "badge": "#4 טירת האגדות הלבנה מעל הדנובה 🏰",
+        "distanceMeters": 2100,
+        "distanceText": "2.1 ק\"מ (25 דק' הליכה נופית דרך גשר השלשלאות / 10 דק' במונית)",
+        "image": "images/fishermans-bastion.jpg",
+        "gallery": [
+            "images/fishermans-bastion.jpg"
+        ],
+        "address": "Szentháromság tér (גבעת המצודה בבודה)",
+        "hours": "פתוח 24/7 (מרפסות תחתונות פתוחות חינם תמיד)",
+        "priceText": "מרפסות תחתונות בחינם! (צריחים עליונים כ-10 ₪)",
+        "verdictScore": "תמונות הזוגיות הכי יפות בעולם! 🏰⭐⭐⭐⭐⭐",
+        "pros": "אחת מנקודות התצפית המצולמות ביותר באירופה. קשתות אבן לבנות שנראות כמו מסגרת ציור מסביב לבניין הפרלמנט ההונגרי. רומנטיקה צרופה.",
+        "cons": "פופולרי ומתויר – בשעות הצהריים יש מטיילים רבים. מומלץ להגיע לקראת שקיעה או בבוקר.",
+        "bottomLine": "חובה לכל זוג! תצפית מהאגדות של הפרלמנט מבעד לקשתות האבן הלבנות.",
+        "howToGetThere": "הליכה רומנטית של 25 דקות מ-Casati דרך גשר השלשלאות ועלייה בגרם המדרגות הנופי, או 10 דקות במונית Bolt ישירות לכיכר המצודה.",
+        "description": "מבצר אבן לבן מהאגדות שנבנה בסגנון ניאו-רומנסקי עם שבעה צריחים וקשתות מרשימות. צופה על כל פשט, נהר הדנובה ובניין הפרלמנט. מראה עוצר נשימה במיוחד בשעת השקיעה וכשהעיר נדלקת.",
+        "tip": "ממש מאחורי המצודה נמצא בית הקפה ההיסטורי Ruszwurm – שלבו את התצפית עם עצירה לקרמשניט!",
+        "ticketInfo": {
+            "whereToBuy": "המרפסות התחתונות פתוחות חינם 24/7 ללא כרטיס! לצריחים העליונים קונים במכונות במקום",
+            "recommendedType": "מרפסות תחתונות (חינם) – מספקות 95% מאותן זוויות צילום מושלמות!",
+            "priceApprox": "0 ₪ למרפסות החופשיות | כ-1,000 HUF (~10 ₪) לצריח עליון",
+            "proTip": "טיפ זהב של מקומיים: בחורף אחרי 19:00 בערב גם הצריחים העליונים נפתחים בחינם! אם אתם מגיעים בשקיעה, המרפסות החינמיות מספיקות מעל ומעבר לכל התמונות הזוגיות הכי יפות.",
+            "ticketUrl": "https://budacastlebudapest.com/fishermans-bastion/"
+        },
+        "mapsLink": "https://maps.google.com/?q=Fishermans+Bastion+Budapest",
+        "ticketLink": "https://budacastlebudapest.com/fishermans-bastion/"
+    },
+    {
+        "id": "att-6",
+        "rank": 5,
+        "name": "שוק הכריסמס בכיכר וורושמרטי",
+        "nameOrig": "Vörösmarty Classic Xmas Market",
+        "type": "christmas",
+        "categories": [
+            "christmas",
+            "romantic"
+        ],
+        "rating": "⭐⭐⭐⭐ השוק המסורתי הוותיק",
+        "badge": "#5 לב שווקי החג בקצה מדרחוב ואצי 🎄",
+        "distanceMeters": 900,
+        "distanceText": "900 מטר (11 דק' הליכה ברגל מקאסטי)",
+        "image": "images/vorosmarty-xmas.jpg",
+        "gallery": [
+            "images/vorosmarty-xmas.jpg"
+        ],
+        "address": "Vörösmarty tér",
+        "hours": "ראשון-חמישי 11:00-21:00, שישי-שבת 11:00-22:00",
+        "priceText": "כניסה חופשית לכיכר ולשוק!",
+        "verdictScore": "השוק הקלאסי של מרכז העיר! 🎄⭐⭐⭐⭐",
+        "pros": "בקתות עץ מסורתיות, ריחות קינמון, עץ אשוח ענק, מחובר ישירות לקצה מדרחוב ואצי.",
+        "cons": "מחירים בדוכני האוכל מעט גבוהים יותר ממסעדה רגילה.",
+        "bottomLine": "כיף לעבור כאן בטיול בין החנויות של ואצי.",
+        "howToGetThere": "הליכה של 11 דקות מ-Casati דרומה דרך כיכר Deák ישר לכיכר Vörösmarty.",
+        "description": "שוק חג המולד המסורתי והגדול ביותר בבודפשט הממוקם בכיכר וורושמרטי. עץ אשוח ענק, רכבת חג מולד קטנה לילדים, בקתות עץ כפריות עם ריחות קינמון, יין חם, צלי בקר ועבודות קרמיקה.",
+        "tip": "נסו קיורטוש שוקולד או קינמון שנאפה טרי על גחלים ממש מול העיניים שלכם.",
+        "ticketInfo": {
+            "whereToBuy": "כניסה חופשית חינם לכולם! אין צורך בכרטיסים כלל.",
+            "recommendedType": "חינם",
+            "priceApprox": "0 ₪ לכניסה | שתייה ומאכלים בדוכנים לפי בחירה",
+            "proTip": "קחו קיורטוש חם ויין מתובל וטיילו ברגל לאורך מדרחוב ואצי המואר.",
+            "ticketUrl": "https://vorosmartyter.hu/"
+        },
+        "mapsLink": "https://maps.google.com/?q=Vorosmarty+ter+Budapest",
+        "ticketLink": "https://vorosmartyter.hu/"
+    },
+    {
+        "id": "att-3",
+        "rank": 6,
+        "name": "משטח ההחלקה על הקרח בטירת ויידהוניאד",
+        "nameOrig": "Városligeti Műjégpálya",
+        "type": "romantic",
+        "categories": [
+            "romantic",
+            "action"
+        ],
+        "rating": "⭐⭐⭐⭐⭐ גלויית חורף מהאגדות",
+        "badge": "#6 משטח הקרח הפתוח הגדול באירופה ❄️",
+        "distanceMeters": 2500,
+        "distanceText": "2.5 ק\"מ (6 דק' ישיר במטרו M1 מתחנת אופרה)",
+        "image": "images/ice-rink.jpg",
+        "gallery": [
+            "images/ice-rink.jpg"
+        ],
+        "address": "Olof Palme sétány 5 (הפארק העירוני)",
+        "hours": "בוקר 09:00-13:00, אחה\"צ-ערב 17:00-21:00",
+        "priceText": "כ-3,500-4,000 HUF (כ-35-40 ₪) + אופציה להשכרת מחליקים",
+        "verdictScore": "שווה ביותר לצילומים ולאווירה! ❄️⭐⭐⭐⭐⭐",
+        "pros": "משטח ההחלקה הפתוח הגדול באירופה למרגלות טירה שנראית ממש כמו טירת סינדרלה בדיסני. עצי אשוח מוארים, מוזיקה ואווירה רומנטית קיצונית.",
+        "cons": "בסופי שבוע תור להשכרת מחליקים; למי שלא מחליק – שווה להגיע רק לעמוד על הגשר ולהצטלם.",
+        "bottomLine": "שווה להגיע גם אם אתם לא מחליקים! לעמוד מחובקים על הגשר מול הטירה המוארת זה רגע מדהים.",
+        "howToGetThere": "עולים על מטרו M1 (הקו הצהוב) מתחנת Opera (2 דק' מ-Casati) ונוסעים 6 תחנות בלבד עד Hősök tere (כיכר הגיבורים). הליכה של 2 דקות למשטח.",
+        "description": "משטח החלקה ענק באוויר הפתוח השוכן למרגלות טירת ויידהוניאד המלכותית (שנראית ממש כמו טירה של דיסני). מוזיקה חיה, עצי חג מוארים, אדי קור ודוכני שוקו חם וקיורטוש.",
+        "tip": "גם למי שלא מחליק על הקרח – לעמוד על הגשר ולהסתכל על הטירה המוארת ועל המשטח זו חוויה רומנטית מטורפת.",
+        "ticketInfo": {
+            "whereToBuy": "אונליין באתר הרשמי mujegpalya.hu (חובה בסופי שבוע למניעת תור ארוך!)",
+            "recommendedType": "כרטיס כניסה למשטח (Adult Ticket) + השכרת מחליקים במקום אם תרצו",
+            "priceApprox": "כ-3,500-4,000 HUF כניסה (~35-40 ₪) + כ-3,000 HUF להשכרת מחליקים",
+            "proTip": "אם אתם לא מתכננים להחליק – אל תקנו כרטיס כלל! אפשר לעלות בחינם לגשר הרגלי הגדול מעל המשטח, להחזיק כוס שוקו חם וליהנות מנוף מושלם של הטירה והמחליקים.",
+            "ticketUrl": "https://www.mujegpalya.hu/en"
+        },
+        "mapsLink": "https://maps.google.com/?q=City+Park+Ice+Rink+Budapest",
+        "ticketLink": "https://www.mujegpalya.hu/en"
+    },
+    {
+        "id": "att-basilica-dome",
+        "rank": 7,
+        "name": "תצפית פנורמה מכיפת בזיליקת סטפן (360°)",
+        "nameOrig": "St. Stephen's Basilica Panorama Lookout & Dome",
+        "type": "viewpoints",
+        "categories": [
+            "viewpoints",
+            "romantic"
+        ],
+        "rating": "⭐⭐⭐⭐⭐ תצפית 360 מעלות על כל גגות העיר",
+        "badge": "🔭 #7 תצפית פנורמית פתוחה מראש כיפת הבזיליקה ✨",
+        "distanceMeters": 500,
+        "distanceText": "500 מטר (6 דק' הליכה מ-Casati)",
+        "image": "images/basilica-dome.jpg",
+        "gallery": [
+            "images/basilica-dome.jpg",
+            "images/basilica-xmas.jpg"
+        ],
+        "address": "Szent István tér 1 (בתוך הבזיליקה)",
+        "hours": "כל יום 09:00 - 19:00 (כניסה אחרונה ב-18:30)",
+        "priceText": "כ-4,500 HUF לאדם (כ-45 ₪ כולל מעלית למעלה)",
+        "verdictScore": "חובת עלייה לכל זוג! 🔭⭐⭐⭐⭐⭐",
+        "pros": "רק 6 דקות הליכה מ-Hotel Casati! נוף פנורמי מקיף של 360 מעלות על כל גגות פשט וגבעות בודה, שוק הכריסמס נפרס ממש מתחתיכם, מעלית מודרנית עד הכיפה.",
+        "cons": "במרפסת הפתוחה עלול להיות קריר בנובמבר – חובה לבוא עם מעיל סגור וצעיף.",
+        "bottomLine": "התצפית הכי נגישה ונוחה בעיר – שלבו אותה בשעות אחה\"צ לקראת 15:30 לפני שהשמש שוקעת.",
+        "howToGetThere": "הליכה רגלית קלה של 6 דקות מ-Hotel Casati: יוצאים לרחוב Paulay Ede, ימינה לרחוב Bajcsy-Zsilinszky וישר לרחבת הבזיליקה. נכנסים לקופת הכרטיסים הראשית משמאל לכניסה.",
+        "description": "מרפסת התצפית ההיקפית המרהיבה ביותר במרכז פשט, המקיפה את כיפת הבזיליקה בגובה של 96 מטר. מראה פנורמי מהפנט של 360 מעלות המשקיף על שוק הכריסמס שלמטה, נהר הדנובה, גשר השלשלאות, ארמון בודה, בית האופרה וכל גבעות בודה. העלייה נעשית באמצעות מעלית מודרנית (בתוספת גרם מדרגות ספירלי קצר וחווייתי).",
+        "tip": "הגיעו סביב 15:30 לקראת שעת השקיעה כדי לראות את בודפשט באור יום, במעבר לשקיעה, ואת האורות הראשונים של שוק הכריסמס נדלקים בכיכר שלמטה!",
+        "ticketInfo": {
+            "whereToBuy": "בקופות הבזיליקה במקום או אונליין באתר הרשמי bazilika.biz",
+            "recommendedType": "כרטיס משולב: כנסייה + מעלית למרפסת התצפית הפנורמית (Church + Panorama Tower)",
+            "priceApprox": "כ-4,500 HUF (~45 ₪ לאדם)",
+            "proTip": "אל תקנו כרטיס \"כנסייה בלבד\" (Church Only) כי הוא לא כולל את העלייה לתצפית! בקשו במפורש בקופה את הכרטיס הכולל את ה-Panorama Lookout.",
+            "ticketUrl": "https://www.bazilika.biz/en"
+        },
+        "mapsLink": "https://maps.google.com/?q=St+Stephens+Basilica+Budapest",
+        "ticketLink": "https://www.bazilika.biz/en"
+    },
+    {
+        "id": "att-gellert-hill",
+        "rank": 8,
+        "name": "תצפית גבעת גלרט והציטדלה",
+        "nameOrig": "Gellért Hill & Citadella Panoramic Vista",
+        "type": "viewpoints",
+        "categories": [
+            "viewpoints",
+            "romantic"
+        ],
+        "rating": "⭐⭐⭐⭐⭐ התצפית הגבוהה והמפורסמת בעיר",
+        "badge": "👑 #8 הנוף הפנורמי האולטימטיבי: כל הגשרים והדנובה בקו אחד 🌄",
+        "distanceMeters": 2800,
+        "distanceText": "2.8 ק\"מ (12 דק' במונית Bolt מ-Casati)",
+        "image": "images/gellert-hill.jpg",
+        "gallery": [
+            "images/gellert-hill.jpg"
+        ],
+        "address": "Citadella sétány, 1118 Budapest",
+        "hours": "פתוח 24/7 (חינם לחלוטין)",
+        "priceText": "חינם לחלוטין (0 ₪)!",
+        "verdictScore": "הנוף הפנורמי הכי פראי ומרגש! 👑⭐⭐⭐⭐⭐",
+        "pros": "פתוח חינם תמיד ללא כרטיסים, התצפית הכי רחבה ומרשימה על שני חלקי העיר (בודה ופשט), רומנטי במיוחד בשקיעה ובלילה.",
+        "cons": "נמצא בראש גבעה – עלייה ברגל מעייפת מאוד בחורף; מומלץ לקחת מונית Bolt ישירות לראש הגבעה!",
+        "bottomLine": "נוף שאי אפשר לפספס – קחו מונית Bolt של 12 דקות מהמלון לקראת 16:00, תתפעלו מהנוף של כל הגשרים ותחזרו במונית למטה.",
+        "howToGetThere": "מונית Bolt ישירה מדלת מלון Casati לראש גבעת גלרט (Citadella) – נסיעה חלקה של כ-10-12 דקות (עלות כ-2,500-3,000 HUF / כ-25-30 ₪ בלבד). הדרך הכי חכמה בלי להתנשף במדרגות התלולות!",
+        "description": "הנקודה הטופוגרפית הגבוהה ביותר הצופה על מרכז בודפשט ונהר הדנובה (גובה של 235 מטר מעל פני הים). מהמרפסות שלמרגלות אנדרטת החירות והציטדלה נשקף מראה גלויה מפורסם של כל עיקול הדנובה, כל 8 הגשרים המפורסמים, בניין הפרלמנט ההונגרי וארמון בודה הפרוסים למרגלותיכם.",
+        "tip": "הגיעו ב-16:00, צלמו את השקיעה המוזהבת על הדנובה והפרלמנט, והמתינו כמה דקות עד שכל הגשרים והארמונות נדלקים באורות לילה.",
+        "ticketInfo": {
+            "whereToBuy": "פתוח חינם לחלוטין 100%! אין צורך בשום כרטיס או הרשמה מראש",
+            "recommendedType": "כניסה חופשית לכל מרפסות התצפית הפתוחות",
+            "priceApprox": "0 ₪ (חינם לגמרי)",
+            "proTip": "אין קופות ואין תורים. קחו מונית Bolt ישר לחניה העליונה כדי לא לטפס מאות מדרגות בקור.",
+            "ticketUrl": "https://www.budapestinfo.hu/gellert-hill"
+        },
+        "mapsLink": "https://maps.google.com/?q=Citadella+Budapest",
+        "ticketLink": "https://www.budapestinfo.hu/gellert-hill"
+    },
+    {
+        "id": "att-10",
+        "rank": 9,
+        "name": "גלגל הענק של בודפשט (Budapest Eye)",
+        "nameOrig": "Budapest Eye",
+        "type": "viewpoints",
+        "categories": [
+            "viewpoints",
+            "action",
+            "romantic"
+        ],
+        "rating": "⭐⭐⭐⭐ תצפית מעל כיכר דיאק",
+        "badge": "#9 גלגל ענק עם נוף לכל העיר 🎡",
+        "distanceMeters": 550,
+        "distanceText": "550 מטר (7 דק' הליכה ברגל מקאסטי)",
+        "image": "images/budapest-eye.jpg",
+        "gallery": [
+            "images/budapest-eye.jpg"
+        ],
+        "address": "Erzsébet tér (כיכר ארז'בט - 5 דק' מ-Casati)",
+        "hours": "שני-חמישי 12:00-23:00, שישי-ראשון 11:00-חצות",
+        "priceText": "כ-4,300 HUF (כ-43 ₪ לאדם)",
+        "verdictScore": "חוויה זוגית כיפית וקלילה! 🎡⭐⭐⭐⭐",
+        "pros": "גובה 65 מטר בלב העיר, קבינות סגורות ומחוממות, נוף מרשים של כל כיכר דיאק, הבזיליקה והאורות.",
+        "cons": "סיבוב של כ-10-12 דקות (3 סיבובים).",
+        "bottomLine": "מעולה לערב רומנטי אחרי ארוחה טובה – נמצא דקות הליכה מהמלון.",
+        "howToGetThere": "הליכה של 7 דקות מ-Casati דרומה דרך רחוב Paulay Ede ישירות לפארק כיכר Erzsébet.",
+        "description": "גלגל ענק בגובה 65 מטר הממוקם בלב כיכר ארז'בט. קבינות סגורות ומחוממות המסתובבות ומשקיפות על כל גגות העיר, כיפת הבזיליקה ושווקי החג מלמעלה.",
+        "tip": "מומלץ לעלות בשעות החשיכה כשהעיר כולה מוארת.",
+        "ticketInfo": {
+            "whereToBuy": "בקופות הכרטיסים ברחבת כיכר Erzsébet (או אונליין באתר oriaskerek.com)",
+            "recommendedType": "כרטיס מבוגר רגיל (Standard Ride - כולל 3 סיבובים מלאים)",
+            "priceApprox": "כ-4,300 HUF (~43 ₪ לאדם)",
+            "proTip": "הקבינות סגורות ומחוממות לחלוטין בחורף. אין שום צורך לשלם תוספת על VIP או Fast Track – התור מתקדם מהר מאוד. הכי יפה לעלות בחושך כשהעיר ושוק החג מוארים מלמעלה!",
+            "ticketUrl": "https://oriaskerek.com/en/"
+        },
+        "mapsLink": "https://maps.google.com/?q=Budapest+Eye",
+        "ticketLink": "https://oriaskerek.com/en/"
+    },
+    {
+        "id": "att-garden-of-lights",
+        "rank": 10,
+        "name": "תערוכת האורות הבינלאומית Garden of Lights (היפה והחיה)",
+        "nameOrig": "Garden of Lights Budapest – Beauty and the Beast (ELTE Füvészkert)",
+        "type": "romantic",
+        "categories": [
+            "romantic"
+        ],
+        "rating": "⭐⭐⭐⭐⭐ מיליוני נורות לד ומופע מולטימדיה קסום",
+        "badge": "🌹 #10 הפקת חורף בינלאומית: היפה והחיה בגן הבוטני ✨",
+        "distanceMeters": 3100,
+        "distanceText": "3.1 ק\"מ (18 דק' במטרו M3 מכיכר Deák או 10 דק' במונית Bolt)",
+        "image": "images/garden-of-lights.jpg",
+        "gallery": [
+            "images/garden-of-lights.jpg"
+        ],
+        "address": "הגן הבוטני ELTE Füvészkert (Illés u. 25, 1083 Budapest)",
+        "hours": "פתוח 23/10/26 עד 03/01/27 • שני-חמישי 16:00-20:00 (כניסה אחרונה 19:00), שישי-שבת 16:00-21:00 (כניסה אחרונה 20:00)",
+        "priceText": "כ-4,500-5,000 HUF (כ-45-50 ₪ לאדם)",
+        "verdictScore": "שווה מאוד ומומלץ לחגיגת 7 השנים! 🌹⭐⭐⭐⭐⭐",
+        "pros": "מתפרס על 30 דונם בגן הבוטני ההיסטורי. נושא 'היפה והחיה' עם שדה ורדים מואר, מנהרות אור, מפל אורות, מוזיקה מקורית ופיסול אור מדהים. מושלם לטיול ערב מחובקים.",
+        "cons": "נסיעה של כ-18 דקות במטרו או 10 דקות במונית (מחוץ למרכז ההליכה המיידי של המלון).",
+        "bottomLine": "חוויית ערב קסומה, רומנטית ומאוד פוטוגנית – קחו שוקו חם בכניסה ותיהנו משעה וחצי מהאגדות.",
+        "howToGetThere": "הליכה של 6 דקות לכיכר Deák Ferenc, מטרו M3 דרומה 4 תחנות עד Klinikák, ומשם 5 דקות הליכה ישרה (450 מ') לשער הגן הבוטני (Illés u. 25). או מונית Bolt ישירה ב-10 דקות מדלת המלון.",
+        "description": "תערוכת האורות העולמית Garden of Lights חוזרת לבודפשט בחורף 2026/27 ומאירה את הגן הבוטני ההיסטורי (ELTE Füvészkert) בלמעלה מ-30 דונם של מיליוני נורות לד, צלילים ופיסול אור מהפנט. נושא התערוכה השנה הוא 'היפה והחיה' (Beauty and the Beast).",
+        "tip": "שווה מאוד! כדאי להגיע לקראת 17:00, לקחת שוקו חם ולטייל ברוגע.",
+        "ticketInfo": {
+            "whereToBuy": "אונליין מראש בלבד באתר הרשמי gardenoflights.hu",
+            "recommendedType": "כרטיס רגיל לפי שעה (Standard Timed Entry Ticket)",
+            "priceApprox": "כ-4,900 HUF (~49 ₪ לאדם)",
+            "proTip": "הזמינו חלון שעה סביב 17:00 או 17:30. רכישה מראש באתר חוסכת את התור בקור בשער הגן הבוטני.",
+            "ticketUrl": "https://gardenoflights.hu/"
+        },
+        "mapsLink": "https://maps.google.com/?q=ELTE+Botanical+Garden+Illes+u+25+Budapest",
+        "ticketLink": "https://gardenoflights.hu/"
+    },
+    {
+        "id": "att-variete",
+        "rank": 11,
+        "name": "Budapest Varieté (וגאס מגיע לבודפשט - Dinner & Show)",
+        "nameOrig": "Budapest Varieté – Dinner & Show Palace",
+        "type": "shows",
+        "categories": [
+            "shows",
+            "romantic"
+        ],
+        "rating": "⭐⭐⭐⭐⭐ הפקת ענק בינלאומית בחורף!",
+        "badge": "🎭 #11 וגאס מגיע לבודפשט (קברט, אקרובטיקה וקסמים) ✨",
+        "distanceMeters": 1200,
+        "distanceText": "1.2 ק\"מ (על גג קניון Westend / כ-14 דק' הליכה או 5 דק' במונית מקאסטי)",
+        "image": "images/budapest-variete.jpg",
+        "gallery": [
+            "images/budapest-variete.jpg"
+        ],
+        "address": "Westend Rooftop Garden (Váci út 1-3, קניון ווסטאנד)",
+        "hours": "ימי חמישי עד שבת: פתיחת דלתות 18:00 | ארוחה 18:30 | מופע 20:00–22:00",
+        "priceText": "מופע בלבד: כ-15,000 HUF (~150 ₪) | משולב ארוחה: כ-35,000 HUF",
+        "verdictScore": "הפקה ברמה עולמית בול בתאריכים שלכם! 🎭⭐⭐⭐⭐⭐",
+        "pros": "אקרובטים יוצאי סירק דו סוליי, זמרים חיים, קסמים ומופע זוהר באוהל מראות Spiegeltent מפואר.",
+        "cons": "מופעים רק בחמישי ובשישי (26-27.11).",
+        "bottomLine": "ערב נוצץ ובלתי נשכח – מומלץ לקנות כרטיס מופע בלבד.",
+        "howToGetThere": "הליכה של 14 דקות מ-Casati צפונה או 5 דקות במונית Bolt ישר לשער Westend.",
+        "description": "ארמון מראות קסום (Spiegeltent) יוקרתי המוקם במיוחד לעונת החורף על גג קניון Westend. הפקת ענק נוצצת המשלבת ארוחת ערב גורמה עם מופע קברט ולאס וגאס עוצר נשימה.",
+        "tip": "בול בתאריכים שלכם! מתקיים בדיוק בחמישי ובשישי של החופשה שלכם (26-27.11).",
+        "ticketInfo": {
+            "whereToBuy": "באתר הרשמי של Budapest Varieté (budapestvariete.hu)",
+            "recommendedType": "כרטיס מופע בלבד (Show Only Ticket)",
+            "priceApprox": "כרטיס מופע בלבד: כ-14,000-18,000 HUF (~140-180 ₪) | עם ארוחה כ-35,000+ HUF",
+            "proTip": "קחו כרטיס מופע בלבד! האוכל במופע יקר וסביר, עדיף לאכול ארוחת ערב מפנקת במסעדה בעיר ואז להגיע ב-19:30 להופעה עם קוקטייל.",
+            "ticketUrl": "https://budapestvariete.hu/"
+        },
+        "mapsLink": "https://maps.google.com/?q=Westend+Shopping+Center+Budapest",
+        "ticketLink": "https://budapestvariete.hu/"
+    },
+    {
+        "id": "att-orfeum",
+        "rank": 12,
+        "name": "Orfeum Budapest (קברט, מוזיקה חיה ותיאטרון ארוחות)",
+        "nameOrig": "Orfeum – The Theater of Dinners",
+        "type": "shows",
+        "categories": [
+            "shows"
+        ],
+        "rating": "⭐⭐⭐⭐⭐ מועדון קברט וינטג' אקסקלוסיבי",
+        "badge": "🍸 #12 קברט ומופעי ערב יוקרתיים ליד קורינתיה 🎭",
+        "distanceMeters": 850,
+        "distanceText": "850 מטר (10 דק' הליכה ברגל מקאסטי)",
+        "image": "images/orfeum.jpg",
+        "gallery": [
+            "images/orfeum.jpg"
+        ],
+        "address": "Erzsébet krt. 43-49 (הרובע היהודי, צמוד למלון קורינתיה)",
+        "hours": "ערבים נבחרים מ-19:00 עד 23:30 (לפי לוח המופעים)",
+        "priceText": "כ-6,000-9,000 HUF למופע (כ-60-90 ₪ לאדם)",
+        "verdictScore": "קברט אינטימי וקלאסי! 🍸⭐⭐⭐⭐",
+        "pros": "אווירת מועדון ג'אז של שנות ה-30, קוקטיילים מעולים, שולחנות אינטימיים, קרוב מאוד למלון.",
+        "cons": "דורש בדיקת לוח המופעים הספציפי לאותו ערב.",
+        "bottomLine": "סגירת ערב מלאת סטייל למי שאוהב מוזיקה חיה ואווירת קברט אותנטית.",
+        "howToGetThere": "הליכה של 10 דקות מזרחה מ-Casati ברחובות הרובע היהודי עד מלון קורינתיה.",
+        "description": "מועדון הקברט וההופעות המוביל והאלגנטי ביותר בבודפשט. תקרת מראות זוהרת, ישיבה סביב שולחנות אינטימיים, קוקטיילים ומנות שף, ומופעי רטרו, בורלסק, קברט, מופעי מחווה מוזיקליים וג'אז בסגנון שנות ה-20 וה-30.",
+        "tip": "חוויית ערב רומנטית ואינטימית מאוד לזוגות. מומלץ לבדוק את לוח ההופעות באתר orfeum.hu ולשריין מקומות מראש.",
+        "ticketInfo": {
+            "whereToBuy": "אונליין באתר orfeum.hu",
+            "recommendedType": "כרטיס כניסה לשולחן (Program Ticket / Table Seat)",
+            "priceApprox": "כ-6,000-9,000 HUF (~60-90 ₪ לאדם)",
+            "proTip": "בדקו מראש את לוח ההופעות לתאריכים שלכם (24-28.11) ושריינו שולחן אינטימי לקוקטייל ומופע.",
+            "ticketUrl": "https://orfeum.hu/"
+        },
+        "mapsLink": "https://maps.google.com/?q=Orfeum+Budapest",
+        "ticketLink": "https://orfeum.hu/"
+    },
+    {
+        "id": "att-godollo-xmas",
+        "rank": 13,
+        "name": "בית חג המולד בעיירה גודולו (Karácsonyház Gödöllő)",
+        "nameOrig": "Gödöllői Karácsonyház – Christmas House",
+        "type": "christmas",
+        "categories": [
+            "christmas",
+            "romantic"
+        ],
+        "rating": "⭐⭐⭐⭐⭐ בית סנטה קלאוס קסום מהאגדות (כניסה חינם!)",
+        "badge": "🧑‍🎄 #13 חצי יום מחוץ לעיר: בית הכריסמס המקורי של הונגריה 🌲",
+        "distanceMeters": 29000,
+        "distanceText": "29 ק\"מ מחוץ לעיר (35 דק' במונית Bolt או 50 דק' ברכבת HÉV H8)",
+        "image": "images/godollo-1.jpg",
+        "gallery": [
+            "images/godollo-1.jpg",
+            "images/godollo-2.jpg",
+            "images/godollo-3.jpg",
+            "images/godollo-4.jpg"
+        ],
+        "address": "Szabadság út 2, 2100 Gödöllő (ממש מול ארמון סיסי המלכותי)",
+        "hours": "פתוח מסוף אוקטובר עד סוף דצמבר • שני-שבת 09:00-18:00, ראשון 09:00-17:00",
+        "priceText": "כניסה חינם! (מוגבל לעד 80-100 איש בו-זמנית)",
+        "verdictScore": "מומלץ בחום לחובבי כריסמס | או לוותר אם רוצים להישאר במרכז",
+        "pros": "חנות-מוזיאון כריסמס ענקית ומרהיבה ביופייה, המעוצבת כבית של סנטה קלאוס. חדרים עמוסים במאות עצי אשוח, כדורי זכוכית, כפרי שלג נעים ודוכני עץ חיצוניים.",
+        "cons": "נסיעה של כ-35 דקות במונית מחוץ לבודפשט.",
+        "bottomLine": "אם אתם משוגעים על אווירת כריסמס – זה קסם טהור! אם מעדיפים להישאר במרכז – השווקים בבזיליקה מעולים.",
+        "howToGetThere": "מונית Bolt ישירה מדלת מלון Casati לשער בית חג המולד ב-30-35 דקות (כ-11,000-13,000 HUF / כ-110-130 ₪).",
+        "description": "בית חג המולד בעיירה גודולו (Karácsonyház) הוא אטרקציית חורף מיתולוגית בהונגריה, השוכנת בתוך מבנה היסטורי יפהפה ממש מול ארמון גודולו המלכותי.",
+        "tip": "הכניסה חינם! מומלץ להגיע בשעות הבוקר של ימי חול (שלישי עד חמישי סביב 10:00-11:00).",
+        "ticketInfo": {
+            "whereToBuy": "כניסה חופשית חינם לכולם! אין צורך בכרטיס",
+            "recommendedType": "חינם (מוגבל לעד 80-100 איש במקביל)",
+            "priceApprox": "0 ₪ (חינם)",
+            "proTip": "כדי להימנע מתור כניסה קצר בסופי שבוע, כדאי להגיע בימי חול (שלישי-חמישי) בשעות הבוקר סביב 10:30-11:30.",
+            "ticketUrl": "https://karacsonybolt.hu/"
+        },
+        "mapsLink": "https://maps.google.com/?q=Karacsonyhaz+Godollo+Szabadsag+ut+2",
+        "ticketLink": "https://karacsonybolt.hu/"
+    },
+    {
+        "id": "att-8",
+        "rank": 14,
+        "name": "קארטינג חשמלי מקורה FlashKart",
+        "nameOrig": "FlashKart Budapest",
+        "type": "action",
+        "categories": [
+            "action"
+        ],
+        "rating": "⭐⭐⭐⭐ אדרנלין ומהירות מקורה",
+        "badge": "#14 מסלול קארטינג מקורה ומתקדם 🏎️",
+        "distanceMeters": 8000,
+        "distanceText": "8 ק\"מ (כ-18 דק' במונית Bolt)",
+        "image": "images/flashkart.jpg",
+        "gallery": [
+            "images/flashkart.jpg"
+        ],
+        "address": "FlashKart Budapest",
+        "hours": "שני-חמישי 14:00-22:00, שישי-ראשון 10:00-23:00",
+        "priceText": "כ-4,500-5,500 HUF למקצה (כ-45-55 ₪)",
+        "verdictScore": "כיף אדיר לחובבי אקשן ומהירות! 🏎️⭐⭐⭐⭐",
+        "pros": "קארטינג חשמלי בעל מומנט מיידי מהיר במיוחד, מסלול טכני מקורה ומחומם, מערכת מדידת זמנים מקצועית.",
+        "cons": "נסיעה של 18 דקות במונית מחוץ למרכז.",
+        "bottomLine": "חוויה תחרותית ומגניבה ביותר אם מתחשק לכם ערב אדרנלין.",
+        "howToGetThere": "מונית Bolt ישירה מ-Casati ב-18 דקות (כ-3,500 HUF / ~35 ₪).",
+        "description": "מתחם קארטינג חשמלי מקורה מתקדם ומודרני. רכבים חשמליים בעלי מומנט גבוה, מסלול טכני עם תאורת לד, מדידת זמנים מדויקת וכיף תחרותי מעולה לזוגות.",
+        "tip": "מושלם לשעות הערב או ליום קר. מומלץ לשריין מקצה מראש באתר gokartbudapest.hu.",
+        "ticketInfo": {
+            "whereToBuy": "אונליין באתר הרשמי gokartbudapest.hu",
+            "recommendedType": "מקצה של 8 דקות (Heat 8 Min) או חבילת 2 מקצים",
+            "priceApprox": "כ-4,500-5,500 HUF למקצה (~45-55 ₪ לאדם)",
+            "proTip": "חובה לשריין מקצה מראש באתר לשעות הערב כדי לא להגיע סתם למסלול מלא. הרכבים חשמליים עם האצה מטורפת!",
+            "ticketUrl": "https://gokartbudapest.hu/"
+        },
+        "mapsLink": "https://maps.google.com/?q=FlashKart+Budapest",
+        "ticketLink": "https://gokartbudapest.hu/"
+    },
+    {
+        "id": "att-9",
+        "rank": 15,
+        "name": "מוזיאון האורות הבינלאומי (Light Art Museum - LAM)",
+        "nameOrig": "Light Art Museum (LAM)",
+        "type": "action",
+        "categories": [
+            "action",
+            "romantic"
+        ],
+        "rating": "⭐⭐⭐⭐ אמנות אור מודרנית",
+        "badge": "#15 מיצגי לייזר ואור מהפנטים קרוב למלון 💡",
+        "distanceMeters": 750,
+        "distanceText": "750 מטר (9 דק' הליכה ברגל מקאסטי)",
+        "image": "images/lam-light-art.jpg",
+        "gallery": [
+            "images/lam-light-art.jpg"
+        ],
+        "address": "Hold u. 13 (שוק Hold utca הישן - 8 דק' מ-Casati)",
+        "hours": "כל יום 10:00 - 22:00",
+        "priceText": "כ-7,500 HUF (כ-75 ₪ לאדם)",
+        "verdictScore": "מיוחד, מקורה ומאוד מרשים! 💡⭐⭐⭐⭐",
+        "pros": "אחד ממוזיאוני האור הגדולים בעולם. מיצבי לייזר, הקרנות אור וסאונד מהפנט. מקורה ומחומם לגמרי.",
+        "cons": "כרטיס כניסה מעט יקר יחסית למוזיאונים רגילים.",
+        "bottomLine": "אופציה מצוינת לשעות גשומות או קרות במרחק הליכה קצר.",
+        "howToGetThere": "הליכה של 9 דקות מערבה מ-Casati לכיוון שוק Hold utca הישן.",
+        "description": "אחד ממוזיאוני האור הגדולים בעולם. שוכן בתוך מבנה שוק היסטורי מרשים, וכולל מיצבי לייזר, הקרנות אור אינטראקטיביות, מנהרות אור וסאונד מהפנט שנוצר על ידי אמנים מובילים.",
+        "tip": "קרוב מאוד למלון שלכם! מקום מקורה ומחומם מושלם לצילומים מיוחדים.",
+        "ticketInfo": {
+            "whereToBuy": "אונליין באתר lam.xyz או בקופה ברחוב Hold 13",
+            "recommendedType": "כרטיס מבוגר רגיל (Adult Ticket)",
+            "priceApprox": "כ-7,500 HUF (~75 ₪ לאדם)",
+            "proTip": "נמצא במרחק 8 דקות הליכה בלבד מ-Hotel Casati! מקום מקורה ומחומם מעולה לשעות אחה\"צ הקרות.",
+            "ticketUrl": "https://lam.xyz/"
+        },
+        "mapsLink": "https://maps.google.com/?q=Light+Art+Museum+Budapest",
+        "ticketLink": "https://lam.xyz/"
+    },
+    {
+        "id": "att-11",
+        "rank": 16,
+        "name": "מוזיאון הסלפי והמתוקים (Museum of Sweets & Selfies)",
+        "nameOrig": "Museum of Sweets & Selfies",
+        "type": "action",
+        "categories": [
+            "action"
+        ],
+        "rating": "⭐⭐⭐⭐ תמונות צבעוניות וכיף",
+        "badge": "#16 מתחם צילומים צבעוני באותו רחוב של המלון 🦄",
+        "distanceMeters": 120,
+        "distanceText": "120 מטר (דקה וחצי הליכה ברגל מקאסטי!)",
+        "image": "images/sweets-selfies.jpg",
+        "gallery": [
+            "images/sweets-selfies.jpg"
+        ],
+        "address": "Paulay Ede u. 43 (באותו רחוב של Casati!)",
+        "hours": "כל יום 10:00 - 19:00",
+        "priceText": "כ-4,500 HUF (כ-45 ₪ לאדם)",
+        "verdictScore": "כיף וצבעוני – דקה מהמלון! 🦄⭐⭐⭐⭐",
+        "pros": "באותו רחוב של המלון, בריכת פלמינגו, מגלשות סוכריות ותמונות מצחיקות לזוג.",
+        "cons": "מתאים בעיקר לצילומים ולא לביקור היסטורי/תרבותי.",
+        "bottomLine": "קפיצה של חצי שעה לכיף זוגי ממש ליד המיטה.",
+        "howToGetThere": "יוצאים ממלון Casati, פונים שמאלה ברחוב Paulay Ede והולכים 100 מטר בלבד למספר 43!",
+        "description": "מוזיאון חווייתי וצבעוני המוקדש לעולם הממתקים, הפופ והתמונות: בריכת פלמינגו ענקית, מגלשות סוכריות, חדרי מראות ומתקנים מתוקים ומצחיקים לצילומים זוגיים.",
+        "tip": "נמצא במרחק של כ-100 מטר בלבד מהמלון שלכם ברחוב Paulay Ede!",
+        "ticketInfo": {
+            "whereToBuy": "בקופה במקום או באתר szelfimuzeum.hu",
+            "recommendedType": "כרטיס כניסה לשעה וחצי (Standard Ticket)",
+            "priceApprox": "כ-4,500 HUF (~45 ₪ לאדם)",
+            "proTip": "נמצא 100 מטר בלבד מ-Casati! אפשר לקפוץ לשם בספונטניות בשעה פנויה לפני שיוצאים לארוחת ערב.",
+            "ticketUrl": "https://szelfimuzeum.hu/"
+        },
+        "mapsLink": "https://maps.google.com/?q=Museum+of+Sweets+and+Selfies+Paulay+Ede",
+        "ticketLink": "https://szelfimuzeum.hu/"
+    }
+],
+
+  essentialTips: [
+    {
+      id: "tip-airport-1",
+      category: "airport",
+      icon: "⏰",
+      badge: "⏱️ זמני הגעה",
+      badgeClass: "cyan",
+      highlight: true,
+      title: "1️⃣ זמני הגעה לשדה התעופה פרנץ ליסט",
+      desc: "השאירו לעצמכם טווח של שעתיים עד שלוש שעות לפני הטיסה (מושלם סביב 11:30-12:00 לטיסת 14:20). שימו לב: דלפקי הצ'ק-אין נפתחים כ-3 שעות לפני, כך שאין צורך להקדים מעבר לכך."
+    },
+    {
+      id: "tip-airport-2",
+      category: "airport",
+      icon: "🧴",
+      badge: "⚠️ חוק 100 מ\"ל",
+      badgeClass: "gold",
+      highlight: true,
+      title: "2️⃣ נוזלים בתיק העלייה למטוס",
+      desc: "שתו או רוקנו את בקבוקי השתייה לפני השיקוף הביטחוני. כל נוזל מעל 100 מ\"ל נזרק במקום. (בקבוק ריק ניתן להעביר ולמלא בחינם בברזיות מים מסוננים אחרי הבידוק)."
+    },
+    {
+      id: "tip-airport-3",
+      category: "shopping",
+      icon: "🛍️",
+      badge: "💰 טיפ זהב לחיסכון",
+      badgeClass: "gold",
+      highlight: true,
+      title: "3️⃣ שופינג ודיוטי פרי – טיפ זהב",
+      desc: "טיפ זהב – הדיוטי פרי בשדה יקר יותר מהסופרים והחנויות בעיר, וגם המגוון בו קטן יותר. סיימו את הקניות מראש בעיר."
+    },
+    {
+      id: "tip-airport-4",
+      category: "airport",
+      icon: "🛂",
+      badge: "🚨 חשוב במיוחד!",
+      badgeClass: "gold",
+      highlight: true,
+      title: "4️⃣ ביקורת דרכונים (חשוב במיוחד!)",
+      desc: "בבודפשט ביקורת הדרכונים מתבצעת אחרי מתחם הדיוטי פרי והמסעדות, ממש בדרך לשער העלייה למטוס. כ-45 דקות לפני זמן הבורדינג, עזבו את המסעדות והתקדמו לעבר הגייט כדי לעבור את הביקורת בנחת."
+    },
+    {
+      id: "tip-1",
+      category: "hotel",
+      icon: "🏨",
+      badge: "🏊 הטבת VIP",
+      badgeClass: "cyan",
+      title: "בריכת Cortile המחוממת: איך נכנסים בחינם?",
+      desc: "כאורחי Casati יש לכם גישה חופשית לבריכת האינפיניטי המחוממת על הגג של מלון Cortile (רחוב Dessewffy 14, מרחק 600 מטר, 7 דק' הליכה). הבריכה פתוחה מ-06:00 עד 22:00 והסקייבר מ-16:00 עד 22:00. פשוט גשו לקבלה של Casati ובקשו שירשמו אתכם (Upon appointment). קחו חלוק ומגבת מהחדר של Casati ותיהנו מבריכה חמה בחורף ללא שום עלות נוספת!"
+    },
+    {
+      id: "tip-2",
+      category: "transport",
+      icon: "🚌",
+      badge: "🚕 הגעה קלה",
+      badgeClass: "cyan",
+      title: "תחבורה מהשדה למלון (קו 100E או מונית Bolt)",
+      desc: "שתי אפשרויות קלות להגעה למלון Casati: 1. מונית Bolt באפליקציה – עלות של כ-10,000 עד 12,000 פורינט (כ-100-115 ש\"ח), נסיעה ישירה של כ-30 דקות לדלת המלון. 2. אוטובוס אקספרס 100E – יוצא ממש מפתח טרמינל 2B כל 7-10 דקות ישירות לכיכר Deák Ferenc (עלות 2,200 פורינט, כ-22 ש\"ח לאדם), ומשם 5 דקות הליכה רגלית למלון."
+    },
+    {
+      id: "tip-3",
+      category: "money",
+      icon: "🧾",
+      badge: "💶 כסף חזרה",
+      badgeClass: "gold",
+      title: "מדריך החזר מס (Tax Free) בשדה התעופה",
+      desc: "קניתם בחנות אחת בסכום של מעל 68,000 פורינט (175 יורו)? בקשו מהקופאי טופס Tax Free ומעטפה. שימו את המוצרים במקום נגיש במזוודה. בשדה התעופה פרנץ ליסט בטרמינל 2B, לפני הבידוק הביטחוני, גשו לעמדת המכס (Customs) כדי להחתים את הטפסים. לאחר ההחתמה פונים לעמדת ההחזרים (Interchange) ומקבלים את הכסף במזומן (יורו/פורינט) או ישירות לכרטיס האשראי!"
+    },
+    {
+      id: "tip-4",
+      category: "money",
+      icon: "💱",
+      badge: "💡 חוק 2 האפסים",
+      badgeClass: "gold",
+      title: "שיטת מחיקת שני האפסים והמרת כספים",
+      desc: "איך מחשבים פורינט לשקל בקלות? מורידים את 2 האפסים הימניים! דוגמה: 1,000 HUF = כ-10 ₪, 10,000 HUF = כ-95-100 ₪, 30,000 HUF = כ-290 ₪. בכל מקום בבודפשט משלמים באשראי (Apple Pay / Google Pay). אזהרה חמורה: לעולם לא למשוך כסף מכספומטים צהובים-כחולים של חברת Euronet ברחוב (עמלות המרה שוד של 15%-20%)! אם חייבים מזומן קטן, משכו רק בכספומט של בנק מקומי כמו OTP Bank."
+    },
+    {
+      id: "tip-5",
+      category: "transport",
+      icon: "☀️",
+      badge: "✈️ טיסת צהריים",
+      badgeClass: "cyan",
+      title: "טיסת החזור בשבת 28.11: טיסת צהריים נוחה (ב-14:20)",
+      desc: "טיסת החזור שלכם  ממריאה ב-14:20 בצהריים! קמים בנחת, יורדים לארוחת בוקר ב-Hotel Casati, מבצעים צ'ק אאוט עד 11:00, ויוצאים במונית Bolt או קו 100E לשדה פרנץ ליסט סביב 11:15-11:30. מגיעים ב-12:00, מחתימים טפסי Tax Free בעמדת המכס, עושים סיבוב בדיוטי פרי ועולים רגועים למטוס. נחיתה בישראל ב-18:35 בערב."
+    },
+    {
+      id: "tip-6",
+      category: "phone",
+      icon: "📱",
+      badge: "📲 אפליקציות חובה",
+      badgeClass: "cyan",
+      title: "אפליקציות חובה בטלפון לפני הטיסה",
+      desc: "1. Bolt – אפליקציית המוניות הרשמית והנוחה ביותר בבודפשט (עובדת בדיוק כמו Uber/Gett, תשלום ישיר באשראי ללא הפתעות). 2. BudapestGO – האפליקציה הרשמית לתחבורה הציבורית (מטרו, חשמליות ואוטובוסים), מאפשרת קניית כרטיסים ישירות בנייד ותכנון מסלול מדויק. 3. Wizz Air – לצ'ק אין המהיר 24 שעות מראש והצגת כרטיסי העלייה למטוס ב-Apple Wallet."
+    }
+  ],
+
+  // 9 מאכלי חובה מסורתיים של הונגריה (לפי האינפוגרפיקה הרשמית - מותאם אישית: ללא חזיר, מומלץ ומדויק)
+  mustTasteFoods: [
+    {
+      id: "taste-1",
+      rank: 1,
+      name: "מרק גולאש הונגרי (Goulash Soup)",
+      nameOrig: "Gulyásleves",
+      type: "soups",
+      categoryName: "מרק חם / בשרי",
+      badge: "<span class='hu-flag-icon'></span> #1 המאכל הלאומי של הונגריה",
+      rating: "⭐⭐⭐⭐⭐ חובת טעימה ראשונה",
+      image: "images/goulash.jpg",
+      description: "מרק בקר הונגרי עשיר, סמיך ומחמם שמתבשל שעות בסיר ברזל עם קוביות בשר בקר נימוחות, תפוחי אדמה, גזר, שורש פטרוזיליה והמון פפריקה מתוקה. מושלם ליום חורף קריר בבודפשט.",
+      kosherGuide: "100% בקר טהור וירקות שורש. נקי לחלוטין מחזיר או פירות ים. בטוח וכשר.",
+      whereToEat: "For Sale Pub (מוגש בקדירת ברזל ענקית ולוהטת - 1.7 ק\"מ) או Menza Étterem (מעודן ואיכותי - 400 מטר מקאסטי).",
+      priceHuf: "3,200 HUF",
+      priceIls: "כ-32 ₪ (לפי שיטת 2 האפסים)",
+      mustOrderTip: "לבקש עם לחם לבן טרי וחריף בצד (Erős Pista) כדי להוסיף לפי הטעם.",
+      mapsLink: "https://maps.google.com/?q=For+Sale+Pub+Budapest"
+    },
+    {
+      id: "taste-2",
+      rank: 2,
+      name: "לנגוש (Lángos - לחם שום, שמנת וגבינה)",
+      nameOrig: "Lángos (Sajtos-Tejfölös)",
+      type: "streetfood",
+      categoryName: "אוכל רחוב / צמחוני",
+      badge: "🧀 #2 אוכל הרחוב הכי ממכר בעולם",
+      rating: "⭐⭐⭐⭐⭐ פריך, חם ומושחת",
+      image: "images/langos.jpg",
+      description: "בצק שמרים רך שנמתח ביד ונזרק לשמן עמוק רותח עד שהוא זהוב ומתפצח מבחוץ ואוורירי בפנים. מורחים עליו מברשת שמן שום ריחני, שכבה עבה של שמנת חמוצה הונגרית (Tejföl) וערימת גבינה צהובה מגוררת שנמסה על הבצק הלוהט.",
+      kosherGuide: "100% צמחוני וחלבי! להזמין תמיד את השילוב הקלאסי 'Sajtos-Tejfölös' (גבינה ושמנת) ולהדגיש: ללא תוספת בייקון או נקניק.",
+      whereToEat: "Retro Lángos Budapest (המוסד הכי טוב בעיר - רק 600 מטר הליכה מקאסטי!) או במתחם הפוד-טראקס Karavan.",
+      priceHuf: "2,200 HUF",
+      priceIls: "כ-22 ₪",
+      mustOrderTip: "לנגוש גבינה-שמנת קלאסי עם מריחת שום עדינה (Fokhagymás). לאכול ישר כשהוא לוהט!",
+      mapsLink: "https://maps.google.com/?q=Retro+Langos+Budapest"
+    },
+    {
+      id: "taste-3",
+      rank: 3,
+      name: "עוף בפפריקה עם נטיפי בצק (Chicken Paprikash)",
+      nameOrig: "Paprikás Csirke",
+      type: "mains",
+      categoryName: "מנה עיקרית / עוף",
+      badge: "🍗 #3 מנחם, עסיסי וסופר טעים",
+      rating: "⭐⭐⭐⭐⭐ קלאסיקה הונגרית חמה",
+      image: "images/paprikas-csirke.jpg",
+      description: "נתחי שוקי עוף רכים שמתפרקים מהעצם, מבושלים ברוטב קרמי סמיך של פפריקה הונגרית מתוקה, בצל מוזהב ושמנת חמוצה. מוגש על הר של נוקדלי (Nokedli - בצקניות הונגריות קטנות שסופגות את כל הרוטב).",
+      kosherGuide: "עוף טהור וביצים. במסעדות איכותיות כמו Menza ו-Gettó Gulyás מכינים בשמן צמחי וחמאה/שמנת ללא שימוש בשומן חזיר.",
+      whereToEat: "Menza Étterem (רק 400 מ' מקאסטי בכיכר Liszt Ferenc) או Gettó Gulyás (500 מ' ברובע היהודי).",
+      priceHuf: "4,600 HUF",
+      priceIls: "כ-46 ₪",
+      mustOrderTip: "לערבב את נטיפי הנוקדלי היטב לתוך הרוטב העשיר של העוף לפני הביס הראשון.",
+      mapsLink: "https://maps.google.com/?q=Menza+Etterem+Budapest"
+    },
+    {
+      id: "taste-4",
+      rank: 4,
+      name: "קיורטוש חם על גחלים (Kürtőskalács)",
+      nameOrig: "Kürtőskalács (Chimney Cake)",
+      type: "streetfood",
+      categoryName: "קינוח רחוב / מאפה",
+      badge: "🥖 #4 המאפה המתוק המפורסם",
+      rating: "⭐⭐⭐⭐⭐ ריח משכר בכל רחוב",
+      image: "images/kurtoskalacs.jpg",
+      description: "מאפה שמרים גלילי חלול הנאפה בסיבוב מעל גחלים לוהטות. שכבת הסוכר החיצונית נמסה והופכת לקרמל קריספי זהוב, ואז מגלגלים אותו מיד בתוספת לבחירה (קינמון, וניל, אגוזים, שוקולד או נוטלה). מושכים רצועה-רצועה בידיים כשהאדים עולים!",
+      kosherGuide: "פרווה / חלבי, 100% צמחוני ונקי לחלוטין ללא שום חשש.",
+      whereToEat: "Molnár's Kürtőskalács (ברחוב ואצי) או בדוכנים העשנים בשוק הכריסמס של בזיליקת סנט סטפן (6 דק' הליכה מקאסטי).",
+      priceHuf: "1,800 - 2,400 HUF",
+      priceIls: "כ-18 - 24 ₪",
+      mustOrderTip: "קיורטוש קינמון חם טרי מהאש, או קיורטוש וניל מגולגל באגוזי מלך קלויים.",
+      mapsLink: "https://maps.google.com/?q=Molnar's+Kurtoskalacs+Budapest"
+    },
+    {
+      id: "taste-5",
+      rank: 5,
+      name: "הורטובאג'י פלצ'ינטה (בלינצ'ס בשר בפפריקה)",
+      nameOrig: "Hortobágyi Palacsinta",
+      type: "mains",
+      categoryName: "מנה ראשונה / עיקרית",
+      badge: "🥞 #5 קרפ בשר ברוטב פפריקה קטיפתי",
+      rating: "⭐⭐⭐⭐ טעמים הונגריים מיוחדים",
+      image: "images/hortobagyi-palacsinta.jpg",
+      description: "חביתיות דקות ועדינות (בלינצ'ס) ממולאות בבשר עוף או עגל טחון ומתובל בפפריקה ובצל מטוגן, מגולגלות, נאפות בתנור ומוגשות מוצפות ברוטב פפריקה-שמנת עשיר עם נגיעת פטרוזיליה טרייה ושמנת חמוצה.",
+      kosherGuide: "חשוב לבחור תמיד את גרסת העוף (Csirke) או העגל (Borjú), ולוודא שהמילוי אינו כולל שומן חזיר.",
+      whereToEat: "Gettó Gulyás (ברובע היהודי - 500 מטר מקאסטי) או ב-Hungarikum Bisztró.",
+      priceHuf: "3,400 HUF",
+      priceIls: "כ-34 ₪",
+      mustOrderTip: "מנה מעולה לחלוקה כראשונה זוגית לפני סטייק או מנה עיקרית.",
+      mapsLink: "https://maps.google.com/?q=Getto+Gulyas+Budapest"
+    },
+    {
+      id: "taste-6",
+      rank: 6,
+      name: "עוגת דובוש מלכותית (Dobos Torte)",
+      nameOrig: "Dobostorta",
+      type: "desserts",
+      categoryName: "קונדיטוריה / קינוח",
+      badge: "🎂 #6 עוגת השכבות והקרמל של הקיסרים",
+      rating: "⭐⭐⭐⭐⭐ יצירת מופת היסטורית",
+      image: "images/dobostorta.jpg",
+      description: "העוגה ההונגרית המפורסמת ביותר שנאפתה לראשונה ב-1885 עבור קיסרי האימפריה האוסטרו-הונגרית. 6 שכבות טורט ספוג דקיקות ואווריריות שביניהן מרוח קרם שוקולד-חמאה עשיר ומרוכז, ומעליהן לוח קרמל קשה שמתפצח בפה בכל ביס.",
+      kosherGuide: "חלבי/צמחוני. עוגה קלאסית נקייה ללא שום מרכיב לא כשר.",
+      whereToEat: "קונדיטוריית Ruszwurm ההיסטורית במצודת הדייגים או Café Gerbeaud בכיכר Vörösmarty.",
+      priceHuf: "2,200 HUF",
+      priceIls: "כ-22 ₪",
+      mustOrderTip: "פרוסת דובוש לצד כוס קפה אספרסו חזק או קפוצ'ינו איטלקי.",
+      mapsLink: "https://maps.google.com/?q=Ruszwurm+Confectionery+Budapest"
+    },
+    {
+      id: "taste-7",
+      rank: 7,
+      name: "טורוגומבוץ (כופתאות גבינה מתוקות נימוחות)",
+      nameOrig: "Túrógombóc",
+      type: "desserts",
+      categoryName: "קינוח חם / חלבי",
+      badge: "🍨 #7 קינוח חלומי שלא קיים בישראל",
+      rating: "⭐⭐⭐⭐⭐ הפתעה מתוקה בלתי נשכחת",
+      image: "images/turogomboc.jpg",
+      description: "כדורים רכים וסופר-אווריריים מגבינת טבורוג מתוקה (גבינת קוטג' הונגרית מיוחדת). מבושלים במים ומגולגלים מיד בפירורי לחם שנקלו בחמאה ריחנית וסוכר. מוגשים חמים לשולחן עם שלולית נדיבה של שמנת חמוצה ממותקת ואבקת סוכר.",
+      kosherGuide: "100% חלבי/צמחוני! כשר לחלוטין ואין בו שום חשש.",
+      whereToEat: "Menza Étterem (מוגש חם ומושלם - 400 מ' מקאסטי) או ב-Kéhli Vendéglő.",
+      priceHuf: "2,600 HUF",
+      priceIls: "כ-26 ₪",
+      mustOrderTip: "לטבול כל כדור חם בשמנת הממותקת ובאבקת הסוכר – השילוב החם-קר פשוט אלוהי!",
+      mapsLink: "https://maps.google.com/?q=Menza+Etterem+Budapest"
+    },
+    {
+      id: "taste-8",
+      rank: 8,
+      name: "מרק דייגים הונגרי (Fisherman's Soup)",
+      nameOrig: "Halászlé",
+      type: "soups",
+      categoryName: "מרק / דגים",
+      badge: "🐟 #8 מרק דגים אדום, חם ופיקנטי",
+      rating: "⭐⭐⭐⭐ מיוחד לאוהבי דגים",
+      image: "images/halaszle.jpg",
+      description: "מרק דגי נהר מסורתי בצבע אדום לוהט המבושל בקדירת נחושת פתוחה עם שפע פפריקה חריפה, בצל מבושל ונתחי דג עסיסיים. מנה היסטורית שמחממת את הגוף ברוח הקרה שליד הדנובה.",
+      kosherGuide: "דגים בלבד. יש להזמין גרסת קרפיון (Ponty) שהוא דג כשר בעל סנפיר וקשקשת, ולהימנע מדגי שפמנון (Harcsa) או צלופח שאינם כשרים.",
+      whereToEat: "Szegedi Halászcsárda (טיילת הדנובה מול הנהר - Belgrád rkp. 25).",
+      priceHuf: "4,200 HUF",
+      priceIls: "כ-42 ₪",
+      mustOrderTip: "לבקש קרפיון (Ponty Halászlé) עם לחם לבן טרי לטבילה.",
+      mapsLink: "https://maps.google.com/?q=Szegedi+Halaszcsarda+Budapest"
+    },
+    {
+      id: "taste-9",
+      rank: 9,
+      name: "שומלוי גלושקה (טרייפל שוקולד, אגוזים ורום)",
+      nameOrig: "Somlói Galuska",
+      type: "desserts",
+      categoryName: "קינוח שחיתות / שוקולד",
+      badge: "🍫 #9 קינוח השחיתות הלאומי של הונגריה",
+      rating: "⭐⭐⭐⭐⭐ חגיגת שוקולד וקצפת",
+      image: "images/somloi-galuska.jpg",
+      description: "קערת שכבות של עוגת ספוג משולשת (וניל, שוקולד ואגוזי מלך) מועשרת בסירופ מתוק עם רמז עדין של רום, מעליה קרם שוקולד מריר עשיר, שברי אגוזי מלך קלויים, והר גבוה של קצפת טרייה וזילופי שוקולד. מנה זוגית גדולה ומושחתת!",
+      kosherGuide: "100% חלבי/צמחוני. קינוח כשר ונקי.",
+      whereToEat: "For Sale Pub (מגישים מנת ענק זוגית מדהימה) או ב-Café Gerbeaud המפואר.",
+      priceHuf: "2,800 HUF",
+      priceIls: "כ-28 ₪",
+      mustOrderTip: "להזמין קערה אחת עם 2 כפיות – מנה גדולה וכיפית לחלוק ביחד!",
+      mapsLink: "https://maps.google.com/?q=For+Sale+Pub+Budapest"
+    }
+  ]
+};
