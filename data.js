@@ -378,7 +378,7 @@ const TRIP_DATA = {
       "dayName": "יום שישי",
       "title": "בראנץ', Black Friday ב-WestEnd, פנקייק סופלה ומסאז'",
       "theme": "Cookie Beacon, קניות ב-WestEnd, פנקייק סופלה, גלגל ענק, מסאז' ב-Thai 5 ו-Art of Sushi",
-      "textSummary": "בראנץ' ב-Cookie Beacon ליד הבזיליקה, Black Friday בקניון WestEnd, פנקייק סופלה ב-Beloved, גלגל ענק באור יום (אם אין ערפל), מסאז' ב-Thai 5 ב-16:00, וארוחת ערב ב-Art of Sushi. ב-22:00 המסיבה במקדונלדס של Nyugati, ואז אריזות ושקילת מזוודות (32 ו-26 ק\"ג).",
+      "textSummary": "בראנץ' ב-Cookie Beacon ליד הבזיליקה, Black Friday בקניון WestEnd, פנקייק סופלה ב-Beloved, גלגל ענק באור יום (אם אין ערפל), מסאז' ב-Thai 5 ב-16:00, וארוחת ערב ב-Art of Sushi. אחר כך אריזות ושקילת מזוודות (32 ו-26 ק\"ג).",
       "highlights": [
         "Cookie Beacon",
         "WestEnd",
@@ -481,24 +481,8 @@ const TRIP_DATA = {
           "mapsQuery": "Art of Sushi Liszt Ferenc tér Budapest",
           "description": "סושי, רולים, פוקי וראמן עוף. להזמין שולחן ולשאול אם יש All you can eat.",
           "tip": "בלי שרימפס ובלי סרטנים.",
-          "transitToNext": "🚕 Bolt 5 דק' • למקדונלדס Nyugati",
+          "transitToNext": "🧳 חזרה למלון • אריזות ושקילת מזוודות (32 ו-26 ק\"ג)",
           "rank": 6
-        },
-        {
-          "id": "d4-7",
-          "image": "images/mcdonalds-nyugati.jpg",
-          "time": "22:00 - 23:00",
-          "duration": "שעה",
-          "title": "🎶 Nyugati Lounge – המקדונלדס שהופך למסיבה",
-          "categoryLabel": "ערב אחרון • Nyugati",
-          "category": "nightlife",
-          "location": "Teréz krt. 55 (תחנת Nyugati)",
-          "distanceText": "5 דק' ב-Bolt מהמלון",
-          "mapsQuery": "McDonald's Nyugati Budapest",
-          "description": "\"המקדונלדס הכי יפה בעולם\": בשישי ושבת מ-22:00 עד 04:00 יש DJ ומופע אורות על התקרה ההיסטורית. חלופה: Szimpla Kert. אחר כך אריזות ושקילת מזוודות (32 ו-26 ק\"ג).",
-          "tip": "קבלות Tax Free ודרכונים במעטפה אחת בתיק הקטן.",
-          "transitToNext": "🛏️ לישון • מחר טיסה",
-          "rank": 7
         }
       ]
     },
