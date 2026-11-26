@@ -391,7 +391,7 @@ const TRIP_DATA = {
         {
           "id": "d4-1",
           "image": "images/cookie-beacon.jpg",
-          "time": "08:30 - 09:30",
+          "time": "09:00 - 10:00",
           "duration": "שעה",
           "title": "🍪 בראנץ' ב-Cookie Beacon",
           "categoryLabel": "בראנץ' • ליד הבזיליקה",
@@ -407,7 +407,7 @@ const TRIP_DATA = {
         {
           "id": "d4-2",
           "image": "images/shop-westend.jpg",
-          "time": "10:00 - 13:00",
+          "time": "10:15 - 13:15",
           "duration": "3 שעות",
           "title": "🛍️ Black Friday בקניון WestEnd",
           "categoryLabel": "שופינג • Nyugati",
@@ -417,13 +417,13 @@ const TRIP_DATA = {
           "mapsQuery": "WestEnd City Center Budapest",
           "description": "Zara, Bershka, Stradivarius, Pull&Bear, H&M ופארם – הכול במקום אחד, בחום ובלי שלג.",
           "tip": "Tax Free: מעל 68,000 פורינט בחנות אחת ובאותו יום – לבקש טופס בקופה.",
-          "transitToNext": "🚕 Bolt • למלון להשאיר שקיות",
+          "transitToNext": "📸 13:15 מבט במקדונלדס Nyugati הצמוד • ואז Bolt למלון",
           "rank": 2
         },
         {
           "id": "d4-3",
           "image": "images/sweets-selfies.jpg",
-          "time": "13:45 - 14:45",
+          "time": "14:00 - 15:00",
           "duration": "שעה",
           "title": "🥞 פנקייק סופלה ב-2D Café Beloved",
           "categoryLabel": "קינוח • Király utca",
@@ -439,7 +439,7 @@ const TRIP_DATA = {
         {
           "id": "d4-4",
           "image": "images/budapest-eye.jpg",
-          "time": "15:00 - 15:30",
+          "time": "15:15 - 15:45",
           "duration": "חצי שעה",
           "title": "🎡 הגלגל הענק (אם אין ערפל)",
           "categoryLabel": "תצפית • כיכר Erzsébet",
