@@ -378,7 +378,7 @@ const TRIP_DATA = {
       "dayName": "יום שישי",
       "title": "בראנץ', Black Friday ב-WestEnd, פנקייק סופלה ומסאז'",
       "theme": "Cookie Beacon, קניות ב-WestEnd, פנקייק סופלה, גלגל ענק, מסאז' ב-Thai 5 ו-Art of Sushi",
-      "textSummary": "בראנץ' ב-Cookie Beacon ליד הבזיליקה, Black Friday בקניון WestEnd, פנקייק סופלה ב-Beloved, גלגל ענק באור יום (אם אין ערפל), מסאז' ב-Thai 5 ב-16:00, וארוחת ערב ב-Art of Sushi. אחר כך אריזות ושקילת מזוודות (32 ו-26 ק\"ג).",
+      "textSummary": "בראנץ' ב-Cookie Beacon, Black Friday ב-WestEnd, מנוחה במלון, גלגל ענק באור יום (15:00, אם אין ערפל), מסאז' ב-Thai 5 ב-16:00, פנקייק סופלה ב-Beloved אחרי המסאז', וארוחת ערב ב-Art of Sushi. אופציה: Szimpla Kert, ואז אריזות (32 ו-26 ק\"ג).",
       "highlights": [
         "Cookie Beacon",
         "WestEnd",
@@ -415,31 +415,15 @@ const TRIP_DATA = {
           "location": "Váci út 1-3",
           "distanceText": "5–7 דק' ב-Bolt מהמלון",
           "mapsQuery": "WestEnd City Center Budapest",
-          "description": "Zara, Bershka, Stradivarius, Pull&Bear, H&M ופארם – הכול במקום אחד, בחום ובלי שלג.",
+          "description": "Zara, Bershka, Stradivarius, Pull&Bear, H&M ופארם – הכול במקום אחד, בחום ובלי שלג. נשנוש קטן בפוד קורט בערך ב-12:30.",
           "tip": "Tax Free: מעל 68,000 פורינט בחנות אחת ובאותו יום – לבקש טופס בקופה.",
-          "transitToNext": "📸 13:15 מבט במקדונלדס Nyugati הצמוד • ואז Bolt למלון",
+          "transitToNext": "📸 מבט במקדונלדס Nyugati הצמוד • Bolt למלון ומנוחה",
           "rank": 2
-        },
-        {
-          "id": "d4-3",
-          "image": "images/sweets-selfies.jpg",
-          "time": "14:00 - 15:00",
-          "duration": "שעה",
-          "title": "🥞 פנקייק סופלה ב-2D Café Beloved",
-          "categoryLabel": "קינוח • Király utca",
-          "category": "food",
-          "location": "Király u. 33",
-          "distanceText": "5 דק' הליכה מהמלון",
-          "mapsQuery": "2D Café Beloved Király utca 33 Budapest",
-          "description": "פנקייקים יפניים אווריריים. אם יש תור – Fluffy & Me ב-Kazinczy u. 52.",
-          "tip": "",
-          "transitToNext": "🚕 Bolt / מטרו • לכיכר Erzsébet",
-          "rank": 3
         },
         {
           "id": "d4-4",
           "image": "images/budapest-eye.jpg",
-          "time": "15:15 - 15:45",
+          "time": "15:00 - 15:30",
           "duration": "חצי שעה",
           "title": "🎡 הגלגל הענק (אם אין ערפל)",
           "categoryLabel": "תצפית • כיכר Erzsébet",
@@ -449,8 +433,8 @@ const TRIP_DATA = {
           "mapsQuery": "Budapest Eye Erzsébet tér",
           "description": "סיבוב של כ-8 דקות לפני השקיעה (בערך 16:00). 4,900 פורינט, כרטיסים בקופה.",
           "tip": "",
-          "transitToNext": "🚶‍♂️ הליכה 3 דק' • ל-Thai 5",
-          "rank": 4
+          "transitToNext": "🚶‍♂️ הליכה 3 דק' • ל-Thai 5 (קפה בדרך אם מוקדם)",
+          "rank": 3
         },
         {
           "id": "d4-5",
@@ -465,7 +449,23 @@ const TRIP_DATA = {
           "mapsQuery": "Thai 5 Budapest Feher Hajo utca",
           "description": "סגור ✅ מסאז' של שעה ב-16:00, ועוד רבע שעה להתארגנות.",
           "tip": "",
-          "transitToNext": "🚕 Bolt • חזרה למלון, מקלחת והתארגנות",
+          "transitToNext": "🚕 Bolt 5 דק' • ל-Beloved",
+          "rank": 4
+        },
+        {
+          "id": "d4-3",
+          "image": "images/sweets-selfies.jpg",
+          "time": "17:30 - 18:30",
+          "duration": "שעה",
+          "title": "🥞 פנקייק סופלה ב-2D Café Beloved",
+          "categoryLabel": "קינוח • Király utca",
+          "category": "food",
+          "location": "Király u. 33",
+          "distanceText": "5 דק' הליכה מהמלון",
+          "mapsQuery": "2D Café Beloved Király utca 33 Budapest",
+          "description": "פנקייקים יפניים אווריריים. אם יש תור – Fluffy & Me ב-Kazinczy u. 52.",
+          "tip": "",
+          "transitToNext": "🚶‍♂️ הליכה 5 דק' • למלון ומנוחה עד הארוחה",
           "rank": 5
         },
         {

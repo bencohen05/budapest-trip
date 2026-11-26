@@ -1,5 +1,5 @@
 // Service Worker for Budapest Trip 2026 💜
-const CACHE_NAME = 'budapest-trip-v29';
+const CACHE_NAME = 'budapest-trip-v30';
 
 const ASSETS_TO_CACHE = [
   './',
