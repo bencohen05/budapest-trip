@@ -481,8 +481,24 @@ const TRIP_DATA = {
           "mapsQuery": "Art of Sushi Liszt Ferenc tér Budapest",
           "description": "סושי, רולים, פוקי וראמן עוף. להזמין שולחן ולשאול אם יש All you can eat.",
           "tip": "בלי שרימפס ובלי סרטנים.",
-          "transitToNext": "🧳 חזרה למלון • אריזות ושקילת מזוודות (32 ו-26 ק\"ג)",
+          "transitToNext": "🚶‍♂️ הליכה 10 דק' • ל-Szimpla Kert (אופציונלי)",
           "rank": 6
+        },
+        {
+          "id": "d4-7",
+          "image": "images/bar-szimpla.jpg",
+          "time": "21:45 - 22:45",
+          "duration": "שעה",
+          "title": "🍸 Szimpla Kert (אופציונלי) ואריזות",
+          "categoryLabel": "ערב אחרון • בר חורבות",
+          "category": "nightlife",
+          "location": "Kazinczy u. 14",
+          "distanceText": "10 דק' הליכה מהמלון",
+          "mapsQuery": "Szimpla Kert Budapest",
+          "description": "בר החורבות המפורסם בעולם – גם 20 דקות רק להסתכל שוות. אחר כך אריזות ושקילת מזוודות: 32 ו-26 ק\"ג.",
+          "tip": "קבלות Tax Free ודרכונים במעטפה אחת בתיק הקטן.",
+          "transitToNext": "🛏️ לישון • מחר טיסה",
+          "rank": 7
         }
       ]
     },
